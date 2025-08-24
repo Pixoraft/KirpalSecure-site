@@ -183,12 +183,19 @@
 /* CCTV Camera Animation */
 .cctv-camera {
   position: fixed;
-  top: 80px;
+  top: 64px; /* Matches h-16 (4rem) on small screens */
   left: 50%;
   transform: translateX(-50%);
   z-index: 40;
   pointer-events: none;
   transition: transform 0.1s ease-out;
+}
+
+/* Responsive positioning to match navigation height */
+@media (min-width: 640px) {
+  .cctv-camera {
+    top: 80px; /* Matches h-20 (5rem) on sm screens and up */
+  }
 }
 
 .cctv-lens {
