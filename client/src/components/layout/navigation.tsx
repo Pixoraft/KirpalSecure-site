@@ -87,18 +87,6 @@ export function Navigation() {
                     </Link>
                   </motion.div>
                 ))}
-                <motion.div
-                  className="ml-4 pl-4 border-l border-gray-300 dark:border-gray-600"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <Link
-                    href="/contact"
-                    className="btn-modern px-6 py-2 rounded-lg text-sm font-semibold"
-                    data-testid="nav-get-quote"
-                  >
-                    Get Quote
-                  </Link>
-                </motion.div>
               </div>
             </div>
 
@@ -170,21 +158,6 @@ export function Navigation() {
                     </Link>
                   </motion.div>
                 ))}
-                <motion.div
-                  className="pt-4 border-t border-gray-200 dark:border-gray-700"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.4 }}
-                >
-                  <Link
-                    href="/contact"
-                    className="block btn-modern text-center px-4 py-3 rounded-lg font-semibold"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    data-testid="mobile-nav-get-quote"
-                  >
-                    Get Quote
-                  </Link>
-                </motion.div>
               </div>
             </motion.div>
           )}

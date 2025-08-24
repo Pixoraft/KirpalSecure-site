@@ -8,6 +8,7 @@ import {
   CheckCircle, ArrowRight, Play, Zap, Eye, Lock
 } from "lucide-react";
 import { SEOHead } from "@/components/seo-head";
+import { FloatingQueryButton } from "@/components/floating-query-button";
 import CountUp from "react-countup";
 
 // Hero banner slides data
@@ -58,11 +59,11 @@ function HeroBannerSlider() {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-10">
+    <div className="absolute inset-0 z-10 overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
-          className="absolute inset-0"
+          className="absolute inset-0 w-full h-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -70,18 +71,23 @@ function HeroBannerSlider() {
         >
           {/* Background Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${heroBannerSlides[currentSlide].backgroundImage})` }}
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ 
+              backgroundImage: `url(${heroBannerSlides[currentSlide].backgroundImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center',
+              backgroundRepeat: 'no-repeat'
+            }}
           />
           
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/50" />
           
           {/* Content */}
-          <div className="relative h-full flex items-center justify-center">
-            <div className="max-w-4xl mx-auto text-center text-white px-4">
+          <div className="relative h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center text-white w-full">
               <motion.h2
-                className="text-4xl md:text-6xl font-black mb-4 text-display"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-display leading-tight"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -90,7 +96,7 @@ function HeroBannerSlider() {
               </motion.h2>
               
               <motion.p
-                className="text-xl md:text-2xl mb-3 font-semibold text-blue-200"
+                className="text-lg sm:text-xl md:text-2xl mb-3 font-semibold text-blue-200"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -99,7 +105,7 @@ function HeroBannerSlider() {
               </motion.p>
               
               <motion.p
-                className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto"
+                className="text-base sm:text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -114,11 +120,11 @@ function HeroBannerSlider() {
               >
                 <Link 
                   href="/services"
-                  className="btn-modern px-8 py-3 text-lg font-bold rounded-xl inline-flex items-center group"
+                  className="btn-modern px-6 sm:px-8 py-3 text-base sm:text-lg font-bold rounded-xl inline-flex items-center group"
                   data-testid="banner-cta-button"
                 >
                   {heroBannerSlides[currentSlide].ctaText}
-                  <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
+                  <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={18} />
                 </Link>
               </motion.div>
             </div>
@@ -143,18 +149,18 @@ function HeroBannerSlider() {
       {/* Navigation arrows */}
       <button
         onClick={() => setCurrentSlide((prev) => (prev - 1 + heroBannerSlides.length) % heroBannerSlides.length)}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all z-20"
+        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all z-20"
         data-testid="banner-prev-button"
       >
-        <ArrowRight className="rotate-180" size={20} />
+        <ArrowRight className="rotate-180" size={18} />
       </button>
       
       <button
         onClick={() => setCurrentSlide((prev) => (prev + 1) % heroBannerSlides.length)}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all z-20"
+        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all z-20"
         data-testid="banner-next-button"
       >
-        <ArrowRight size={20} />
+        <ArrowRight size={18} />
       </button>
     </div>
   );
@@ -239,22 +245,20 @@ export default function HomePage() {
         {/* Animated background elements - properly contained */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-20 left-20 w-20 h-20 border border-white/10 rounded-full"
+            className="absolute top-10 left-4 sm:top-20 sm:left-20 w-16 h-16 sm:w-20 sm:h-20 border border-white/10 rounded-full"
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            style={{ maxWidth: 'calc(100vw - 160px)', maxHeight: 'calc(100vh - 160px)' }}
           />
           <motion.div
-            className="absolute bottom-20 right-20 w-16 h-16 border-2 border-white/20 rounded-lg"
-            animate={{ y: [-8, 8, -8] }}
+            className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-12 h-12 sm:w-16 sm:h-16 border-2 border-white/20 rounded-lg"
+            animate={{ y: [-6, 6, -6] }}
             transition={{ duration: 4, repeat: Infinity }}
-            style={{ maxWidth: 'calc(100vw - 160px)', maxHeight: 'calc(100vh - 160px)' }}
           />
           <motion.div
-            className="absolute top-1/2 left-16 w-12 h-12 bg-white/5 rounded-full"
+            className="absolute top-1/2 left-8 sm:left-16 w-8 h-8 sm:w-12 sm:h-12 bg-white/5 rounded-full"
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
-            style={{ maxWidth: 'calc(100vw - 160px)', transformOrigin: 'center' }}
+            style={{ transformOrigin: 'center' }}
           />
         </div>
 
@@ -273,6 +277,9 @@ export default function HomePage() {
           </div>
         </motion.div>
       </section>
+      
+      {/* Floating Query Button */}
+      <FloatingQueryButton />
 
       {/* Stats Section */}
       <section className="py-20 bg-white">
