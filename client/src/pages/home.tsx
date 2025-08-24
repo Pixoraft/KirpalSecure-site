@@ -237,7 +237,7 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden max-w-full">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden max-w-full -mt-20 pt-20">
         {/* Background with gradient and pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-red via-brand-red-dark to-gray-900"></div>
         <div className="absolute inset-0 bg-black/20"></div>
@@ -278,8 +278,6 @@ export default function HomePage() {
         </motion.div>
       </section>
       
-      {/* Floating Query Button */}
-      <FloatingQueryButton />
 
       {/* Stats Section */}
       <section className="py-20 bg-white">
@@ -559,6 +557,133 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-white/80 leading-relaxed">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Package Offers Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 text-display">
+              Special <span className="text-gradient">Package Offers</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Choose from our exclusive security packages designed for your needs
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                name: "Basic Security",
+                price: "₹15,999",
+                originalPrice: "₹20,000",
+                features: [
+                  "4 CCTV Cameras (HD)",
+                  "1 DVR System",
+                  "Free Installation",
+                  "1 Year Warranty",
+                  "24/7 Support"
+                ],
+                popular: false,
+                color: "from-blue-500 to-cyan-500"
+              },
+              {
+                name: "Smart Home Package",
+                price: "₹35,999", 
+                originalPrice: "₹45,000",
+                features: [
+                  "8 CCTV Cameras (4K)",
+                  "Smart Door Lock",
+                  "Motion Sensors (4)",
+                  "Mobile App Control",
+                  "Free Installation",
+                  "2 Years Warranty"
+                ],
+                popular: true,
+                color: "from-green-500 to-emerald-500"
+              },
+              {
+                name: "Premium Security",
+                price: "₹65,999",
+                originalPrice: "₹80,000", 
+                features: [
+                  "16 CCTV Cameras (4K)",
+                  "Biometric Access",
+                  "Smart Alarms",
+                  "Video Intercom",
+                  "Cloud Storage",
+                  "Professional Monitoring",
+                  "3 Years Warranty"
+                ],
+                popular: false,
+                color: "from-purple-500 to-pink-500"
+              }
+            ].map((pkg, index) => (
+              <motion.div
+                key={index}
+                className={`card-modern p-8 relative group hover-lift ${
+                  pkg.popular ? 'ring-2 ring-brand-red' : ''
+                }`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                data-testid={`package-${index}`}
+              >
+                {pkg.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gradient-primary text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                
+                <div className={`w-16 h-16 bg-gradient-to-br ${pkg.color} rounded-2xl shadow-lg flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform`}>
+                  <Shield className="text-white" size={28} />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-center mb-4">{pkg.name}</h3>
+                
+                <div className="text-center mb-6">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-4xl font-black text-brand-red">{pkg.price}</span>
+                    <div className="flex flex-col">
+                      <span className="text-lg text-gray-400 line-through">{pkg.originalPrice}</span>
+                      <span className="text-sm text-green-600 font-semibold">Save ₹{parseInt(pkg.originalPrice.slice(1).replace(',', '')) - parseInt(pkg.price.slice(1).replace(',', ''))}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-8">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm text-gray-600">
+                      <CheckCircle className="text-green-500 mr-3 flex-shrink-0" size={16} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                
+                <Link 
+                  href="/contact" 
+                  className={`block w-full text-center py-3 rounded-lg font-bold transition-all ${
+                    pkg.popular 
+                      ? 'bg-gradient-primary text-white hover:bg-gradient-secondary' 
+                      : 'border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white'
+                  }`}
+                  data-testid={`package-button-${index}`}
+                >
+                  Choose Package
+                </Link>
               </motion.div>
             ))}
           </div>

@@ -83,23 +83,28 @@ Please get back to me. Thanks!`;
 
   return (
     <>
-      {/* Floating Button */}
-      <motion.button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-primary rounded-full shadow-xl flex items-center justify-center text-white z-40 group"
-        whileHover={{ scale: 1.1 }}
+      {/* Floating Button with Text */}
+      <motion.div
+        className="fixed bottom-6 right-6 z-40"
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        data-testid="floating-query-button"
       >
-        <MessageCircle size={24} className="group-hover:scale-110 transition-transform" />
-        
-        {/* Pulse animation */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-primary rounded-full opacity-30"
-          animate={{ scale: [1, 1.4, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        />
-      </motion.button>
+        <motion.button
+          onClick={() => setIsOpen(true)}
+          className="bg-gradient-primary rounded-full shadow-xl flex items-center justify-center text-white group px-4 py-3 gap-3"
+          data-testid="floating-query-button"
+        >
+          <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
+          <span className="text-sm font-semibold">Get Query</span>
+          
+          {/* Pulse animation */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-primary rounded-full opacity-30"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        </motion.button>
+      </motion.div>
 
       {/* Query Form Modal */}
       <AnimatePresence>

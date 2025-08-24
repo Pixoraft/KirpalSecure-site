@@ -7,6 +7,7 @@ import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { ScrollToTop } from "@/lib/scroll-to-top";
 import { CCTVCamera } from "@/components/cctv-camera";
+import { FloatingQueryButton } from "@/components/floating-query-button";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/home";
 import ServicesPage from "@/pages/services";
@@ -20,7 +21,7 @@ function Router() {
       <ScrollToTop />
       <Navigation />
       <CCTVCamera />
-      <main>
+      <main className="pt-20">
         <Switch>
           <Route path="/" component={HomePage} />
           <Route path="/services" component={ServicesPage} />
@@ -32,6 +33,9 @@ function Router() {
         </Switch>
       </main>
       <Footer />
+      
+      {/* Floating Query Button - Available on all pages */}
+      <FloatingQueryButton />
     </>
   );
 }
