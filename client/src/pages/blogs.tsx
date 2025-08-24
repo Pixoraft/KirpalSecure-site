@@ -5,6 +5,7 @@ import { SEOHead } from "@/components/seo-head";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "wouter";
 import type { Blog } from "@shared/schema";
 
 const categories = ["All", "Security Tips", "Technology", "Smart Home", "Network Security", "Intercom Systems"];
@@ -174,9 +175,11 @@ export default function BlogsPage() {
                     </div>
                   </div>
                   
-                  <h2 className="text-xl font-bold mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
-                    {post.title}
-                  </h2>
+                  <Link href={`/blog/${post.slug}`}>
+                    <h2 className="text-xl font-bold mb-3 group-hover:text-brand-red transition-colors line-clamp-2 cursor-pointer">
+                      {post.title}
+                    </h2>
+                  </Link>
                   
                   <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                     {post.excerpt}
@@ -188,15 +191,17 @@ export default function BlogsPage() {
                       <span className="text-sm text-gray-600 dark:text-gray-400">{post.author}</span>
                     </div>
                     
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-brand-red hover:text-brand-red-dark p-0 h-auto font-semibold group/btn"
-                      data-testid={`read-more-${post.id}`}
-                    >
-                      Read More
-                      <ArrowRight size={16} className="ml-1 transition-transform group-hover/btn:translate-x-1" />
-                    </Button>
+                    <Link href={`/blog/${post.slug}`}>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-brand-red hover:text-brand-red-dark p-0 h-auto font-semibold group/btn"
+                        data-testid={`read-more-${post.id}`}
+                      >
+                        Read More
+                        <ArrowRight size={16} className="ml-1 transition-transform group-hover/btn:translate-x-1" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </motion.article>

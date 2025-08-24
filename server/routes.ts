@@ -8,10 +8,7 @@ const ADMIN_PASSWORD = "admin123"; // Change this to a secure password
 
 // Extend Request type to include session
 interface AuthenticatedRequest extends Request {
-  session: {
-    isAdminAuthenticated?: boolean;
-    [key: string]: any;
-  };
+  session: any;
 }
 
 // Middleware to check admin authentication
@@ -58,9 +55,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/blogs/:id", async (req, res) => {
+  app.get("/api/blogs/:slug", async (req, res) => {
     try {
-      const blog = await storage.getBlog(req.params.id);
+      const blog = await storage.getBlogBySlug(req.params.slug);
       if (!blog) {
         return res.status(404).json({ message: "Blog not found" });
       }

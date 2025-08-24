@@ -13,6 +13,7 @@ import HomePage from "@/pages/home";
 import ServicesPage from "@/pages/services";
 import AboutPage from "@/pages/about";
 import BlogsPage from "@/pages/blogs";
+import BlogDetailPage from "@/pages/blog-detail";
 import ContactPage from "@/pages/contact";
 import { AdminPage } from "@/pages/admin";
 
@@ -28,6 +29,7 @@ function Router() {
           <Route path="/services" component={ServicesPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/blogs" component={BlogsPage} />
+          <Route path="/blog/:slug" component={BlogDetailPage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/admin" component={AdminPage} />
           {/* Fallback to 404 */}
