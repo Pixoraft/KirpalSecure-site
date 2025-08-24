@@ -3,46 +3,44 @@ import { motion } from 'framer-motion';
 
 export function CCTVCamera() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    // Set initial window size
-    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    const updateWindowSize = () => {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    };
-
     window.addEventListener('mousemove', updateMousePosition);
-    window.addEventListener('resize', updateWindowSize);
 
     return () => {
       window.removeEventListener('mousemove', updateMousePosition);
-      window.removeEventListener('resize', updateWindowSize);
     };
   }, []);
 
-  // Calculate smooth camera rotation based on mouse position
-  const centerX = windowSize.width / 2;
-  const centerY = 100; // Fixed camera position
+  // Get screen dimensions safely
+  const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 1920;
+  const screenHeight = typeof window !== 'undefined' ? window.innerHeight : 1080;
+  const centerX = screenWidth / 2;
   
-  // Horizontal rotation (left/right movement)
-  const horizontalRotation = ((mousePosition.x - centerX) / centerX) * 45; // Max 45 degrees
-  
-  // Vertical tilt (up/down movement) 
-  const verticalTilt = ((mousePosition.y - centerY) / windowSize.height) * 20; // Max 20 degrees
-  
-  // Lens tracking angle
-  const lensAngle = Math.atan2(mousePosition.y - centerY, mousePosition.x - centerX) * (180 / Math.PI);
+  // Calculate dramatic camera movement
+  const cameraX = ((mousePosition.x - centerX) / centerX) * 150; // Move left/right 150px
+  const rotation = ((mousePosition.x - centerX) / centerX) * 45; // Rotate up to 45 degrees
+  const verticalTilt = ((mousePosition.y - 100) / screenHeight) * 25; // Tilt up/down
+  const lensRotation = Math.atan2(mousePosition.y - 100, mousePosition.x - centerX) * (180 / Math.PI);
 
   return (
-    <div className="cctv-camera">
+    <motion.div 
+      className="cctv-camera"
+      animate={{
+        x: cameraX, // Move camera horizontally with cursor
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 80,
+        damping: 20,
+      }}
+    >
       {/* Wall Mount */}
-      <motion.div className="relative">
+      <div className="relative">
         {/* Mount Bracket */}
         <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-8 h-4 bg-gradient-to-b from-gray-600 to-gray-800 rounded-t-lg shadow-lg border border-gray-700"></div>
         
@@ -50,13 +48,13 @@ export function CCTVCamera() {
         <motion.div
           className="relative"
           animate={{
-            rotateY: horizontalRotation,
-            rotateX: verticalTilt,
+            rotateY: rotation, // Rotate camera based on cursor
+            rotateX: verticalTilt, // Tilt up/down
           }}
           transition={{
             type: "spring",
-            stiffness: 40,
-            damping: 12,
+            stiffness: 60,
+            damping: 15,
           }}
         >
           <div className="relative w-20 h-14">
@@ -73,7 +71,7 @@ export function CCTVCamera() {
                   <motion.div
                     className="w-6 h-6 bg-gradient-to-br from-blue-900 via-blue-800 to-black rounded-full border border-blue-700 relative overflow-hidden shadow-inner"
                     animate={{
-                      rotateZ: lensAngle * 0.1,
+                      rotateZ: lensRotation * 0.1,
                     }}
                     transition={{
                       type: "spring",
@@ -88,7 +86,7 @@ export function CCTVCamera() {
                     <motion.div
                       className="absolute inset-0.5 border border-blue-400 rounded-full opacity-60"
                       animate={{
-                        rotateZ: -lensAngle * 0.2,
+                        rotateZ: -lensRotation * 0.2,
                       }}
                       transition={{
                         type: "spring",
@@ -144,7 +142,7 @@ export function CCTVCamera() {
         <motion.div
           className="absolute top-8 left-1/2 transform -translate-x-1/2 pointer-events-none"
           animate={{
-            rotateZ: horizontalRotation * 0.5,
+            rotateZ: rotation * 0.5, // Beam follows camera rotation
           }}
           transition={{
             type: "spring",
@@ -170,7 +168,7 @@ export function CCTVCamera() {
         <motion.div
           className="absolute top-8 left-1/2 transform -translate-x-1/2"
           animate={{
-            rotateZ: horizontalRotation * 0.3,
+            rotateZ: rotation * 0.3, // Arc follows camera movement
           }}
           transition={{
             type: "spring",
@@ -188,7 +186,17 @@ export function CCTVCamera() {
             />
           </svg>
         </motion.div>
-      </motion.div>
-    </div>
+        
+        {/* Tracking Indicator */}
+        <motion.div
+          className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-brand-red font-bold opacity-70"
+          animate={{
+            opacity: mousePosition.x > 0 ? 1 : 0.3,
+          }}
+        >
+          TRACKING: {Math.round(Math.abs(rotation))}°
+        </motion.div>
+      </div>
+    </motion.div>
   );
 }
