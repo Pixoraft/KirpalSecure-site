@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Shield, Menu, X, Camera } from "lucide-react";
+import { Shield, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Navigation() {
@@ -24,7 +24,7 @@ export function Navigation() {
   return (
     <>
       <motion.nav 
-        className="glass backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 shadow-xl border-b border-white/20 fixed top-0 left-0 right-0 w-full z-[100]"
+        className="bg-white dark:bg-gray-900 shadow-xl border-b border-gray-200 dark:border-gray-700 fixed top-0 left-0 right-0 w-full z-[100]"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -47,7 +47,7 @@ export function Navigation() {
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.8 }}
                   >
-                    <Camera className="text-white" size={24} />
+                    <Shield className="text-white" size={24} />
                   </motion.div>
                   <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
                 </div>
@@ -136,7 +136,7 @@ export function Navigation() {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="px-4 py-4 space-y-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-white/20">
+              <div className="px-4 py-4 space-y-2 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item.path}

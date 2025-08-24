@@ -631,8 +631,8 @@ export default function HomePage() {
             ].map((pkg, index) => (
               <motion.div
                 key={index}
-                className={`card-modern p-8 relative group hover-lift ${
-                  pkg.popular ? 'ring-2 ring-brand-red' : ''
+                className={`card-modern p-8 relative group hover-lift h-full flex flex-col ${
+                  pkg.popular ? 'ring-2 ring-brand-red scale-105' : ''
                 }`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -641,7 +641,7 @@ export default function HomePage() {
                 data-testid={`package-${index}`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                     <span className="bg-gradient-primary text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
                       Most Popular
                     </span>
@@ -664,26 +664,30 @@ export default function HomePage() {
                   </div>
                 </div>
                 
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-600">
-                      <CheckCircle className="text-green-500 mr-3 flex-shrink-0" size={16} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex-grow">
+                  <ul className="space-y-3 mb-8">
+                    {pkg.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start text-sm text-gray-600">
+                        <CheckCircle className="text-green-500 mr-3 flex-shrink-0 mt-0.5" size={16} />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
                 
-                <Link 
-                  href="/contact" 
-                  className={`block w-full text-center py-3 rounded-lg font-bold transition-all ${
-                    pkg.popular 
-                      ? 'bg-gradient-primary text-white hover:bg-gradient-secondary' 
-                      : 'border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white'
-                  }`}
-                  data-testid={`package-button-${index}`}
-                >
-                  Choose Package
-                </Link>
+                <div className="mt-auto">
+                  <Link 
+                    href="/contact" 
+                    className={`block w-full text-center py-4 rounded-lg font-bold transition-all shadow-lg ${
+                      pkg.popular 
+                        ? 'bg-gradient-primary text-white hover:bg-gradient-secondary hover:shadow-xl' 
+                        : 'border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white hover:shadow-xl'
+                    }`}
+                    data-testid={`package-button-${index}`}
+                  >
+                    Choose Package
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
