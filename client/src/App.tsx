@@ -21,7 +21,7 @@ function Router() {
       <ScrollToTop />
       <Navigation />
       <CCTVCamera />
-      <main className="pt-20">
+      <main className="pt-16 sm:pt-20">
         <Switch>
           <Route path="/" component={HomePage} />
           <Route path="/services" component={ServicesPage} />

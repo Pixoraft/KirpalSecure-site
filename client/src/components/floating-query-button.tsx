@@ -85,17 +85,17 @@ Please get back to me. Thanks!`;
     <>
       {/* Floating Button with Text */}
       <motion.div
-        className="fixed bottom-6 right-6 z-40"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
         <motion.button
           onClick={() => setIsOpen(true)}
-          className="bg-gradient-primary rounded-full shadow-xl flex items-center justify-center text-white group px-4 py-3 gap-3"
+          className="bg-gradient-primary rounded-full shadow-xl flex items-center justify-center text-white group px-3 py-2 sm:px-4 sm:py-3 gap-2 sm:gap-3"
           data-testid="floating-query-button"
         >
-          <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
-          <span className="text-sm font-semibold">Get Query</span>
+          <MessageCircle size={18} className="group-hover:scale-110 transition-transform sm:w-5 sm:h-5" />
+          <span className="text-xs sm:text-sm font-semibold">Get Query</span>
           
           {/* Pulse animation */}
           <motion.div

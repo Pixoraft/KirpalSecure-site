@@ -326,3 +326,33 @@ body {
   0%, 80%, 100% { transform: scale(0); }
   40% { transform: scale(1); }
 }
+
+/* Mobile responsive improvements */
+@media (max-width: 640px) {
+  .max-w-full {
+    overflow-x: hidden;
+  }
+  
+  body, html {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  * {
+    max-width: 100% !important;
+  }
+  
+  /* Ensure sections don't cause horizontal scroll */
+  section {
+    overflow-x: hidden;
+  }
+}
+
+/* Additional responsive utilities */
+@media (min-width: 640px) and (max-width: 768px) {
+  /* Tablet specific styles */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

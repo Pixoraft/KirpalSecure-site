@@ -30,7 +30,7 @@ export function Navigation() {
         transition={{ duration: 0.5 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16 sm:h-20">
             <motion.div 
               className="flex items-center"
               whileHover={{ scale: 1.05 }}
@@ -43,17 +43,17 @@ export function Navigation() {
               >
                 <div className="relative">
                   <motion.div
-                    className="w-12 h-12 bg-gradient-primary rounded-xl shadow-glow flex items-center justify-center"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-xl shadow-glow flex items-center justify-center"
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.8 }}
                   >
-                    <Shield className="text-white" size={24} />
+                    <Shield className="text-white" size={20} />
                   </motion.div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-red-500 rounded-full animate-pulse"></div>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-2xl font-black text-gradient tracking-tight">KIRPAL</span>
-                  <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 -mt-1 tracking-wider">SECURITIES</span>
+                  <span className="text-xl sm:text-2xl font-black text-gradient tracking-tight">KIRPAL</span>
+                  <span className="text-[10px] sm:text-xs font-semibold text-gray-600 dark:text-gray-400 -mt-1 tracking-wider">SECURITIES</span>
                 </div>
               </Link>
             </motion.div>
