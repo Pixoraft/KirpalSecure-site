@@ -1,0 +1,57 @@
+# Robots.txt for Kirpal Securities - Professional Security Solutions
+# https://kirpalsecurities.com
+
+User-agent: *
+Allow: /
+
+# Prioritize important pages for crawlers
+Allow: /services
+Allow: /about
+Allow: /contact
+Allow: /blogs
+Allow: /blog/
+
+# Block admin and private areas
+Disallow: /admin
+Disallow: /api/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Allow all images and assets
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://kirpalsecurities.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

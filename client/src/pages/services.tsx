@@ -6,16 +6,19 @@ export default function ServicesPage() {
   return (
     <>
       <SEOHead
-        title="Security Services - CCTV, Home Security, Biometric Systems | Kirpal Securities"
-        description="Comprehensive security services including CCTV installation, home security systems, biometric devices, networking solutions, and repair services in Jalandhar."
-        keywords="CCTV installation, home security systems, biometric access control, networking services, intercom systems, laptop repair, printer repair"
+        title="Professional Security Services in Jalandhar | CCTV, Biometric, Home Automation | Kirpal Securities"
+        description="🎯 Complete Security Services in Jalandhar: CCTV installation, home security systems, biometric devices, networking, video intercom, laptop/printer repair. Expert installation with warranty. Get free quote!"
+        keywords="security services Jalandhar, CCTV camera installation Punjab, home security system installation, biometric attendance system, video door phone system, access control system, surveillance camera installation, networking solutions business, laptop repair Jalandhar, printer service center"
+        image="https://kirpalsecurities.com/services-security.jpg"
+        url="https://kirpalsecurities.com/services"
+        type="website"
       />
 
       {/* Services Header */}
       <section className="bg-brand-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl max-w-3xl mx-auto">Professional security solutions tailored to meet your specific needs</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Professional Security Services in Jalandhar</h1>
+          <p className="text-xl max-w-3xl mx-auto">Complete CCTV installation, home security systems, biometric devices & networking solutions. Expert installation with warranty and 24/7 support in Punjab.</p>
         </div>
       </section>
 

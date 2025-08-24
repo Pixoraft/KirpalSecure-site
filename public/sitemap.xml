@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://kirpalsecurities.com/</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://kirpalsecurities.com/hero-security-team.jpg</image:loc>
+            <image:title>Kirpal Securities Professional Team</image:title>
+            <image:caption>Professional security solutions team in Jalandhar</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Services Page -->
+    <url>
+        <loc>https://kirpalsecurities.com/services</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://kirpalsecurities.com/services-security.jpg</image:loc>
+            <image:title>Complete Security Services</image:title>
+            <image:caption>CCTV, home security, biometric and networking services</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- About Page -->
+    <url>
+        <loc>https://kirpalsecurities.com/about</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Contact Page -->
+    <url>
+        <loc>https://kirpalsecurities.com/contact</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://kirpalsecurities.com/contact-team.jpg</image:loc>
+            <image:title>Contact Kirpal Securities</image:title>
+            <image:caption>Get in touch for security consultation</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Blog Main Page -->
+    <url>
+        <loc>https://kirpalsecurities.com/blogs</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://kirpalsecurities.com/blog-security-insights.jpg</image:loc>
+            <image:title>Security Blog & Tips</image:title>
+            <image:caption>Expert security insights and tips</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Service-specific landing pages for SEO -->
+    <url>
+        <loc>https://kirpalsecurities.com/services#cctv</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://kirpalsecurities.com/services#home-security</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://kirpalsecurities.com/services#biometric</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://kirpalsecurities.com/services#networking</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://kirpalsecurities.com/services#intercom</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://kirpalsecurities.com/services#repair</loc>
+        <lastmod>2025-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+</urlset>

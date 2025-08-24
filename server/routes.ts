@@ -21,6 +21,24 @@ const requireAuth = (req: AuthenticatedRequest, res: Response, next: NextFunctio
 };
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  
+  // SEO Landing Pages for Better Search Rankings
+  app.get('/security-services-jalandhar', (req, res) => {
+    res.redirect(301, '/');
+  });
+  
+  app.get('/cctv-installation-jalandhar', (req, res) => {
+    res.redirect(301, '/services');
+  });
+  
+  app.get('/home-security-systems-punjab', (req, res) => {
+    res.redirect(301, '/services');
+  });
+  
+  app.get('/biometric-systems-jalandhar', (req, res) => {
+    res.redirect(301, '/services');
+  });
+
   // Admin authentication routes
   app.post("/api/admin/login", async (req: AuthenticatedRequest, res: Response) => {
     try {

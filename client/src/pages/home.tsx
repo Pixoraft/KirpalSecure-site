@@ -231,9 +231,12 @@ export default function HomePage() {
   return (
     <>
       <SEOHead
-        title="Kirpal Securities - Professional Security Solutions in Jalandhar"
-        description="Kirpal Securities provides professional security solutions including CCTV cameras, home security systems, biometric devices, networking, and repair services in Jalandhar."
-        keywords="security cameras, home security, biometric devices, networking, CCTV installation, Jalandhar security services"
+        title="Best Security Solutions in Jalandhar | CCTV Installation & Home Security | Kirpal Securities"
+        description="🔒 #1 Security Solutions Provider in Jalandhar! Professional CCTV installation, smart home security systems, biometric devices & networking. 24/7 support. Free consultation & quote. Call 7009154711 ⭐ 500+ Happy Customers"
+        keywords="security solutions Jalandhar, CCTV camera installation Jalandhar, home security systems Punjab, biometric access control, video door phone installation, security camera Jalandhar, smart home security, surveillance systems, networking solutions Punjab, security services near me, CCTV installation Jalandhar Punjab, security system repair, biometric attendance system"
+        image="https://kirpalsecurities.com/hero-security-team.jpg"
+        url="https://kirpalsecurities.com"
+        type="website"
       />
 
       {/* Hero Section */}
@@ -340,10 +343,10 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-4 sm:mb-6 text-display px-4">
-              Premium Security <span className="text-gradient">Solutions</span>
+              Professional <span className="text-gradient">Security Solutions</span> in Jalandhar
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-              Cutting-edge technology meets professional expertise to deliver unparalleled security solutions
+              Leading CCTV installation & home security systems provider in Jalandhar, Punjab. Expert installation, 24/7 support, and the latest security technology for homes and businesses.
             </p>
           </motion.div>
           
@@ -443,7 +446,7 @@ export default function HomePage() {
               What Our <span className="text-gradient">Customers Say</span>
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Real feedback from our satisfied customers across Jalandhar
+              Real testimonials from 500+ satisfied customers across Jalandhar who trust us for their security needs
             </p>
           </div>
           

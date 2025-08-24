@@ -61,9 +61,12 @@ export default function BlogsPage() {
   return (
     <>
       <SEOHead
-        title="Security Blogs & Tips - Expert Insights | Kirpal Securities"
-        description="Stay updated with the latest security tips, technology insights, and expert advice from Kirpal Securities. Learn about CCTV, home security, biometric systems, and more."
-        keywords="security blogs, CCTV tips, home security advice, biometric technology, smart home security, network security"
+        title="Security Blog & Expert Tips | CCTV, Home Security Insights | Kirpal Securities Jalandhar"
+        description="📚 Latest security tips, CCTV guides, home security insights & technology updates from Jalandhar's top security experts. Learn to protect your home & business with professional advice!"
+        keywords="security blog Jalandhar, CCTV installation tips, home security guide, biometric system advice, surveillance camera tips, smart home security blog, network security tips, security technology updates, home protection guide"
+        image="https://kirpalsecurities.com/blog-security-insights.jpg"
+        url="https://kirpalsecurities.com/blogs"
+        type="website"
       />
 
       {/* Hero Section */}
