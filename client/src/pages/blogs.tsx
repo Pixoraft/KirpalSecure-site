@@ -1,79 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, User, ArrowRight, Search, Filter } from "lucide-react";
 import { SEOHead } from "@/components/seo-head";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
-// Mock blog data - in a real app, this would come from your backend
-const blogPosts = [
-  {
-    id: 1,
-    title: "Top 10 CCTV Security Tips for Your Home in 2025",
-    excerpt: "Learn the essential security camera placement strategies and maintenance tips to maximize your home's protection.",
-    author: "Security Expert Team",
-    date: "2025-01-15",
-    readTime: "8 min read",
-    category: "Security Tips",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    slug: "top-10-cctv-security-tips-2025"
-  },
-  {
-    id: 2,
-    title: "Biometric Access Control: The Future of Business Security",
-    excerpt: "Discover how biometric systems are revolutionizing workplace security with fingerprint and facial recognition technology.",
-    author: "Tech Innovator",
-    date: "2025-01-12",
-    readTime: "6 min read",
-    category: "Technology",
-    image: "https://images.unsplash.com/photo-1633265486064-086b219458ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    slug: "biometric-access-control-future"
-  },
-  {
-    id: 3,
-    title: "Smart Home Security Systems: What to Consider in Jalandhar",
-    excerpt: "A comprehensive guide to choosing the right smart security system for homes in Jalandhar's urban landscape.",
-    author: "Local Security Advisor",
-    date: "2025-01-10",
-    readTime: "10 min read",
-    category: "Smart Home",
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    slug: "smart-home-security-jalandhar"
-  },
-  {
-    id: 4,
-    title: "Network Security Best Practices for Small Businesses",
-    excerpt: "Protect your business network from cyber threats with these essential security measures and monitoring techniques.",
-    author: "Network Specialist",
-    date: "2025-01-08",
-    readTime: "7 min read",
-    category: "Network Security",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    slug: "network-security-best-practices"
-  },
-  {
-    id: 5,
-    title: "The Ultimate Guide to Video Door Phone Systems",
-    excerpt: "Everything you need to know about video intercom systems, installation, and choosing the right features for your property.",
-    author: "Installation Expert",
-    date: "2025-01-05",
-    readTime: "9 min read",
-    category: "Intercom Systems",
-    image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    slug: "video-door-phone-systems-guide"
-  }
-];
+import { useQuery } from "@tanstack/react-query";
+import type { Blog } from "@shared/schema";
 
 const categories = ["All", "Security Tips", "Technology", "Smart Home", "Network Security", "Intercom Systems"];
 
 export default function BlogsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [filteredPosts, setFilteredPosts] = useState(blogPosts);
+
+  const { data: blogs = [], isLoading, error } = useQuery({
+    queryKey: ['/api/blogs'],
+    queryFn: () => fetch('/api/blogs').then(res => res.json()) as Promise<Blog[]>
+  });
 
   // Filter posts based on search and category
-  const handleFilter = () => {
-    let filtered = blogPosts;
+  const filteredPosts = useMemo(() => {
+    let filtered = blogs;
     
     if (searchTerm) {
       filtered = filtered.filter(post => 
@@ -86,13 +33,29 @@ export default function BlogsPage() {
       filtered = filtered.filter(post => post.category === selectedCategory);
     }
     
-    setFilteredPosts(filtered);
-  };
+    return filtered;
+  }, [blogs, searchTerm, selectedCategory]);
 
-  // Handle filter on search/category change
-  useState(() => {
-    handleFilter();
-  });
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-4 border-brand-red border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400">Loading blogs...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-600 dark:text-red-400">Failed to load blogs. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -209,7 +172,7 @@ export default function BlogsPage() {
                   <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                     <div className="flex items-center gap-1">
                       <Calendar size={14} />
-                      {new Date(post.date).toLocaleDateString()}
+                      {new Date(post.createdAt).toLocaleDateString()}
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock size={14} />
@@ -266,7 +229,6 @@ export default function BlogsPage() {
                   onClick={() => {
                     setSearchTerm("");
                     setSelectedCategory("All");
-                    setFilteredPosts(blogPosts);
                   }}
                   className="bg-gradient-primary text-white"
                   data-testid="clear-filters"

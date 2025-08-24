@@ -14,6 +14,7 @@ import ServicesPage from "@/pages/services";
 import AboutPage from "@/pages/about";
 import BlogsPage from "@/pages/blogs";
 import ContactPage from "@/pages/contact";
+import { AdminPage } from "@/pages/admin";
 
 function Router() {
   return (
@@ -28,6 +29,7 @@ function Router() {
           <Route path="/about" component={AboutPage} />
           <Route path="/blogs" component={BlogsPage} />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/admin" component={AdminPage} />
           {/* Fallback to 404 */}
           <Route component={NotFound} />
         </Switch>
