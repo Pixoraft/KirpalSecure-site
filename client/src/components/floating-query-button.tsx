@@ -14,6 +14,7 @@ interface QueryFormData {
   message: string;
   contactMethod: string;
   email?: string;
+  address: string;
 }
 
 const serviceTypes = [
@@ -34,20 +35,37 @@ export function FloatingQueryButton() {
     serviceType: "",
     message: "",
     contactMethod: "phone",
-    email: ""
+    email: "",
+    address: ""
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // Create WhatsApp message
+    const whatsappMessage = `Hello! I'm interested in your services.
+
+📋 *Service Details:*
+👤 Name: ${formData.name}
+🏠 Address: ${formData.address}
+🔧 Service: ${formData.serviceType}
+📞 Contact Method: ${formData.contactMethod}
+${formData.email ? `📧 Email: ${formData.email}` : ''}
+
+💬 *Message:*
+${formData.message}
+
+Please get back to me. Thanks!`;
+
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappURL = `https://wa.me/917009154711?text=${encodedMessage}`;
+    
+    // Simulate loading and redirect to WhatsApp
     setTimeout(() => {
-      const contactInfo = formData.contactMethod === "phone" 
-        ? "Phone: +91 7009154711 (Nikhil)" 
-        : `Email: ${formData.email || "Not provided"}`;
-      
-      alert(`Query submitted successfully! We'll contact you via ${formData.contactMethod}.\n\n${contactInfo}\n\nService: ${formData.serviceType}\nMessage: ${formData.message}`);
+      // Open WhatsApp in new tab
+      window.open(whatsappURL, '_blank');
       
       // Reset form
       setFormData({
@@ -55,7 +73,8 @@ export function FloatingQueryButton() {
         serviceType: "",
         message: "",
         contactMethod: "phone",
-        email: ""
+        email: "",
+        address: ""
       });
       setIsSubmitting(false);
       setIsOpen(false);
@@ -192,6 +211,19 @@ export function FloatingQueryButton() {
                   </div>
                 )}
 
+                {/* Address */}
+                <div>
+                  <Label htmlFor="address" className="text-sm font-medium">Your Address</Label>
+                  <Input
+                    id="address"
+                    value={formData.address}
+                    onChange={(e) => setFormData(prev => ({ ...prev, address: e.target.value }))}
+                    placeholder="Enter your complete address"
+                    required
+                    data-testid="query-address-input"
+                  />
+                </div>
+
                 {/* Message */}
                 <div>
                   <Label htmlFor="message" className="text-sm font-medium">Your Message</Label>
@@ -216,12 +248,12 @@ export function FloatingQueryButton() {
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Submitting...
+                      Opening WhatsApp...
                     </div>
                   ) : (
                     <div className="flex items-center gap-2">
-                      <Send size={16} />
-                      Send Query
+                      <MessageCircle size={16} />
+                      Send via WhatsApp
                     </div>
                   )}
                 </Button>
