@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Edit, Trash2, Save, X, Eye } from "lucide-react";
+import { Plus, Edit, Trash2, Save, X, Eye, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,13 +8,15 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SEOHead } from "@/components/seo-head";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest, queryClient } from "@/lib/queryClient";
+import { queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { AdminLogin } from "@/components/admin-login";
 import type { Blog, InsertBlog, UpdateBlog } from "@shared/schema";
 
 const categories = ["Security Tips", "Technology", "Smart Home", "Network Security", "Intercom Systems"];
 
 export function AdminPage() {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
   const [isCreating, setIsCreating] = useState(false);
   const [formData, setFormData] = useState<InsertBlog>({
@@ -30,9 +32,18 @@ export function AdminPage() {
 
   const { toast } = useToast();
 
+  // Check authentication status
+  useEffect(() => {
+    fetch('/api/admin/status')
+      .then(res => res.json())
+      .then(data => setIsAuthenticated(data.isAuthenticated))
+      .catch(() => setIsAuthenticated(false));
+  }, []);
+
   const { data: blogs = [], isLoading } = useQuery({
     queryKey: ['/api/blogs'],
-    queryFn: () => fetch('/api/blogs').then(res => res.json()) as Promise<Blog[]>
+    queryFn: () => fetch('/api/blogs').then(res => res.json()) as Promise<Blog[]>,
+    enabled: isAuthenticated === true // Only fetch when authenticated
   });
 
   const createBlogMutation = useMutation({
@@ -78,6 +89,18 @@ export function AdminPage() {
     },
     onError: (error: any) => {
       toast({ title: "Failed to delete blog", description: error.message, variant: "destructive" });
+    }
+  });
+
+  const logoutMutation = useMutation({
+    mutationFn: () => 
+      fetch('/api/admin/logout', { method: 'POST' }).then(res => res.json()),
+    onSuccess: () => {
+      setIsAuthenticated(false);
+      toast({ title: "Logged out successfully!" });
+    },
+    onError: () => {
+      toast({ title: "Logout failed", variant: "destructive" });
     }
   });
 
@@ -143,7 +166,13 @@ export function AdminPage() {
     }
   };
 
-  if (isLoading) {
+  // Show login form if not authenticated
+  if (isAuthenticated === false) {
+    return <AdminLogin onLoginSuccess={() => setIsAuthenticated(true)} />;
+  }
+
+  // Show loading while checking authentication
+  if (isAuthenticated === null || isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
         <div className="text-center">
@@ -169,14 +198,25 @@ export function AdminPage() {
         >
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-4xl font-black text-gradient">Blog Admin</h1>
-            <Button
-              onClick={startCreate}
-              className="bg-gradient-primary text-white"
-              data-testid="create-blog-button"
-            >
-              <Plus className="mr-2" size={20} />
-              New Blog
-            </Button>
+            <div className="flex gap-4">
+              <Button
+                onClick={startCreate}
+                className="bg-gradient-primary text-white"
+                data-testid="create-blog-button"
+              >
+                <Plus className="mr-2" size={20} />
+                New Blog
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() => logoutMutation.mutate()}
+                disabled={logoutMutation.isPending}
+                data-testid="logout-button"
+              >
+                <LogOut className="mr-2" size={20} />
+                Logout
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

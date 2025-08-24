@@ -40,8 +40,13 @@ export const updateBlogSchema = createInsertSchema(blogs).omit({
   updatedAt: true,
 }).partial();
 
+export const adminLoginSchema = z.object({
+  password: z.string().min(1, "Password is required"),
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type Blog = typeof blogs.$inferSelect;
 export type InsertBlog = z.infer<typeof insertBlogSchema>;
 export type UpdateBlog = z.infer<typeof updateBlogSchema>;
+export type AdminLogin = z.infer<typeof adminLoginSchema>;

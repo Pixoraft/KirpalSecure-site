@@ -104,10 +104,7 @@ export default function BlogsPage() {
                   type="text"
                   placeholder="Search articles..."
                   value={searchTerm}
-                  onChange={(e) => {
-                    setSearchTerm(e.target.value);
-                    handleFilter();
-                  }}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10 h-12 text-lg"
                   data-testid="search-input"
                 />
@@ -120,10 +117,7 @@ export default function BlogsPage() {
                       key={category}
                       variant={selectedCategory === category ? "default" : "outline"}
                       size="sm"
-                      onClick={() => {
-                        setSelectedCategory(category);
-                        handleFilter();
-                      }}
+                      onClick={() => setSelectedCategory(category)}
                       className={selectedCategory === category ? "bg-gradient-primary text-white" : ""}
                       data-testid={`filter-${category.toLowerCase().replace(" ", "-")}`}
                     >

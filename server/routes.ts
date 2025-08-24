@@ -1,9 +1,53 @@
-import type { Express } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertBlogSchema, updateBlogSchema } from "@shared/schema";
+import { insertBlogSchema, updateBlogSchema, adminLoginSchema } from "@shared/schema";
+
+// Simple admin password - in production, this should be hashed and stored securely
+const ADMIN_PASSWORD = "admin123"; // Change this to a secure password
+
+// Extend Request type to include session
+interface AuthenticatedRequest extends Request {
+  session: {
+    isAdminAuthenticated?: boolean;
+    [key: string]: any;
+  };
+}
+
+// Middleware to check admin authentication
+const requireAuth = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+  if (req.session?.isAdminAuthenticated) {
+    next();
+  } else {
+    res.status(401).json({ message: "Authentication required" });
+  }
+};
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Admin authentication routes
+  app.post("/api/admin/login", async (req: AuthenticatedRequest, res: Response) => {
+    try {
+      const { password } = adminLoginSchema.parse(req.body);
+      
+      if (password === ADMIN_PASSWORD) {
+        req.session.isAdminAuthenticated = true;
+        res.json({ success: true, message: "Login successful" });
+      } else {
+        res.status(401).json({ message: "Invalid password" });
+      }
+    } catch (error) {
+      res.status(400).json({ message: "Invalid request" });
+    }
+  });
+
+  app.post("/api/admin/logout", (req: AuthenticatedRequest, res: Response) => {
+    req.session.isAdminAuthenticated = false;
+    res.json({ message: "Logged out successfully" });
+  });
+
+  app.get("/api/admin/status", (req: AuthenticatedRequest, res: Response) => {
+    res.json({ isAuthenticated: !!req.session?.isAdminAuthenticated });
+  });
   // Blog routes
   app.get("/api/blogs", async (req, res) => {
     try {
@@ -26,7 +70,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post("/api/blogs", async (req, res) => {
+  app.post("/api/blogs", requireAuth, async (req: AuthenticatedRequest, res: Response) => {
     try {
       const validatedData = insertBlogSchema.parse(req.body);
       
@@ -46,7 +90,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.put("/api/blogs/:id", async (req, res) => {
+  app.put("/api/blogs/:id", requireAuth, async (req: AuthenticatedRequest, res: Response) => {
     try {
       const validatedData = updateBlogSchema.parse(req.body);
       
@@ -71,7 +115,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.delete("/api/blogs/:id", async (req, res) => {
+  app.delete("/api/blogs/:id", requireAuth, async (req: AuthenticatedRequest, res: Response) => {
     try {
       const success = await storage.deleteBlog(req.params.id);
       if (!success) {
