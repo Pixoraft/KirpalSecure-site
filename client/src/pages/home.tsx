@@ -10,6 +10,98 @@ import {
 import { SEOHead } from "@/components/seo-head";
 import CountUp from "react-countup";
 
+// Hero slider data
+const heroSlides = [
+  {
+    id: 1,
+    title: "AI-Powered CCTV Systems",
+    subtitle: "24/7 Intelligent Monitoring",
+    description: "Advanced surveillance with facial recognition and smart alerts",
+    image: "🎥",
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    id: 2,
+    title: "Smart Home Security",
+    subtitle: "Total Home Protection",
+    description: "Integrated systems with mobile app control and automation",
+    image: "🏠",
+    color: "from-green-500 to-emerald-500"
+  },
+  {
+    id: 3,
+    title: "Biometric Access Control", 
+    subtitle: "Future-Ready Security",
+    description: "Fingerprint and facial recognition for secure access",
+    image: "👆",
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    id: 4,
+    title: "Professional Support",
+    subtitle: "Expert Installation & Service",
+    description: "Certified technicians with 24/7 support available",
+    image: "🛠️",
+    color: "from-orange-500 to-red-500"
+  }
+];
+
+// Hero Slider Component
+function HeroSlider() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 w-full max-w-5xl px-4">
+      <div className="relative h-40 overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            className="absolute inset-0"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="card-modern bg-white/10 backdrop-blur-md border-white/20 p-6 h-full flex items-center">
+              <div className="flex items-center space-x-6 w-full">
+                <div className={`w-20 h-20 bg-gradient-to-br ${heroSlides[currentSlide].color} rounded-2xl shadow-lg flex items-center justify-center text-2xl flex-shrink-0`}>
+                  {heroSlides[currentSlide].image}
+                </div>
+                
+                <div className="flex-1 text-white">
+                  <h3 className="text-2xl font-bold mb-2">{heroSlides[currentSlide].title}</h3>
+                  <p className="text-lg font-semibold text-blue-200 mb-1">{heroSlides[currentSlide].subtitle}</p>
+                  <p className="text-white/80">{heroSlides[currentSlide].description}</p>
+                </div>
+                
+                <div className="flex space-x-2">
+                  {heroSlides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        index === currentSlide ? 'bg-white scale-125' : 'bg-white/40'
+                      }`}
+                      data-testid={`hero-slide-indicator-${index}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
 // Mock reviews data - changes daily
 const reviews = [
   {
@@ -86,22 +178,25 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-brand-red via-brand-red-dark to-gray-900"></div>
         <div className="absolute inset-0 bg-black/20"></div>
         
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
+        {/* Animated background elements - properly contained */}
+        <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-20 left-20 w-32 h-32 border border-white/10 rounded-full"
+            className="absolute top-20 left-20 w-20 h-20 border border-white/10 rounded-full"
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            style={{ maxWidth: 'calc(100vw - 160px)', maxHeight: 'calc(100vh - 160px)' }}
           />
           <motion.div
-            className="absolute bottom-20 right-20 w-24 h-24 border-2 border-white/20 rounded-lg"
-            animate={{ y: [-10, 10, -10] }}
+            className="absolute bottom-20 right-20 w-16 h-16 border-2 border-white/20 rounded-lg"
+            animate={{ y: [-8, 8, -8] }}
             transition={{ duration: 4, repeat: Infinity }}
+            style={{ maxWidth: 'calc(100vw - 160px)', maxHeight: 'calc(100vh - 160px)' }}
           />
           <motion.div
-            className="absolute top-1/2 left-10 w-16 h-16 bg-white/5 rounded-full"
-            animate={{ scale: [1, 1.2, 1] }}
+            className="absolute top-1/2 left-16 w-12 h-12 bg-white/5 rounded-full"
+            animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
+            style={{ maxWidth: 'calc(100vw - 160px)', transformOrigin: 'center' }}
           />
         </div>
 
@@ -182,6 +277,9 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
         </div>
+        
+        {/* Hero Slider */}
+        <HeroSlider />
         
         {/* Scroll indicator */}
         <motion.div
