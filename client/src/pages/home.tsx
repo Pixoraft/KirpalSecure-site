@@ -10,94 +10,152 @@ import {
 import { SEOHead } from "@/components/seo-head";
 import CountUp from "react-countup";
 
-// Hero slider data
-const heroSlides = [
+// Hero banner slides data
+const heroBannerSlides = [
   {
     id: 1,
-    title: "AI-Powered CCTV Systems",
-    subtitle: "24/7 Intelligent Monitoring",
-    description: "Advanced surveillance with facial recognition and smart alerts",
-    image: "🎥",
-    color: "from-blue-500 to-cyan-500"
+    title: "Advanced CCTV Systems",
+    subtitle: "Professional Security Solutions",
+    description: "High-definition surveillance with AI-powered monitoring and mobile app access",
+    backgroundImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    ctaText: "View CCTV Services"
   },
   {
     id: 2,
-    title: "Smart Home Security",
-    subtitle: "Total Home Protection",
-    description: "Integrated systems with mobile app control and automation",
-    image: "🏠",
-    color: "from-green-500 to-emerald-500"
+    title: "Smart Home Automation",
+    subtitle: "Control Your World",
+    description: "Integrated smart locks, sensors, and automated security systems for modern homes",
+    backgroundImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    ctaText: "Explore Smart Home"
   },
   {
     id: 3,
-    title: "Biometric Access Control", 
+    title: "Biometric Access Control",
     subtitle: "Future-Ready Security",
-    description: "Fingerprint and facial recognition for secure access",
-    image: "👆",
-    color: "from-purple-500 to-pink-500"
+    description: "Fingerprint and facial recognition systems for secure access management",
+    backgroundImage: "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    ctaText: "Learn More"
   },
   {
     id: 4,
-    title: "Professional Support",
+    title: "24/7 Professional Support",
     subtitle: "Expert Installation & Service",
-    description: "Certified technicians with 24/7 support available",
-    image: "🛠️",
-    color: "from-orange-500 to-red-500"
+    description: "Certified technicians providing installation, maintenance, and repair services",
+    backgroundImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    ctaText: "Contact Support"
   }
 ];
 
-// Hero Slider Component
-function HeroSlider() {
+// Hero Banner Slider Component
+function HeroBannerSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 4000);
+      setCurrentSlide((prev) => (prev + 1) % heroBannerSlides.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 w-full max-w-5xl px-4">
-      <div className="relative h-40 overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            className="absolute inset-0"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="card-modern bg-white/10 backdrop-blur-md border-white/20 p-6 h-full flex items-center">
-              <div className="flex items-center space-x-6 w-full">
-                <div className={`w-20 h-20 bg-gradient-to-br ${heroSlides[currentSlide].color} rounded-2xl shadow-lg flex items-center justify-center text-2xl flex-shrink-0`}>
-                  {heroSlides[currentSlide].image}
-                </div>
-                
-                <div className="flex-1 text-white">
-                  <h3 className="text-2xl font-bold mb-2">{heroSlides[currentSlide].title}</h3>
-                  <p className="text-lg font-semibold text-blue-200 mb-1">{heroSlides[currentSlide].subtitle}</p>
-                  <p className="text-white/80">{heroSlides[currentSlide].description}</p>
-                </div>
-                
-                <div className="flex space-x-2">
-                  {heroSlides.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentSlide(index)}
-                      className={`w-2 h-2 rounded-full transition-all ${
-                        index === currentSlide ? 'bg-white scale-125' : 'bg-white/40'
-                      }`}
-                      data-testid={`hero-slide-indicator-${index}`}
-                    />
-                  ))}
-                </div>
-              </div>
+    <div className="absolute inset-0 z-10">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        >
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${heroBannerSlides[currentSlide].backgroundImage})` }}
+          />
+          
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50" />
+          
+          {/* Content */}
+          <div className="relative h-full flex items-center justify-center">
+            <div className="max-w-4xl mx-auto text-center text-white px-4">
+              <motion.h2
+                className="text-4xl md:text-6xl font-black mb-4 text-display"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                {heroBannerSlides[currentSlide].title}
+              </motion.h2>
+              
+              <motion.p
+                className="text-xl md:text-2xl mb-3 font-semibold text-blue-200"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                {heroBannerSlides[currentSlide].subtitle}
+              </motion.p>
+              
+              <motion.p
+                className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                {heroBannerSlides[currentSlide].description}
+              </motion.p>
+              
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <Link 
+                  href="/services"
+                  className="btn-modern px-8 py-3 text-lg font-bold rounded-xl inline-flex items-center group"
+                  data-testid="banner-cta-button"
+                >
+                  {heroBannerSlides[currentSlide].ctaText}
+                  <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
+                </Link>
+              </motion.div>
             </div>
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+      
+      {/* Slide indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+        {heroBannerSlides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'
+            }`}
+            data-testid={`banner-slide-indicator-${index}`}
+          />
+        ))}
       </div>
+      
+      {/* Navigation arrows */}
+      <button
+        onClick={() => setCurrentSlide((prev) => (prev - 1 + heroBannerSlides.length) % heroBannerSlides.length)}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all z-20"
+        data-testid="banner-prev-button"
+      >
+        <ArrowRight className="rotate-180" size={20} />
+      </button>
+      
+      <button
+        onClick={() => setCurrentSlide((prev) => (prev + 1) % heroBannerSlides.length)}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all z-20"
+        data-testid="banner-next-button"
+      >
+        <ArrowRight size={20} />
+      </button>
     </div>
   );
 }
@@ -200,86 +258,9 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <motion.div
-              className="mb-8"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-2 mb-8">
-                <Shield className="text-white" size={20} />
-                <span className="text-sm font-semibold">Trusted by 500+ Customers</span>
-              </div>
-            </motion.div>
-            
-            <h1 className="text-5xl md:text-7xl font-black mb-6 text-display leading-tight">
-              <span className="block">World-Class</span>
-              <span className="text-gradient block">Security Solutions</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
-              Transform your security with cutting-edge CCTV systems, smart home automation, 
-              biometric access control, and 24/7 professional monitoring in Jalandhar.
-            </p>
-            
-            <motion.div
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <Link 
-                href="/services" 
-                className="btn-modern px-10 py-4 text-lg font-bold rounded-xl inline-flex items-center group"
-                data-testid="button-our-services"
-              >
-                Explore Services
-                <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
-              </Link>
-              
-              <button className="inline-flex items-center space-x-3 text-white hover:text-gray-200 transition-colors group">
-                <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 group-hover:bg-white/30 transition-all">
-                  <Play className="text-white ml-1" size={20} />
-                </div>
-                <span className="font-semibold">Watch Demo</span>
-              </button>
-            </motion.div>
-            
-            {/* Trust indicators */}
-            <motion.div
-              className="mt-16 flex flex-wrap justify-center items-center gap-8 text-white/70"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <div className="flex items-center space-x-2">
-                <CheckCircle size={16} />
-                <span className="text-sm">Licensed & Insured</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Clock size={16} />
-                <span className="text-sm">24/7 Support</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Award size={16} />
-                <span className="text-sm">5 Years Experience</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Shield size={16} />
-                <span className="text-sm">Warranty Included</span>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
         
-        {/* Hero Slider */}
-        <HeroSlider />
+        {/* Hero Banner Slider */}
+        <HeroBannerSlider />
         
         {/* Scroll indicator */}
         <motion.div
