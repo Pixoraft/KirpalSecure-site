@@ -37,12 +37,33 @@ export default function ContactPage() {
 
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Create WhatsApp message
+    const whatsappMessage = `Hello! I'm contacting you from your website.
+
+📋 *Contact Details:*
+👤 Name: ${formData.name}
+📞 Phone: ${formData.phone}
+${formData.email ? `📧 Email: ${formData.email}` : ''}
+${formData.service ? `🔧 Service: ${formData.service}` : ''}
+
+💬 *Message:*
+${formData.message}
+
+Please get back to me. Thanks!`;
+
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappURL = `https://wa.me/917009154711?text=${encodedMessage}`;
+    
     setTimeout(() => {
+      // Open WhatsApp in new tab
+      window.open(whatsappURL, '_blank');
+      
       toast({
-        title: "Message Sent!",
-        description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+        title: "Redirecting to WhatsApp!",
+        description: "Your message is ready to send via WhatsApp.",
       });
+      
       setFormData({
         name: "",
         phone: "",
