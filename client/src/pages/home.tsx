@@ -280,7 +280,7 @@ export default function HomePage() {
       
 
       {/* Stats Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             ref={statsRef}
@@ -394,40 +394,40 @@ export default function HomePage() {
             ].map((service, index) => (
               <motion.div
                 key={index}
-                className="card-modern p-8 group hover-lift"
+                className="card-modern p-4 sm:p-6 lg:p-8 group hover-lift"
                 initial={{ opacity: 0, y: 30 }}
                 animate={servicesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 data-testid={`card-service-${index}`}
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl shadow-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="text-white" size={28} />
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${service.color} rounded-xl sm:rounded-2xl shadow-lg flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="text-white" size={20} />
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-red transition-colors">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 group-hover:text-brand-red transition-colors">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                   {service.description}
                 </p>
                 
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-1 sm:space-y-2 mb-4 sm:mb-6">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-600">
-                      <CheckCircle className="text-green-500 mr-2" size={16} />
-                      {feature}
+                    <li key={idx} className="flex items-center text-xs sm:text-sm text-gray-600">
+                      <CheckCircle className="text-green-500 mr-2 flex-shrink-0" size={14} />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
                 
                 <Link 
                   href="/services" 
-                  className="inline-flex items-center text-brand-red font-semibold hover:text-brand-red-dark group/link"
+                  className="inline-flex items-center text-brand-red font-semibold hover:text-brand-red-dark group/link text-sm sm:text-base"
                   data-testid={`link-service-${index}`}
                 >
                   Learn More
-                  <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" size={16} />
+                  <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" size={14} />
                 </Link>
               </motion.div>
             ))}
@@ -436,13 +436,13 @@ export default function HomePage() {
       </section>
 
       {/* Customer Reviews */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 text-display">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-4 sm:mb-6 text-display px-4">
               What Our <span className="text-gradient">Customers Say</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Real feedback from our satisfied customers across Jalandhar
             </p>
           </div>

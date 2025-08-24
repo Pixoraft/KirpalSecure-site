@@ -329,22 +329,22 @@ body {
 
 /* Mobile responsive improvements */
 @media (max-width: 640px) {
-  .max-w-full {
-    overflow-x: hidden;
-  }
-  
   body, html {
     overflow-x: hidden;
-    max-width: 100%;
-  }
-  
-  * {
-    max-width: 100% !important;
+    max-width: 100vw;
   }
   
   /* Ensure sections don't cause horizontal scroll */
   section {
     overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Fix container widths on mobile */
+  .max-w-7xl, .max-w-4xl, .max-w-3xl {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
