@@ -165,9 +165,8 @@ Please get back to me. Thanks!`;
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">Office Address</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Urban Estate Ph. 2, Road Opp. Hotel Imperia Suites,<br />
-                        Aggarwal Dhaba Road,<br />
-                        Jalandhar, Punjab
+                        Hoshiarpur, Jalandhar<br />
+                        Punjab, India
                       </p>
                     </div>
                   </div>

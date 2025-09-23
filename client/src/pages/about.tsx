@@ -14,7 +14,7 @@ export default function AboutPage() {
       <section className="bg-brand-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">About Kirpal Securities</h1>
-          <p className="text-xl max-w-3xl mx-auto">Your trusted partner for comprehensive security solutions in Jalandhar</p>
+          <p className="text-xl max-w-3xl mx-auto">Your trusted partner for comprehensive security solutions in Hoshiarpur, Jalandhar</p>
         </div>
       </section>
 
@@ -25,23 +25,23 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 mb-6">
-                At Kirpal Securities, we are dedicated to providing state-of-the-art security solutions that protect what matters most to you. With years of experience in the security industry, we have built a reputation for reliability, professionalism, and exceptional customer service.
+                At Kirpal Securities, we specialize in CCTV camera installation, electric fence systems, networking solutions, intercom systems, biometric devices, fire alarm systems, and comprehensive technical support. Located in Hoshiarpur, Jalandhar, we provide professional security solutions with exceptional customer service.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                Our comprehensive range of services includes everything from CCTV installation to biometric access control, ensuring that we can meet all your security needs under one roof.
+                We offer door-to-door laptop, PC, and printer repair services, along with complete CCTV packages backed by a 2-year warranty. Our team is committed to providing reliable, professional installations and maintenance services across Punjab.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
                 <div className="text-center" data-testid="stat-projects">
-                  <div className="text-3xl font-bold text-brand-red">100+</div>
-                  <div className="text-gray-600">Projects Completed</div>
+                  <div className="text-3xl font-bold text-brand-red">500+</div>
+                  <div className="text-gray-600">Security Systems Installed</div>
                 </div>
                 <div className="text-center" data-testid="stat-experience">
                   <div className="text-3xl font-bold text-brand-red">5+</div>
                   <div className="text-gray-600">Years Experience</div>
                 </div>
-                <div className="text-center" data-testid="stat-clients">
-                  <div className="text-3xl font-bold text-brand-red">50+</div>
-                  <div className="text-gray-600">Happy Clients</div>
+                <div className="text-center" data-testid="stat-warranty">
+                  <div className="text-3xl font-bold text-brand-red">2 Years</div>
+                  <div className="text-gray-600">CCTV Package Warranty</div>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Service Areas</h2>
-            <p className="text-xl text-gray-600">We proudly serve the Jalandhar region and surrounding areas</p>
+            <p className="text-xl text-gray-600">We proudly serve Hoshiarpur, Jalandhar and surrounding areas in Punjab</p>
           </div>
           
           <div className="bg-white rounded-lg shadow-lg p-8">
@@ -114,6 +114,10 @@ export default function AboutPage() {
               <div data-testid="primary-service-area">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Primary Service Area</h3>
                 <div className="space-y-3 text-gray-700">
+                  <div className="flex items-center">
+                    <MapPin className="text-brand-red mr-3" size={16} />
+                    <span>Hoshiarpur</span>
+                  </div>
                   <div className="flex items-center">
                     <MapPin className="text-brand-red mr-3" size={16} />
                     <span>Jalandhar City</span>
@@ -125,10 +129,6 @@ export default function AboutPage() {
                   <div className="flex items-center">
                     <MapPin className="text-brand-red mr-3" size={16} />
                     <span>Model Town</span>
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin className="text-brand-red mr-3" size={16} />
-                    <span>Civil Lines</span>
                   </div>
                 </div>
               </div>

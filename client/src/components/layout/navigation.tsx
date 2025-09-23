@@ -10,8 +10,8 @@ export function Navigation() {
   const navItems = [
     { path: "/", label: "Home" },
     { path: "/services", label: "Services" },
+    { path: "/products", label: "Products" },
     { path: "/about", label: "About" },
-    { path: "/blogs", label: "Blogs" },
     { path: "/contact", label: "Contact" },
   ];
 

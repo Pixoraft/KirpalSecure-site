@@ -17,8 +17,8 @@ export default function ServicesPage() {
       {/* Services Header */}
       <section className="bg-brand-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Professional Security Services in Jalandhar</h1>
-          <p className="text-xl max-w-3xl mx-auto">Complete CCTV installation, home security systems, biometric devices & networking solutions. Expert installation with warranty and 24/7 support in Punjab.</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Professional Security Services in Hoshiarpur, Jalandhar</h1>
+          <p className="text-xl max-w-3xl mx-auto">Complete CCTV camera installation, electric fence, networking, intercom, biometric devices, fire alarm systems, and technical support. Laptop/PC/Printer repair with door-to-door service.</p>
         </div>
       </section>
 
@@ -199,29 +199,41 @@ export default function ServicesPage() {
           </div>
 
           {/* Additional Services */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-50 rounded-lg p-8" data-testid="section-intercom">
               <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <Phone className="text-brand-red mr-3" size={32} />
-                Intercom & Video Door Phone
+                Intercom & Video Door Phones
               </h3>
               <ul className="space-y-2 text-gray-700">
-                <li>• Audio/Video Intercoms</li>
+                <li>• Intercom Systems</li>
+                <li>• Video Door Phones</li>
                 <li>• Multi-Unit Systems</li>
                 <li>• Wireless Options</li>
-                <li>• Integration with Security Systems</li>
               </ul>
             </div>
             <div className="bg-gray-50 rounded-lg p-8" data-testid="section-repair">
               <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <Wrench className="text-brand-red mr-3" size={32} />
-                Repair Services
+                Technical Support & Repair
               </h3>
               <ul className="space-y-2 text-gray-700">
-                <li>• Laptop Repair & Service</li>
-                <li>• Printer Repair</li>
-                <li>• Hardware Upgrades</li>
-                <li>• Software Installation</li>
+                <li>• Laptop/Computer Repairing</li>
+                <li>• Printer Repairing</li>
+                <li>• Door-to-door Service</li>
+                <li>• Laptop Accessories</li>
+              </ul>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-8" data-testid="section-fire-electric">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                <CheckCircle className="text-brand-red mr-3" size={32} />
+                Fire Alarm & Electric Fence
+              </h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Fire Alarm Systems</li>
+                <li>• Electric Fence Installation</li>
+                <li>• Security Perimeter Solutions</li>
+                <li>• Emergency Alert Systems</li>
               </ul>
             </div>
           </div>
