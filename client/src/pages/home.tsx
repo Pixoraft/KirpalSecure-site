@@ -5,11 +5,251 @@ import { useInView } from "react-intersection-observer";
 import { 
   Video, Home, Fingerprint, Network, Phone, Wrench, 
   Shield, Award, Clock, Users, Star, Quote, 
-  CheckCircle, ArrowRight, Play, Zap, Eye, Lock
+  CheckCircle, ArrowRight, Play, Zap, Eye, Lock,
+  MessageCircle, IndianRupee, ChevronLeft, ChevronRight
 } from "lucide-react";
 import { SEOHead } from "@/components/seo-head";
 import { FloatingQueryButton } from "@/components/floating-query-button";
 import CountUp from "react-countup";
+import { Product, ProductData } from "@/types/product";
+import productData from "@/data/products.json";
+
+const data = productData as ProductData;
+
+// Product Slider Component
+function ProductSlider({ title, subtitle, products, categoryColor }: {
+  title: string;
+  subtitle: string;
+  products: Product[];
+  categoryColor: string;
+}) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(3);
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+
+  // Update cards per view based on screen size
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      const width = window.innerWidth;
+      const newCardsPerView = width < 768 ? 1 : width < 1024 ? 2 : 3;
+      
+      setCardsPerView(newCardsPerView);
+      
+      // Clamp currentIndex when cardsPerView changes to prevent over-shifting
+      const newMaxIndex = Math.max(0, products.length - newCardsPerView);
+      setCurrentIndex(prev => Math.min(prev, newMaxIndex));
+    };
+
+    updateCardsPerView();
+    window.addEventListener('resize', updateCardsPerView);
+    return () => window.removeEventListener('resize', updateCardsPerView);
+  }, [products.length]);
+
+  const maxIndex = Math.max(0, products.length - cardsPerView);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
+  };
+
+  const handleWhatsAppClick = (product: Product) => {
+    const savings = product.originalPrice - product.price;
+    const savingsPercent = Math.round((savings / product.originalPrice) * 100);
+    
+    const message = `Hi! I'm interested in ${product.name} from your ${title} collection.
+
+💰 Price: ₹${product.price.toLocaleString()} (Save ₹${savings.toLocaleString()} - ${savingsPercent}% OFF!)
+⭐ Rating: ${product.rating}/5
+
+🔧 Key Features:
+${product.features.slice(0, 3).map(feature => `• ${feature}`).join('\n')}
+
+Please provide more details. Thanks!`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/917009154711?text=${encodedMessage}`;
+    window.open(whatsappURL, '_blank');
+  };
+
+  if (products.length === 0) return null;
+
+  return (
+    <motion.div
+      ref={ref}
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      initial={{ opacity: 0, y: 30 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+    >
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-display">
+          {title}
+        </h2>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          {subtitle}
+        </p>
+      </div>
+
+      <div className="relative">
+        {/* Navigation Buttons */}
+        {products.length > cardsPerView && (
+          <>
+            <button
+              onClick={prevSlide}
+              disabled={currentIndex === 0}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              data-testid={`prev-${title.toLowerCase().replace(/\s+/g, '-')}`}
+            >
+              <ChevronLeft size={20} className="text-gray-600" />
+            </button>
+            <button
+              onClick={nextSlide}
+              disabled={currentIndex >= maxIndex}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              data-testid={`next-${title.toLowerCase().replace(/\s+/g, '-')}`}
+            >
+              <ChevronRight size={20} className="text-gray-600" />
+            </button>
+          </>
+        )}
+
+        {/* Product Cards */}
+        <div className="overflow-hidden">
+          <motion.div
+            className="flex"
+            animate={{ 
+              x: `calc(-${currentIndex * (100 / cardsPerView)}% - ${currentIndex * 1.5}rem)` 
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            {products.map((product) => {
+              const savings = product.originalPrice - product.price;
+              const savingsPercent = Math.round((savings / product.originalPrice) * 100);
+              
+              return (
+                <div
+                  key={product.id}
+                  className={`flex-none ${
+                    cardsPerView === 1 ? 'w-full px-3' : 
+                    cardsPerView === 2 ? 'w-1/2 px-3' : 
+                    'w-1/3 px-3'
+                  }`}
+                  data-testid={`product-card-${product.id}`}
+                >
+                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full">
+                    {/* Product Image */}
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                      {product.featured && (
+                        <div className="absolute top-3 left-3">
+                          <div className="bg-yellow-500 text-black px-2 py-1 rounded-md text-xs font-semibold">
+                            ⭐ Featured
+                          </div>
+                        </div>
+                      )}
+                      {savingsPercent > 0 && (
+                        <div className="absolute top-3 right-3">
+                          <div className="bg-red-500 text-white px-2 py-1 rounded-md text-xs font-semibold">
+                            {savingsPercent}% OFF
+                          </div>
+                        </div>
+                      )}
+                      <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${categoryColor}`}></div>
+                    </div>
+
+                    {/* Product Info */}
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="text-xs text-gray-500 uppercase tracking-wider">
+                          {data.categories.find(cat => cat.id === product.category)?.name}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Star className="text-yellow-500 fill-current" size={12} />
+                          <span className="text-sm font-medium">{product.rating}</span>
+                        </div>
+                      </div>
+                      
+                      <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
+                        {product.name}
+                      </h3>
+                      
+                      <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                        {product.shortDescription}
+                      </p>
+
+                      {/* Pricing */}
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center">
+                            <IndianRupee size={16} className="text-green-600" />
+                            <span className="text-xl font-bold text-green-600">
+                              {product.price.toLocaleString()}
+                            </span>
+                          </div>
+                          {savings > 0 && (
+                            <span className="text-sm text-gray-500 line-through">
+                              ₹{product.originalPrice.toLocaleString()}
+                            </span>
+                          )}
+                        </div>
+                        {savings > 0 && (
+                          <p className="text-sm text-green-600 font-medium">
+                            Save ₹{savings.toLocaleString()}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Key Features */}
+                      <div className="mb-6">
+                        <div className="space-y-1">
+                          {product.features.slice(0, 2).map((feature, index) => (
+                            <div key={index} className="flex items-start gap-2">
+                              <CheckCircle className="text-green-500 mt-0.5 flex-shrink-0" size={12} />
+                              <span className="text-xs text-gray-700">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* CTA Button */}
+                      <button
+                        onClick={() => handleWhatsAppClick(product)}
+                        className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors"
+                        data-testid={`whatsapp-${product.id}`}
+                      >
+                        <MessageCircle size={16} />
+                        Get Quote on WhatsApp
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* View All Button */}
+      <div className="text-center mt-8">
+        <Link
+          href="/products"
+          className="inline-flex items-center px-6 py-3 bg-brand-red text-white rounded-lg font-semibold hover:bg-brand-red-dark transition-colors"
+          data-testid={`view-all-${title.toLowerCase().replace(/\s+/g, '-')}`}
+        >
+          View All Products
+          <ArrowRight className="ml-2" size={16} />
+        </Link>
+      </div>
+    </motion.div>
+  );
+}
 
 // Hero banner slides data
 const heroBannerSlides = [
@@ -333,6 +573,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Security Cameras Product Slider */}
+      <section className="py-16 bg-white">
+        <ProductSlider 
+          title="Security Cameras Collection"
+          subtitle="Professional CCTV systems with HD quality and smart features"
+          products={data.products.filter(product => product.category === 'security-cameras')}
+          categoryColor="from-blue-500 to-cyan-500"
+        />
+      </section>
+
       {/* Services Overview */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white" ref={servicesRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -438,6 +688,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Access Control & Biometric Product Slider */}
+      <section className="py-16 bg-gray-50">
+        <ProductSlider 
+          title="Access Control & Biometric Systems"
+          subtitle="Advanced fingerprint and facial recognition for secure access management"
+          products={data.products.filter(product => product.category === 'access-control')}
+          categoryColor="from-purple-500 to-pink-500"
+        />
+      </section>
+
       {/* Customer Reviews */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -512,6 +772,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Smart Home & Automation Product Slider */}
+      <section className="py-16 bg-white">
+        <ProductSlider 
+          title="Smart Home & Automation"
+          subtitle="Modern smart locks, sensors, and automation systems for intelligent homes"
+          products={data.products.filter(product => product.category === 'smart-home')}
+          categoryColor="from-green-500 to-teal-500"
+        />
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-20 bg-gradient-to-br from-brand-red to-brand-red-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -564,6 +834,16 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Communication & Networking Product Slider */}
+      <section className="py-16 bg-gray-50">
+        <ProductSlider 
+          title="Communication & Networking"
+          subtitle="Professional intercom systems and networking solutions"
+          products={[...data.products.filter(product => product.category === 'communication'), ...data.products.filter(product => product.category === 'networking')]}
+          categoryColor="from-teal-500 to-blue-500"
+        />
       </section>
 
       {/* Package Offers Section */}
@@ -695,6 +975,26 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Safety & Services Product Slider */}
+      <section className="py-16 bg-white">
+        <ProductSlider 
+          title="Safety Systems & Repair Services"
+          subtitle="Fire alarm systems, safety equipment, and professional repair services"
+          products={[...data.products.filter(product => product.category === 'safety-systems'), ...data.products.filter(product => product.category === 'repair-services')]}
+          categoryColor="from-red-500 to-orange-500"
+        />
+      </section>
+
+      {/* Perimeter Security Product Slider */}
+      <section className="py-16 bg-gray-50">
+        <ProductSlider 
+          title="Perimeter Security & Electric Fence"
+          subtitle="Electric fence systems and perimeter protection for enhanced security"
+          products={data.products.filter(product => product.category === 'perimeter-security')}
+          categoryColor="from-yellow-500 to-orange-500"
+        />
       </section>
 
       {/* CTA Section */}
