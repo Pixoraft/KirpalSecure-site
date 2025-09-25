@@ -17,7 +17,8 @@ import {
   IndianRupee,
   Shield,
   Award,
-  Clock
+  Clock,
+  ArrowRight
 } from "lucide-react";
 import { Product, ProductData } from "@/types/product";
 import productData from "@/data/products.json";

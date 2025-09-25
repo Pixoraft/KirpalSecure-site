@@ -221,12 +221,12 @@ Please provide more details. Thanks!`;
 
                       {/* CTA Button */}
                       <button
-                        onClick={() => handleWhatsAppClick(product)}
-                        className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors"
-                        data-testid={`whatsapp-${product.id}`}
+                        onClick={() => window.location.href = `/product/${product.id}`}
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors"
+                        data-testid={`buy-now-${product.id}`}
                       >
-                        <MessageCircle size={16} />
-                        Get Quote on WhatsApp
+                        <ArrowRight size={16} />
+                        Buy Now
                       </button>
                     </div>
                   </div>
