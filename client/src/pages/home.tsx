@@ -864,52 +864,58 @@ export default function HomePage() {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
             {[
               {
-                name: "Basic Security",
-                price: "₹15,999",
-                originalPrice: "₹20,000",
+                name: "Home Starter Security",
+                price: "₹13,999",
+                originalPrice: "₹18,500",
                 features: [
-                  "4 CCTV Cameras (HD)",
-                  "1 DVR System",
-                  "Free Installation",
-                  "1 Year Warranty",
-                  "24/7 Support"
+                  "4 HD CCTV Cameras (5MP)",
+                  "DVR System with 500GB HDD",
+                  "Mobile App Monitoring",
+                  "Free Professional Installation",
+                  "2 Years Warranty",
+                  "24/7 Customer Support"
                 ],
                 popular: false,
-                color: "from-blue-500 to-cyan-500"
+                color: "from-blue-500 to-cyan-500",
+                savings: "24%",
+                icon: Video
               },
               {
-                name: "Smart Home Package",
-                price: "₹35,999", 
-                originalPrice: "₹45,000",
+                name: "Complete Smart Home",
+                price: "₹29,999", 
+                originalPrice: "₹42,000",
                 features: [
-                  "8 CCTV Cameras (4K)",
-                  "Smart Door Lock",
-                  "Motion Sensors (4)",
+                  "8 Ultra-HD CCTV Cameras (4K)",
+                  "Smart Biometric Door Lock",
+                  "Motion & Door Sensors (6)",
+                  "Video Intercom System",
                   "Mobile App Control",
-                  "Free Installation",
-                  "2 Years Warranty"
+                  "Free Installation & Setup"
                 ],
                 popular: true,
-                color: "from-green-500 to-emerald-500"
+                color: "from-green-500 to-emerald-500",
+                savings: "29%",
+                icon: Home
               },
               {
-                name: "Premium Security",
-                price: "₹65,999",
-                originalPrice: "₹80,000", 
+                name: "Business Security Pro",
+                price: "₹55,999",
+                originalPrice: "₹75,000", 
                 features: [
-                  "16 CCTV Cameras (4K)",
-                  "Biometric Access",
-                  "Smart Alarms",
-                  "Video Intercom",
-                  "Cloud Storage",
-                  "Professional Monitoring",
-                  "3 Years Warranty"
+                  "16 Professional CCTV Cameras",
+                  "Biometric Access Control",
+                  "Fire Alarm System",
+                  "Network Video Recorder (NVR)",
+                  "Cloud Storage (1 Year)",
+                  "Professional Monitoring Service"
                 ],
                 popular: false,
-                color: "from-purple-500 to-pink-500"
+                color: "from-purple-500 to-pink-500",
+                savings: "25%",
+                icon: Shield
               }
             ].map((pkg, index) => (
               <motion.div
@@ -932,7 +938,7 @@ export default function HomePage() {
                 )}
                 
                 <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${pkg.color} rounded-xl sm:rounded-2xl shadow-lg flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform`}>
-                  <Shield className="text-white" size={20} />
+                  <pkg.icon className="text-white" size={24} />
                 </div>
                 
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-3 sm:mb-4">{pkg.name}</h3>
@@ -942,7 +948,10 @@ export default function HomePage() {
                     <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-red">{pkg.price}</span>
                     <div className="flex flex-col items-center sm:items-start">
                       <span className="text-sm sm:text-base lg:text-lg text-gray-400 line-through">{pkg.originalPrice}</span>
-                      <span className="text-xs sm:text-sm text-green-600 font-semibold">Save ₹{parseInt(pkg.originalPrice.slice(1).replace(',', '')) - parseInt(pkg.price.slice(1).replace(',', ''))}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs sm:text-sm text-green-600 font-semibold">Save ₹{parseInt(pkg.originalPrice.slice(1).replace(',', '')) - parseInt(pkg.price.slice(1).replace(',', ''))}</span>
+                        <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-bold">{pkg.savings} OFF</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -974,6 +983,27 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
+          
+          {/* View More Packages Button */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <Link
+              href="/packages"
+              className="btn-modern px-8 py-4 text-lg font-bold rounded-xl inline-flex items-center group shadow-lg hover:shadow-xl"
+              data-testid="button-view-more-packages"
+            >
+              View All Package Deals
+              <ArrowRight className="ml-3 transition-transform group-hover:translate-x-1" size={20} />
+            </Link>
+            <p className="text-sm text-gray-500 mt-3">
+              Explore our complete range of CCTV packages and security solutions
+            </p>
+          </motion.div>
         </div>
       </section>
 
