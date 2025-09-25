@@ -13,6 +13,7 @@ import { FloatingQueryButton } from "@/components/floating-query-button";
 import CountUp from "react-countup";
 import { Product, ProductData } from "@/types/product";
 import productData from "@/data/products.json";
+import { cctvPackages, CCTVPackage } from "@/data/packages";
 
 const data = productData as ProductData;
 
@@ -865,123 +866,81 @@ export default function HomePage() {
           </motion.div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
-            {[
-              {
-                name: "Home Starter Security",
-                price: "₹13,999",
-                originalPrice: "₹18,500",
-                features: [
-                  "4 HD CCTV Cameras (5MP)",
-                  "DVR System with 500GB HDD",
-                  "Mobile App Monitoring",
-                  "Free Professional Installation",
-                  "2 Years Warranty",
-                  "24/7 Customer Support"
-                ],
-                popular: false,
-                color: "from-blue-500 to-cyan-500",
-                savings: "24%",
-                icon: Video
-              },
-              {
-                name: "Complete Smart Home",
-                price: "₹29,999", 
-                originalPrice: "₹42,000",
-                features: [
-                  "8 Ultra-HD CCTV Cameras (4K)",
-                  "Smart Biometric Door Lock",
-                  "Motion & Door Sensors (6)",
-                  "Video Intercom System",
-                  "Mobile App Control",
-                  "Free Installation & Setup"
-                ],
-                popular: true,
-                color: "from-green-500 to-emerald-500",
-                savings: "29%",
-                icon: Home
-              },
-              {
-                name: "Business Security Pro",
-                price: "₹55,999",
-                originalPrice: "₹75,000", 
-                features: [
-                  "16 Professional CCTV Cameras",
-                  "Biometric Access Control",
-                  "Fire Alarm System",
-                  "Network Video Recorder (NVR)",
-                  "Cloud Storage (1 Year)",
-                  "Professional Monitoring Service"
-                ],
-                popular: false,
-                color: "from-purple-500 to-pink-500",
-                savings: "25%",
-                icon: Shield
-              }
-            ].map((pkg, index) => (
-              <motion.div
-                key={index}
-                className={`card-modern p-4 sm:p-6 lg:p-8 relative group hover-lift h-full flex flex-col ${
-                  pkg.popular ? 'ring-2 ring-brand-red sm:scale-105' : ''
-                }`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                data-testid={`package-${index}`}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20 w-max">
-                    <span className="bg-gradient-primary text-white text-xs sm:text-sm font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg whitespace-nowrap">
-                      Most Popular
-                    </span>
+            {cctvPackages.slice(0, 3).map((pkg, index) => {
+              const savings = pkg.originalPrice - pkg.discountedPrice;
+              const savingsPercent = Math.round((savings / pkg.originalPrice) * 100);
+              const colors = ["from-blue-500 to-cyan-500", "from-green-500 to-emerald-500", "from-purple-500 to-pink-500"];
+              const icons = [Video, Home, Shield];
+              const isPopular = index === 1; // middle package is popular
+              
+              return (
+                <motion.div
+                  key={pkg.id}
+                  className={`card-modern p-4 sm:p-6 lg:p-8 relative group hover-lift h-full flex flex-col ${
+                    isPopular ? 'ring-2 ring-brand-red sm:scale-105' : ''
+                  }`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  data-testid={`package-${pkg.id}`}
+                >
+                  {isPopular && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20 w-max">
+                      <span className="bg-gradient-primary text-white text-xs sm:text-sm font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg whitespace-nowrap">
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+                  
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${colors[index]} rounded-xl sm:rounded-2xl shadow-lg flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform`}>
+                    {index === 0 && <Video className="text-white" size={24} />}
+                    {index === 1 && <Home className="text-white" size={24} />}
+                    {index === 2 && <Shield className="text-white" size={24} />}
                   </div>
-                )}
-                
-                <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${pkg.color} rounded-xl sm:rounded-2xl shadow-lg flex items-center justify-center mb-4 sm:mb-6 mx-auto group-hover:scale-110 transition-transform`}>
-                  <pkg.icon className="text-white" size={24} />
-                </div>
-                
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-3 sm:mb-4">{pkg.name}</h3>
-                
-                <div className="text-center mb-4 sm:mb-6">
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-red">{pkg.price}</span>
-                    <div className="flex flex-col items-center sm:items-start">
-                      <span className="text-sm sm:text-base lg:text-lg text-gray-400 line-through">{pkg.originalPrice}</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs sm:text-sm text-green-600 font-semibold">Save ₹{parseInt(pkg.originalPrice.slice(1).replace(',', '')) - parseInt(pkg.price.slice(1).replace(',', ''))}</span>
-                        <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-bold">{pkg.savings} OFF</span>
+                  
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-3 sm:mb-4">{pkg.name}</h3>
+                  
+                  <div className="text-center mb-4 sm:mb-6">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                      <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-red">₹{pkg.discountedPrice.toLocaleString()}</span>
+                      <div className="flex flex-col items-center sm:items-start">
+                        <span className="text-sm sm:text-base lg:text-lg text-gray-400 line-through">₹{pkg.originalPrice.toLocaleString()}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs sm:text-sm text-green-600 font-semibold">Save ₹{savings.toLocaleString()}</span>
+                          <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-bold">{savingsPercent}% OFF</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                
-                <div className="flex-grow">
-                  <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-xs sm:text-sm text-gray-600">
-                        <CheckCircle className="text-green-500 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" size={14} />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div className="mt-auto">
-                  <Link 
-                    href="/contact" 
-                    className={`block w-full text-center py-3 sm:py-4 rounded-lg font-bold text-sm sm:text-base transition-all shadow-lg ${
-                      pkg.popular 
-                        ? 'bg-gradient-primary text-white hover:bg-gradient-secondary hover:shadow-xl' 
-                        : 'border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white hover:shadow-xl'
-                    }`}
-                    data-testid={`package-button-${index}`}
-                  >
-                    Choose Package
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+                  
+                  <div className="flex-grow">
+                    <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+                      {pkg.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start text-xs sm:text-sm text-gray-600">
+                          <CheckCircle className="text-green-500 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" size={14} />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-auto">
+                    <Link 
+                      href="/contact" 
+                      className={`block w-full text-center py-3 sm:py-4 rounded-lg font-bold text-sm sm:text-base transition-all shadow-lg ${
+                        isPopular 
+                          ? 'bg-gradient-primary text-white hover:bg-gradient-secondary hover:shadow-xl' 
+                          : 'border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white hover:shadow-xl'
+                      }`}
+                      data-testid={`package-button-${index}`}
+                    >
+                      Choose Package
+                    </Link>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
           
           {/* View More Packages Button */}
