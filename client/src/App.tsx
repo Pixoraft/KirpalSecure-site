@@ -12,6 +12,7 @@ import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/home";
 import ServicesPage from "@/pages/services";
 import ProductsPage from "@/pages/products";
+import ProductDetailPage from "@/pages/product-detail";
 import PackagesPage from "@/pages/packages";
 import AboutPage from "@/pages/about";
 import BlogsPage from "@/pages/blogs";
@@ -30,6 +31,7 @@ function Router() {
           <Route path="/" component={HomePage} />
           <Route path="/services" component={ServicesPage} />
           <Route path="/products" component={ProductsPage} />
+          <Route path="/product/:id" component={ProductDetailPage} />
           <Route path="/packages" component={PackagesPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/blogs" component={BlogsPage} />
