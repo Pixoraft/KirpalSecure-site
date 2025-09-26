@@ -18,6 +18,7 @@ interface QueryFormData {
 }
 
 const serviceTypes = [
+  "Electric Fencing Installation",
   "CCTV Installation",
   "Smart Home Security",
   "Biometric Systems",
@@ -43,8 +44,42 @@ export function FloatingQueryButton() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Create WhatsApp message
-    const whatsappMessage = `Hello! I'm interested in your services.
+    // Determine phone number and message format based on service type
+    let phoneNumber = "917009154711"; // Default number
+    let whatsappMessage = "";
+
+    if (formData.serviceType === "Electric Fencing Installation") {
+      // KIRPAL SECURITIES specific phone numbers and message
+      phoneNumber = "917009154711"; // NIKHIL's number
+      whatsappMessage = `🔋 *KIRPAL SECURITIES - ELECTRIC FENCING INQUIRY*
+
+Hello! I'm interested in electric fencing installation by KIRPAL SECURITIES.
+
+👤 *Customer Details:*
+Name: ${formData.name}
+🏠 Address: ${formData.address}
+📞 Contact Method: ${formData.contactMethod}
+${formData.email ? `📧 Email: ${formData.email}` : ''}
+
+⚡ *Service Required:* Electric Fencing Installation
+
+💬 *Additional Details:*
+${formData.message}
+
+📋 *Please provide information about:*
+• Pricing for Commercial/Residential sites
+• MS Powder Coating Pole vs S.S 304 Grade Pole
+• Openable Gate Fencing vs Straight Fencing options
+• Installation timeline and warranty details
+
+Please get back to me with detailed quotation. Thanks!
+
+📞 *KIRPAL SECURITIES Contact:*
+NIKHIL: +91 70091-54711
+NAVEEN: +91 94636-87535`;
+    } else {
+      // Regular services message
+      whatsappMessage = `Hello! I'm interested in your services.
 
 📋 *Service Details:*
 👤 Name: ${formData.name}
@@ -57,10 +92,11 @@ ${formData.email ? `📧 Email: ${formData.email}` : ''}
 ${formData.message}
 
 Please get back to me. Thanks!`;
+    }
 
     // Encode message for URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappURL = `https://wa.me/917009154711?text=${encodedMessage}`;
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     
     // Simulate loading and redirect to WhatsApp
     setTimeout(() => {
