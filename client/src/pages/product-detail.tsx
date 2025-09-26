@@ -17,13 +17,8 @@ export default function ProductDetailPage() {
 
   useEffect(() => {
     if (id) {
-      // Find product from all categories
-      let foundProduct: Product | null = null;
-      for (const category of data.categories) {
-        const products = (data.products as any)[category.id] || [];
-        foundProduct = products.find((p: Product) => p.id === id) || null;
-        if (foundProduct) break;
-      }
+      // Find product directly from the products array
+      const foundProduct = data.products.find((p: Product) => p.id === id) || null;
       setProduct(foundProduct);
       if (foundProduct) {
         setSelectedImage(foundProduct.image);
