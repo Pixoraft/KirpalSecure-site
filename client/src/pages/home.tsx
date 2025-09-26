@@ -222,7 +222,7 @@ Please provide more details. Thanks!`;
                       {/* CTA Button */}
                       <button
                         onClick={() => window.location.href = `/product/${product.id}`}
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors"
+                        className="w-full bg-brand-red hover:bg-red-700 text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors"
                         data-testid={`buy-now-${product.id}`}
                       >
                         <ArrowRight size={16} />
