@@ -255,6 +255,15 @@ Please provide more details. Thanks!`;
 // Hero banner slides data
 const heroBannerSlides = [
   {
+    id: 0,
+    title: "KIRPAL SECURITIES",
+    subtitle: "⚡ ELECTRIC FENCING SPECIALISTS ⚡",
+    description: "North India's biggest solar electric fencing company • 7+ Years Experience • 3300+ Installations PAN INDIA • Most Trusted Electric Fencing Installation",
+    backgroundImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    ctaText: "⚡ Get Electric Fencing Quote",
+    isElectricFencing: true
+  },
+  {
     id: 1,
     title: "Advanced CCTV Systems",
     subtitle: "Professional Security Solutions",
@@ -327,8 +336,26 @@ function HeroBannerSlider() {
           {/* Content */}
           <div className="relative h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center text-white w-full">
+              {heroBannerSlides[currentSlide].isElectricFencing && (
+                <motion.div
+                  className="absolute inset-0 pointer-events-none"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-orange-600/20 animate-pulse" />
+                  <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-yellow-400 rounded-full animate-ping" />
+                  <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-yellow-300 rounded-full animate-ping delay-300" />
+                  <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-orange-400 rounded-full animate-ping delay-500" />
+                </motion.div>
+              )}
+              
               <motion.h2
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-display leading-tight"
+                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-display leading-tight ${
+                  heroBannerSlides[currentSlide].isElectricFencing 
+                    ? 'text-yellow-200 drop-shadow-2xl' 
+                    : ''
+                }`}
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -337,7 +364,11 @@ function HeroBannerSlider() {
               </motion.h2>
               
               <motion.p
-                className="text-lg sm:text-xl md:text-2xl mb-3 font-semibold text-blue-200"
+                className={`text-lg sm:text-xl md:text-2xl mb-3 font-semibold ${
+                  heroBannerSlides[currentSlide].isElectricFencing 
+                    ? 'text-yellow-300 drop-shadow-lg' 
+                    : 'text-blue-200'
+                }`}
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -359,14 +390,32 @@ function HeroBannerSlider() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                <Link 
-                  href="/services"
-                  className="btn-modern px-6 sm:px-8 py-3 text-base sm:text-lg font-bold rounded-xl inline-flex items-center group"
-                  data-testid="banner-cta-button"
-                >
-                  {heroBannerSlides[currentSlide].ctaText}
-                  <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={18} />
-                </Link>
+                {heroBannerSlides[currentSlide].isElectricFencing ? (
+                  <button 
+                    onClick={() => {
+                      window.dispatchEvent(new CustomEvent('openQueryForm', {
+                        detail: {
+                          serviceType: 'Electric Fencing Installation',
+                          message: 'I am interested in KIRPAL SECURITIES electric fencing installation. Please provide detailed pricing and timeline information.'
+                        }
+                      }));
+                    }}
+                    className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-black px-6 sm:px-8 py-3 text-base sm:text-lg font-bold rounded-xl inline-flex items-center group shadow-2xl transform hover:scale-105 transition-all"
+                    data-testid="banner-electric-fencing-cta"
+                  >
+                    {heroBannerSlides[currentSlide].ctaText}
+                    <Zap className="ml-2 transition-transform group-hover:rotate-12" size={18} />
+                  </button>
+                ) : (
+                  <Link 
+                    href="/services"
+                    className="btn-modern px-6 sm:px-8 py-3 text-base sm:text-lg font-bold rounded-xl inline-flex items-center group"
+                    data-testid="banner-cta-button"
+                  >
+                    {heroBannerSlides[currentSlide].ctaText}
+                    <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={18} />
+                  </Link>
+                )}
               </motion.div>
             </div>
           </div>
