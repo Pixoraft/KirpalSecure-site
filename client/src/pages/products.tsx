@@ -112,7 +112,7 @@ function ProductCard({ product, onViewDetails }: { product: Product; onViewDetai
         )}
       </div>
       
-      <CardHeader className="pb-4">
+      <CardHeader className="pb-3 sm:pb-4 p-4 sm:p-6">
         <div className="flex justify-between items-start mb-2">
           <Badge variant="secondary" className="bg-gray-100 text-gray-800 text-xs">
             {data.categories.find(cat => cat.id === product.category)?.name || product.category}
@@ -123,7 +123,7 @@ function ProductCard({ product, onViewDetails }: { product: Product; onViewDetai
           </div>
         </div>
         
-        <CardTitle className="text-lg font-bold text-gray-900 line-clamp-2">
+        <CardTitle className="text-base sm:text-lg font-bold text-gray-900 line-clamp-2">
           {product.name}
         </CardTitle>
         
@@ -176,7 +176,7 @@ function ProductCard({ product, onViewDetails }: { product: Product; onViewDetai
           <Button 
             onClick={() => onViewDetails(product)}
             variant="outline" 
-            className="w-full"
+            className="w-full min-h-[44px]"
             data-testid={`view-details-${product.id}`}
           >
             <Eye className="mr-2" size={16} />
@@ -200,13 +200,13 @@ function ProductDetailModal({ product, isOpen, onClose }: {
   const savingsPercent = Math.round((savings / product.originalPrice) * 100);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" onClick={onClose}>
-      <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
-        <div className="p-6">
-          <div className="flex justify-between items-start mb-6">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h2>
-              <div className="flex items-center gap-4">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-2 sm:p-4" onClick={onClose}>
+      <div className="bg-white rounded-lg max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+        <div className="p-4 sm:p-6">
+          <div className="flex justify-between items-start mb-4 sm:mb-6">
+            <div className="flex-1 pr-4">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">{product.name}</h2>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
                 <Badge variant="secondary">
                   {data.categories.find(cat => cat.id === product.category)?.name}
                 </Badge>
@@ -216,10 +216,10 @@ function ProductDetailModal({ product, isOpen, onClose }: {
                 </div>
               </div>
             </div>
-            <Button variant="outline" onClick={onClose}>✕</Button>
+            <Button variant="outline" onClick={onClose} className="min-w-[44px] min-h-[44px] p-2">✕</Button>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Product Image */}
             <div>
               <img 
@@ -360,28 +360,28 @@ export default function ProductsPage() {
       </section>
 
       {/* Search and Filter Section */}
-      <section className="py-8 bg-gray-50">
+      <section className="py-6 sm:py-8 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="relative flex-1 max-w-md">
+          <div className="flex flex-col gap-4">
+            <div className="relative w-full">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
               <Input
                 type="text"
                 placeholder="Search products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
+                className="pl-10 text-base min-h-[44px]"
                 data-testid="search-products"
               />
             </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
               <div className="flex items-center gap-2">
                 <Filter size={16} className="text-gray-600" />
                 <span className="text-sm text-gray-600">Filter by:</span>
               </div>
               <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                <SelectTrigger className="w-48" data-testid="category-filter">
+                <SelectTrigger className="w-full sm:w-48 min-h-[44px]" data-testid="category-filter">
                   <SelectValue placeholder="All Categories" />
                 </SelectTrigger>
                 <SelectContent>
@@ -411,7 +411,7 @@ export default function ProductsPage() {
               <p className="text-xl text-gray-600">Our most popular and highly rated security solutions</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
               {featuredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} onViewDetails={handleViewDetails} />
               ))}
@@ -434,7 +434,7 @@ export default function ProductsPage() {
           </div>
           
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
               {filteredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} onViewDetails={handleViewDetails} />
               ))}

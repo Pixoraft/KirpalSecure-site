@@ -158,32 +158,32 @@ Please provide more details and availability. Thanks!`;
                     </div>
                   </div>
                   
-                  <h1 className="text-3xl font-bold text-gray-900 mb-4" data-testid="product-title">
+                  <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4" data-testid="product-title">
                     {product.name}
                   </h1>
                   
-                  <p className="text-lg text-gray-600 mb-6" data-testid="product-description">
+                  <p className="text-base sm:text-lg text-gray-600 mb-6" data-testid="product-description">
                     {product.shortDescription}
                   </p>
                 </div>
 
                 {/* Pricing */}
-                <div className="bg-gray-50 rounded-lg p-6">
-                  <div className="flex items-center gap-3 mb-2">
+                <div className="bg-gray-50 rounded-lg p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
                     <div className="flex items-center">
-                      <IndianRupee size={28} className="text-green-600" />
-                      <span className="text-4xl font-bold text-green-600" data-testid="product-price">
+                      <IndianRupee size={24} className="text-green-600 sm:w-7 sm:h-7" />
+                      <span className="text-3xl sm:text-4xl font-bold text-green-600" data-testid="product-price">
                         {product.price.toLocaleString()}
                       </span>
                     </div>
                     {savings > 0 && (
-                      <span className="text-xl text-gray-500 line-through">
+                      <span className="text-lg sm:text-xl text-gray-500 line-through">
                         ₹{product.originalPrice.toLocaleString()}
                       </span>
                     )}
                   </div>
                   {savings > 0 && (
-                    <p className="text-green-600 font-medium text-lg">
+                    <p className="text-green-600 font-medium text-base sm:text-lg">
                       You save ₹{savings.toLocaleString()} ({savingsPercent}% off)
                     </p>
                   )}
@@ -192,12 +192,12 @@ Please provide more details and availability. Thanks!`;
                   </p>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="space-y-4">
+                {/* Action Buttons - Desktop */}
+                <div className="space-y-4 hidden lg:block">
                   <button
                     onClick={handleWhatsAppClick}
                     disabled={!product.inStock}
-                    className="w-full bg-brand-red hover:bg-red-700 disabled:bg-gray-400 text-white py-4 px-6 rounded-lg font-bold text-lg flex items-center justify-center gap-3 transition-colors disabled:cursor-not-allowed"
+                    className="w-full bg-brand-red hover:bg-red-700 disabled:bg-gray-400 text-white py-4 px-6 rounded-lg font-bold text-lg flex items-center justify-center gap-3 transition-colors disabled:cursor-not-allowed min-h-[56px]"
                     data-testid="buy-now-button"
                   >
                     <MessageCircle size={20} />
@@ -279,16 +279,39 @@ Please provide more details and availability. Thanks!`;
           </div>
 
           {/* Back to Products */}
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-center pb-20 lg:pb-8">
             <Button 
               onClick={() => setLocation("/products")} 
               variant="outline"
-              className="px-6 py-3"
+              className="px-6 py-3 min-h-[44px]"
               data-testid="back-to-products"
             >
               <ArrowLeft className="mr-2" size={16} />
               Back to All Products
             </Button>
+          </div>
+        </div>
+
+        {/* Mobile Sticky CTA Bar */}
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 lg:hidden z-50 safe-area-inset-bottom">
+          <div className="flex gap-3">
+            <button
+              onClick={handleShare}
+              className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-4 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors min-h-[48px]"
+              data-testid="mobile-share-button"
+            >
+              <Share2 size={18} />
+              Share
+            </button>
+            <button
+              onClick={handleWhatsAppClick}
+              disabled={!product.inStock}
+              className="flex-[2] bg-brand-red hover:bg-red-700 disabled:bg-gray-400 text-white py-3 px-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-colors disabled:cursor-not-allowed min-h-[48px]"
+              data-testid="mobile-buy-now-button"
+            >
+              <MessageCircle size={18} />
+              {product.inStock ? 'Buy Now' : 'Out of Stock'}
+            </button>
           </div>
         </div>
       </div>

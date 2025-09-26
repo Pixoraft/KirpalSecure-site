@@ -101,18 +101,18 @@ Please provide more details. Thanks!`;
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               data-testid={`prev-${title.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <ChevronLeft size={20} className="text-gray-600" />
+              <ChevronLeft size={18} className="text-gray-600" />
             </button>
             <button
               onClick={nextSlide}
               disabled={currentIndex >= maxIndex}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               data-testid={`next-${title.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <ChevronRight size={20} className="text-gray-600" />
+              <ChevronRight size={18} className="text-gray-600" />
             </button>
           </>
         )}
@@ -120,11 +120,20 @@ Please provide more details. Thanks!`;
         {/* Product Cards */}
         <div className="overflow-hidden">
           <motion.div
-            className="flex"
+            className="flex touch-pan-x"
             animate={{ 
               x: `calc(-${currentIndex * (100 / cardsPerView)}% - ${currentIndex * 1.5}rem)` 
             }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            drag="x"
+            dragConstraints={{ left: -50, right: 50 }}
+            onDragEnd={(event, info) => {
+              if (info.offset.x > 50 && currentIndex > 0) {
+                prevSlide();
+              } else if (info.offset.x < -50 && currentIndex < maxIndex) {
+                nextSlide();
+              }
+            }}
           >
             {products.map((product) => {
               const savings = product.originalPrice - product.price;
@@ -142,11 +151,12 @@ Please provide more details. Thanks!`;
                 >
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full">
                     {/* Product Image */}
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-40 sm:h-48 overflow-hidden">
                       <img 
                         src={product.image} 
                         alt={product.name}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
                       />
                       {product.featured && (
                         <div className="absolute top-3 left-3">
@@ -166,7 +176,7 @@ Please provide more details. Thanks!`;
                     </div>
 
                     {/* Product Info */}
-                    <div className="p-6">
+                    <div className="p-4 sm:p-6">
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-xs text-gray-500 uppercase tracking-wider">
                           {data.categories.find(cat => cat.id === product.category)?.name}
@@ -177,11 +187,11 @@ Please provide more details. Thanks!`;
                         </div>
                       </div>
                       
-                      <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 line-clamp-2">
                         {product.name}
                       </h3>
                       
-                      <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                      <p className="text-sm text-gray-600 mb-3 sm:mb-4 line-clamp-2">
                         {product.shortDescription}
                       </p>
 
@@ -222,7 +232,7 @@ Please provide more details. Thanks!`;
                       {/* CTA Button */}
                       <button
                         onClick={() => window.location.href = `/product/${product.id}`}
-                        className="w-full bg-brand-red hover:bg-red-700 text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors"
+                        className="w-full bg-brand-red hover:bg-red-700 text-white py-3 sm:py-3 min-h-[44px] rounded-lg font-medium flex items-center justify-center gap-2 transition-colors"
                         data-testid={`buy-now-${product.id}`}
                       >
                         <ArrowRight size={16} />

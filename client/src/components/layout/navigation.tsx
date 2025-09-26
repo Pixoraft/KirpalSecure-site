@@ -95,7 +95,7 @@ export function Navigation() {
             <div className="md:hidden">
               <motion.button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="p-3 min-w-[44px] min-h-[44px] rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center"
                 data-testid="mobile-menu-toggle"
                 whileTap={{ scale: 0.95 }}
               >
@@ -137,7 +137,7 @@ export function Navigation() {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="px-4 py-4 space-y-2 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+              <div className="px-4 py-6 space-y-2 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item.path}
@@ -147,7 +147,7 @@ export function Navigation() {
                   >
                     <Link
                       href={item.path}
-                      className={`block px-4 py-3 text-base font-semibold rounded-lg transition-colors ${
+                      className={`block px-6 py-4 min-h-[44px] text-lg font-semibold rounded-lg transition-colors flex items-center ${
                         isActive(item.path)
                           ? "text-white bg-gradient-primary shadow-glow"
                           : "text-gray-700 dark:text-gray-300 hover:text-brand-red hover:bg-brand-red/5"
