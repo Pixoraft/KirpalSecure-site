@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Video, Home, Fingerprint, Network, Phone, Wrench, CheckCircle, Zap, Shield } from "lucide-react";
+import { Video, Home, Fingerprint, Network, Phone, Wrench, CheckCircle, Zap, Shield, Award } from "lucide-react";
 import { SEOHead } from "@/components/seo-head";
 
 export default function ServicesPage() {
@@ -243,43 +243,80 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                  <div className="bg-white/10 rounded-lg p-3">
-                    <h5 className="font-semibold text-yellow-300 mb-2">Fencing Types</h5>
-                    <ul className="text-sm space-y-1">
-                      <li>• Openable Gate Fencing</li>
-                      <li>• Straight Fencing</li>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="bg-white/10 rounded-lg p-4">
+                    <h5 className="font-semibold text-yellow-300 mb-3 flex items-center">
+                      <CheckCircle className="text-yellow-300 mr-2" size={16} />
+                      Fencing Types Available
+                    </h5>
+                    <ul className="text-sm space-y-2">
+                      <li className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-0.5 mr-2" size={12} />
+                        <span>Openable Gate Fencing - Perfect for vehicle access</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-0.5 mr-2" size={12} />
+                        <span>Straight Fencing - Continuous perimeter protection</span>
+                      </li>
                     </ul>
                   </div>
-                  <div className="bg-white/10 rounded-lg p-3">
-                    <h5 className="font-semibold text-yellow-300 mb-2">Contact Numbers</h5>
-                    <ul className="text-sm space-y-1">
-                      <li>📞 NIKHIL: +91 70091-54711</li>
-                      <li>📞 NAVEEN: +91 94636-87535</li>
+                  <div className="bg-white/10 rounded-lg p-4">
+                    <h5 className="font-semibold text-yellow-300 mb-3 flex items-center">
+                      <Shield className="text-yellow-300 mr-2" size={16} />
+                      Pole Material Options
+                    </h5>
+                    <ul className="text-sm space-y-2">
+                      <li className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-0.5 mr-2" size={12} />
+                        <span>MS Powder Coating Pole - Durable & cost-effective</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-0.5 mr-2" size={12} />
+                        <span>S.S 304 Grade Pole - Premium corrosion resistance</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-lg p-4">
-                  <h4 className="font-bold text-lg mb-2 text-yellow-300">Why Choose KIRPAL SECURITIES?</h4>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start">
-                      <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
-                      Leading manufacturer & North India's biggest solar electric fencing company
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
-                      Team of experienced engineers, technicians and after sales executives
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
-                      Complete spare and service network for quick service
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
-                      Based in Jalandhar, Punjab with PAN INDIA installations
-                    </li>
-                  </ul>
+                <div className="bg-white/10 rounded-lg p-6">
+                  <h4 className="font-bold text-xl mb-4 text-yellow-300 flex items-center">
+                    <Award className="text-yellow-300 mr-3" size={24} />
+                    Why Choose KIRPAL SECURITIES?
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-1 mr-3 flex-shrink-0" size={16} />
+                        <div>
+                          <span className="font-semibold text-white">Leading Manufacturer</span>
+                          <p className="text-xs text-gray-300">North India's biggest solar electric fencing company</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-1 mr-3 flex-shrink-0" size={16} />
+                        <div>
+                          <span className="font-semibold text-white">Expert Team</span>
+                          <p className="text-xs text-gray-300">Experienced engineers, technicians and after sales executives</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-1 mr-3 flex-shrink-0" size={16} />
+                        <div>
+                          <span className="font-semibold text-white">Service Network</span>
+                          <p className="text-xs text-gray-300">Complete spare and service network for quick service</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-1 mr-3 flex-shrink-0" size={16} />
+                        <div>
+                          <span className="font-semibold text-white">PAN INDIA Reach</span>
+                          <p className="text-xs text-gray-300">Based in Jalandhar, Punjab with installations across India</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               
