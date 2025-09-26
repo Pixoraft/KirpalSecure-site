@@ -15,6 +15,9 @@ interface QueryFormData {
   contactMethod: string;
   email?: string;
   address: string;
+  area?: string;
+  fencingType?: string;
+  siteType?: string;
 }
 
 interface FloatingQueryButtonProps {
@@ -43,7 +46,10 @@ export function FloatingQueryButton({ preSelectedService }: FloatingQueryButtonP
       : "",
     contactMethod: "phone",
     email: "",
-    address: ""
+    address: "",
+    area: "",
+    fencingType: "",
+    siteType: ""
   });
 
   // Listen for custom events to open with pre-selected service
@@ -55,7 +61,10 @@ export function FloatingQueryButton({ preSelectedService }: FloatingQueryButtonP
         serviceType: serviceType || "",
         message: message || (serviceType === "Electric Fencing Installation" 
           ? "I'm interested in electric fencing installation. Please provide pricing details for both commercial and residential options, including different pole types and fencing configurations."
-          : prev.message)
+          : prev.message),
+        area: serviceType === "Electric Fencing Installation" ? "" : prev.area,
+        fencingType: serviceType === "Electric Fencing Installation" ? "" : prev.fencingType,
+        siteType: serviceType === "Electric Fencing Installation" ? "" : prev.siteType
       }));
       setIsOpen(true);
     };
@@ -87,7 +96,10 @@ Name: ${formData.name}
 📞 Contact Method: ${formData.contactMethod}
 ${formData.email ? `📧 Email: ${formData.email}` : ''}
 
-⚡ *Service Required:* Electric Fencing Installation
+⚡ *Electric Fencing Requirements:*
+${formData.area ? `📏 Area to be fenced: ${formData.area}` : ''}
+${formData.siteType ? `🏢 Site Type: ${formData.siteType}` : ''}
+${formData.fencingType ? `🔧 Fencing Type: ${formData.fencingType}` : ''}
 
 💬 *Additional Details:*
 ${formData.message}
@@ -98,11 +110,7 @@ ${formData.message}
 • Openable Gate Fencing vs Straight Fencing options
 • Installation timeline and warranty details
 
-Please get back to me with detailed quotation. Thanks!
-
-📞 *KIRPAL SECURITIES Contact:*
-NIKHIL: +91 70091-54711
-NAVEEN: +91 94636-87535`;
+Please get back to me with detailed quotation. Thanks!`;
     } else {
       // Regular services message
       whatsappMessage = `Hello! I'm interested in your services.
@@ -136,7 +144,10 @@ Please get back to me. Thanks!`;
         message: "",
         contactMethod: "phone",
         email: "",
-        address: ""
+        address: "",
+        area: "",
+        fencingType: "",
+        siteType: ""
       });
       setIsSubmitting(false);
       setIsOpen(false);
@@ -236,6 +247,66 @@ Please get back to me. Thanks!`;
                     </SelectContent>
                   </Select>
                 </div>
+
+                {/* Electric Fencing Specific Fields */}
+                {formData.serviceType === "Electric Fencing Installation" && (
+                  <>
+                    {/* Area Field */}
+                    <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                      <h4 className="text-sm font-semibold text-yellow-800 dark:text-yellow-200 mb-3 flex items-center">
+                        ⚡ Electric Fencing Details
+                      </h4>
+                      
+                      <div className="space-y-3">
+                        <div>
+                          <Label htmlFor="area" className="text-sm font-medium">Area to be Fenced</Label>
+                          <Input
+                            id="area"
+                            value={formData.area}
+                            onChange={(e) => setFormData(prev => ({ ...prev, area: e.target.value }))}
+                            placeholder="e.g., 5000 sq ft, 2 acres, 100x50 meters"
+                            data-testid="electric-fencing-area-input"
+                          />
+                        </div>
+
+                        <div>
+                          <Label htmlFor="siteType" className="text-sm font-medium">Site Type</Label>
+                          <Select 
+                            value={formData.siteType} 
+                            onValueChange={(value) => setFormData(prev => ({ ...prev, siteType: value }))}
+                          >
+                            <SelectTrigger data-testid="site-type-select">
+                              <SelectValue placeholder="Select site type" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Commercial">Commercial</SelectItem>
+                              <SelectItem value="Residential">Residential</SelectItem>
+                              <SelectItem value="Industrial">Industrial</SelectItem>
+                              <SelectItem value="Agricultural">Agricultural</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+
+                        <div>
+                          <Label htmlFor="fencingType" className="text-sm font-medium">Fencing Type</Label>
+                          <Select 
+                            value={formData.fencingType} 
+                            onValueChange={(value) => setFormData(prev => ({ ...prev, fencingType: value }))}
+                          >
+                            <SelectTrigger data-testid="fencing-type-select">
+                              <SelectValue placeholder="Select fencing type" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Straight Fencing">Straight Fencing</SelectItem>
+                              <SelectItem value="Openable Gate Fencing">Openable Gate Fencing</SelectItem>
+                              <SelectItem value="Mixed (Straight + Gate)">Mixed (Straight + Gate)</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
 
                 {/* Contact Method */}
                 <div>
