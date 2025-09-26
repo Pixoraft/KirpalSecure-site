@@ -50,7 +50,7 @@ Please provide more details and help me get a quote. Thanks!`;
   return (
     <Button 
       onClick={handleWhatsAppClick}
-      className="w-full bg-green-600 hover:bg-green-700 text-white"
+      className="w-full bg-brand-red hover:bg-red-700 text-white"
       data-testid={`whatsapp-${product.id}`}
     >
       <MessageCircle className="mr-2" size={16} />
