@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Phone, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,10 @@ interface QueryFormData {
   address: string;
 }
 
+interface FloatingQueryButtonProps {
+  preSelectedService?: string;
+}
+
 const serviceTypes = [
   "Electric Fencing Installation",
   "CCTV Installation",
@@ -28,17 +32,39 @@ const serviceTypes = [
   "General Inquiry"
 ];
 
-export function FloatingQueryButton() {
+export function FloatingQueryButton({ preSelectedService }: FloatingQueryButtonProps = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<QueryFormData>({
     name: "",
-    serviceType: "",
-    message: "",
+    serviceType: preSelectedService || "",
+    message: preSelectedService === "Electric Fencing Installation" 
+      ? "I'm interested in electric fencing installation. Please provide pricing details for both commercial and residential options, including different pole types and fencing configurations."
+      : "",
     contactMethod: "phone",
     email: "",
     address: ""
   });
+
+  // Listen for custom events to open with pre-selected service
+  useEffect(() => {
+    const handleOpenQuery = (event: CustomEvent) => {
+      const { serviceType, message } = event.detail;
+      setFormData(prev => ({
+        ...prev,
+        serviceType: serviceType || "",
+        message: message || (serviceType === "Electric Fencing Installation" 
+          ? "I'm interested in electric fencing installation. Please provide pricing details for both commercial and residential options, including different pole types and fencing configurations."
+          : prev.message)
+      }));
+      setIsOpen(true);
+    };
+
+    window.addEventListener('openQueryForm', handleOpenQuery as EventListener);
+    return () => {
+      window.removeEventListener('openQueryForm', handleOpenQuery as EventListener);
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

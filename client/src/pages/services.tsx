@@ -296,11 +296,13 @@ export default function ServicesPage() {
                     className="bg-yellow-400 text-black px-8 py-3 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all transform hover:scale-105 shadow-lg w-full"
                     data-testid="button-get-electric-fencing-quote"
                     onClick={() => {
-                      // This will trigger the floating query button to open with electric fencing pre-selected
-                      const queryButton = document.querySelector('[data-testid="floating-query-button"]') as HTMLElement;
-                      if (queryButton) {
-                        queryButton.click();
-                      }
+                      // Trigger custom event to open query form with electric fencing pre-selected
+                      window.dispatchEvent(new CustomEvent('openQueryForm', {
+                        detail: {
+                          serviceType: 'Electric Fencing Installation',
+                          message: 'I am interested in KIRPAL SECURITIES electric fencing installation. Please provide detailed pricing for:'
+                        }
+                      }));
                     }}
                   >
                     ⚡ Get Electric Fencing Quote Now!
