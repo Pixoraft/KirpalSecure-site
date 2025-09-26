@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Video, Home, Fingerprint, Network, Phone, Wrench, CheckCircle } from "lucide-react";
+import { Video, Home, Fingerprint, Network, Phone, Wrench, CheckCircle, Zap, Shield } from "lucide-react";
 import { SEOHead } from "@/components/seo-head";
 
 export default function ServicesPage() {
@@ -194,6 +194,118 @@ export default function ServicesPage() {
                     Network Maintenance
                   </li>
                 </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* KIRPAL SECURITIES Electric Fencing - Highlighted Section */}
+          <div className="mb-16 bg-gradient-to-r from-brand-red to-red-700 rounded-2xl p-8 text-white" data-testid="section-electric-fencing">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="bg-white/20 rounded-lg p-6 mb-6">
+                  <h2 className="text-4xl font-bold mb-4 flex items-center">
+                    <Zap className="text-yellow-300 mr-3" size={48} />
+                    KIRPAL SECURITIES
+                  </h2>
+                  <p className="text-2xl font-semibold mb-2">Get Electric Fencing Installed By Most Trusted Company</p>
+                  <div className="flex items-center text-lg">
+                    <Shield className="text-yellow-300 mr-2" size={20} />
+                    <span className="font-semibold">7+ Years Experience • 3300+ Installations • PAN INDIA</span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="bg-white/10 rounded-lg p-4">
+                    <h4 className="font-bold text-lg mb-3 text-yellow-300">Commercial Sites</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
+                        MS Powder Coating Pole
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
+                        S.S 304 Grade Pole
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-4">
+                    <h4 className="font-bold text-lg mb-3 text-yellow-300">Residential Sites</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
+                        S.S 304 Grade Pole
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
+                        MS Powder Coating Pole
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  <div className="bg-white/10 rounded-lg p-3">
+                    <h5 className="font-semibold text-yellow-300 mb-2">Fencing Types</h5>
+                    <ul className="text-sm space-y-1">
+                      <li>• Openable Gate Fencing</li>
+                      <li>• Straight Fencing</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-3">
+                    <h5 className="font-semibold text-yellow-300 mb-2">Contact Numbers</h5>
+                    <ul className="text-sm space-y-1">
+                      <li>📞 NIKHIL: +91 70091-54711</li>
+                      <li>📞 NAVEEN: +91 94636-87535</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="bg-white/10 rounded-lg p-4">
+                  <h4 className="font-bold text-lg mb-2 text-yellow-300">Why Choose KIRPAL SECURITIES?</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start">
+                      <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
+                      Leading manufacturer & North India's biggest solar electric fencing company
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
+                      Team of experienced engineers, technicians and after sales executives
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
+                      Complete spare and service network for quick service
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="text-yellow-300 mt-1 mr-2" size={14} />
+                      Based in Jalandhar, Punjab with PAN INDIA installations
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                  alt="Electric fencing installation by KIRPAL SECURITIES" 
+                  className="rounded-lg shadow-2xl w-full h-auto" 
+                  data-testid="img-electric-fencing"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-center">
+                  <button 
+                    className="bg-yellow-400 text-black px-8 py-3 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all transform hover:scale-105 shadow-lg w-full"
+                    data-testid="button-get-electric-fencing-quote"
+                    onClick={() => {
+                      // This will trigger the floating query button to open with electric fencing pre-selected
+                      const queryButton = document.querySelector('[data-testid="floating-query-button"]') as HTMLElement;
+                      if (queryButton) {
+                        queryButton.click();
+                      }
+                    }}
+                  >
+                    ⚡ Get Electric Fencing Quote Now!
+                  </button>
+                </div>
               </div>
             </div>
           </div>
