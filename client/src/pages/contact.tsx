@@ -198,7 +198,7 @@ Please get back to me. Thanks!`;
               
               <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
                 <div>
-                  <Label htmlFor="name">Full Name *</Label>
+                  <Label htmlFor="name" className="text-base">Full Name *</Label>
                   <Input
                     type="text"
                     id="name"
@@ -206,12 +206,13 @@ Please get back to me. Thanks!`;
                     onChange={(e) => handleInputChange("name", e.target.value)}
                     placeholder="Your full name"
                     required
+                    className="min-h-[44px] text-base"
                     data-testid="input-name"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="phone">Phone Number *</Label>
+                  <Label htmlFor="phone" className="text-base">Phone Number *</Label>
                   <Input
                     type="tel"
                     id="phone"
@@ -219,26 +220,28 @@ Please get back to me. Thanks!`;
                     onChange={(e) => handleInputChange("phone", e.target.value)}
                     placeholder="Your phone number"
                     required
+                    className="min-h-[44px] text-base"
                     data-testid="input-phone"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="email">Email Address</Label>
+                  <Label htmlFor="email" className="text-base">Email Address</Label>
                   <Input
                     type="email"
                     id="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     placeholder="Your email address"
+                    className="min-h-[44px] text-base"
                     data-testid="input-email"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="service">Service Interested In</Label>
+                  <Label htmlFor="service" className="text-base">Service Interested In</Label>
                   <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
-                    <SelectTrigger data-testid="select-service">
+                    <SelectTrigger className="min-h-[44px]" data-testid="select-service">
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
@@ -254,7 +257,7 @@ Please get back to me. Thanks!`;
                 </div>
                 
                 <div>
-                  <Label htmlFor="message">Message *</Label>
+                  <Label htmlFor="message" className="text-base">Message *</Label>
                   <Textarea
                     id="message"
                     value={formData.message}
@@ -262,13 +265,14 @@ Please get back to me. Thanks!`;
                     placeholder="Tell us about your security needs..."
                     rows={5}
                     required
+                    className="text-base resize-none"
                     data-testid="textarea-message"
                   />
                 </div>
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-brand-red hover:bg-brand-red-dark"
+                  className="w-full bg-brand-red hover:bg-brand-red-dark min-h-[48px] text-base font-semibold"
                   disabled={isSubmitting}
                   data-testid="button-send-message"
                 >

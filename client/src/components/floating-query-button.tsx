@@ -194,7 +194,7 @@ Please get back to me. Thanks!`;
             
             {/* Modal */}
             <motion.div
-              className="fixed bottom-6 right-6 w-96 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl z-50 max-h-[80vh] overflow-y-auto"
+              className="fixed inset-x-0 bottom-0 top-0 sm:bottom-6 sm:right-6 sm:left-auto sm:top-auto w-full sm:w-96 bg-white dark:bg-gray-900 rounded-t-2xl sm:rounded-2xl shadow-2xl z-50 max-h-[90vh] sm:max-h-[80vh] overflow-y-auto"
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -205,7 +205,7 @@ Please get back to me. Thanks!`;
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">Get Quick Query</h3>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                  className="p-3 min-w-[44px] min-h-[44px] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors flex items-center justify-center"
                   data-testid="close-query-form"
                 >
                   <X size={20} />
@@ -223,6 +223,7 @@ Please get back to me. Thanks!`;
                     onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                     placeholder="Enter your name"
                     required
+                    className="min-h-[44px] text-base"
                     data-testid="query-name-input"
                   />
                 </div>
@@ -235,7 +236,7 @@ Please get back to me. Thanks!`;
                     onValueChange={(value) => setFormData(prev => ({ ...prev, serviceType: value }))}
                     required
                   >
-                    <SelectTrigger data-testid="service-type-select">
+                    <SelectTrigger className="min-h-[44px]" data-testid="service-type-select">
                       <SelectValue placeholder="Select service type" />
                     </SelectTrigger>
                     <SelectContent>
