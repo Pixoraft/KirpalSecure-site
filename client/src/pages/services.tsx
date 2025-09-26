@@ -280,7 +280,7 @@ export default function ServicesPage() {
 
                 <div className="bg-white/10 rounded-lg p-6">
                   <h4 className="font-bold text-xl mb-4 text-yellow-300 flex items-center">
-                    <Award className="text-yellow-300 mr-3" size={24} />
+                    <Shield className="text-yellow-300 mr-3" size={24} />
                     Why Choose KIRPAL SECURITIES?
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
