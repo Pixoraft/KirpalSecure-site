@@ -194,7 +194,7 @@ Please get back to me. Thanks!`;
             
             {/* Modal */}
             <motion.div
-              className="fixed inset-x-0 bottom-0 top-0 sm:bottom-6 sm:right-6 sm:left-auto sm:top-auto w-full sm:w-96 bg-white dark:bg-gray-900 rounded-t-2xl sm:rounded-2xl shadow-2xl z-50 max-h-[90vh] sm:max-h-[80vh] overflow-y-auto"
+              className="fixed inset-0 m-auto w-full sm:w-96 h-fit max-h-[90vh] sm:max-h-[80vh] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl z-50 overflow-y-auto"
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -392,7 +392,7 @@ Please get back to me. Thanks!`;
                   ) : (
                     <div className="flex items-center gap-2">
                       <MessageCircle size={16} />
-                      Send via WhatsApp
+                      Book Now
                     </div>
                   )}
                 </Button>

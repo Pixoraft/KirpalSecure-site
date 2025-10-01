@@ -342,7 +342,7 @@ export default function ServicesPage() {
                       }));
                     }}
                   >
-                    ⚡ Get Electric Fencing Quote Now!
+                    Book Now
                   </button>
                 </div>
               </div>
