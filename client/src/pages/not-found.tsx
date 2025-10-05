@@ -8,9 +8,9 @@ export default function NotFound() {
   return (
     <>
       <SEOHead
-        title="Page Not Found (404) - Kirpal Securities | Security Solutions Jalandhar"
-        description="The page you're looking for doesn't exist. Explore Kirpal Securities' professional security solutions including CCTV installation, electric fencing, biometric systems, and home automation in Jalandhar, Punjab."
-        keywords="404 error, page not found, Kirpal Securities, security solutions Jalandhar, CCTV installation Punjab, home security systems, electric fencing, biometric access control, smart home automation"
+        title="Page Not Found - Kirpal Securities"
+        description="The page you're looking for doesn't exist. Explore our security solutions including CCTV installation, electric fencing and biometric systems in Jalandhar."
+        keywords="Kirpal Securities, security solutions Jalandhar, CCTV installation Punjab, home security systems"
         url="https://kirpalsecurities.com/404"
         type="website"
       />

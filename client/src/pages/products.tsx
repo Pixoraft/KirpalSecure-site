@@ -342,9 +342,9 @@ export default function ProductsPage() {
   return (
     <>
       <SEOHead
-        title="Security Products | CCTV Cameras, Biometric Devices, Smart Home | Kirpal Securities"
-        description="🔐 Comprehensive security products in Jalandhar: CCTV cameras, biometric devices, intercom systems, networking solutions, fire alarms & smart home automation. Expert installation with warranty."
-        keywords="security products Jalandhar, CCTV cameras Punjab, biometric devices, intercom systems, fire alarm systems, electric fence, networking solutions, smart home automation"
+        title="Security Products Jalandhar | Kirpal Securities"
+        description="Buy security products in Jalandhar: CCTV cameras, biometric devices, electric fencing, intercom systems and networking equipment. Best prices with warranty."
+        keywords="security products Jalandhar, CCTV cameras Punjab, biometric devices, electric fence, intercom systems, fire alarm, networking equipment, video door phone"
         image="https://kirpalsecurities.com/security-products.jpg"
         url="https://kirpalsecurities.com/products"
         type="website"

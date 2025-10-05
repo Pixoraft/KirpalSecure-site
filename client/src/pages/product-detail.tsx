@@ -76,9 +76,9 @@ Please provide more details and availability. Thanks!`;
   return (
     <>
       <SEOHead
-        title={`${product.name} - ${category?.name} | Kirpal Securities`}
-        description={`${product.shortDescription} - Starting at ₹${product.price.toLocaleString()}. ${product.features.slice(0, 3).join(', ')}.`}
-        keywords={`${product.name}, ${category?.name}, security products, ${product.features.slice(0, 5).join(', ')}`}
+        title={`${product.name} - ₹${product.price.toLocaleString()} | Kirpal Securities`}
+        description={`${product.shortDescription} Starting at ₹${product.price.toLocaleString()}${savings > 0 ? ` (${savingsPercent}% off)` : ''}. Professional installation available. ${product.inStock ? 'In stock.' : 'Available for order.'} Call 7009154711.`}
+        keywords={`${product.name} Jalandhar, ${product.name} price Punjab, ${category?.name}, ${product.features.slice(0, 3).join(', ')}, security products Jalandhar`}
         image={product.image}
         url={`https://kirpalsecurities.com/product/${product.id}`}
         type="website"

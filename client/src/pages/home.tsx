@@ -438,9 +438,9 @@ export default function HomePage() {
   return (
     <>
       <SEOHead
-        title="Best Security Solutions in Jalandhar | CCTV Installation & Home Security | Kirpal Securities"
-        description="🔒 #1 Security Solutions Provider in Jalandhar! Professional CCTV installation, smart home security systems, biometric devices & networking. 24/7 support. Free consultation & quote. Call 7009154711 ⭐ 500+ Happy Customers"
-        keywords="security solutions Jalandhar, CCTV camera installation Jalandhar, home security systems Punjab, biometric access control, video door phone installation, security camera Jalandhar, smart home security, surveillance systems, networking solutions Punjab, security services near me, CCTV installation Jalandhar Punjab, security system repair, biometric attendance system"
+        title="Security Solutions Jalandhar | Kirpal Securities"
+        description="Professional CCTV installation, electric fencing, biometric systems and home security in Jalandhar. 500+ installations, 2-year warranty. Call 7009154711."
+        keywords="security solutions Jalandhar, CCTV installation Jalandhar, electric fence Punjab, biometric systems Jalandhar, home security Jalandhar, surveillance cameras Punjab, security company Jalandhar"
         image="https://kirpalsecurities.com/hero-security-team.jpg"
         url="https://kirpalsecurities.com"
         type="website"

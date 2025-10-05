@@ -367,9 +367,9 @@ export default function PackagesPage() {
   return (
     <>
       <SEOHead
-        title="CCTV Camera Packages | Silver, Gold & HD Series | Kirpal Securities Hoshiarpur"
-        description="🎯 Complete CCTV camera packages in Hoshiarpur, Jalandhar: Silver (₹10K-₹21K), Gold (₹14.5K-₹23K) & HD Series. 4-8 camera setups with 2-year warranty. Professional installation included. Get quote on WhatsApp!"
-        keywords="CCTV camera packages Jalandhar, security camera price Punjab, IP camera installation, surveillance system cost, CCTV packages with installation, best security camera deals, professional CCTV setup"
+        title="CCTV Camera Packages Jalandhar | Kirpal Securities"
+        description="Complete CCTV packages in Jalandhar from ₹10,000. Silver, Gold and HD series with 4-8 cameras, NVR, installation and 2-year warranty included."
+        keywords="CCTV packages Jalandhar, CCTV installation package Punjab, IP camera package, security camera packages, surveillance system packages, CCTV with installation"
         image="https://kirpalsecurities.com/cctv-packages.jpg"
         url="https://kirpalsecurities.com/packages"
         type="website"

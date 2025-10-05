@@ -6,9 +6,12 @@ export default function AboutPage() {
   return (
     <>
       <SEOHead
-        title="About Kirpal Securities - Trusted Security Solutions Provider in Jalandhar"
-        description="Learn about Kirpal Securities, your trusted security solutions provider in Jalandhar. Professional team with years of experience in security systems installation and repair services."
-        keywords="about Kirpal Securities, security company Jalandhar, professional security installation, security experts Punjab"
+        title="About Kirpal Securities - Security Company Jalandhar"
+        description="Leading security solutions provider in Jalandhar with 500+ installations. Expert team offering CCTV, electric fencing and biometric systems with warranty."
+        keywords="Kirpal Securities Jalandhar, security company Jalandhar, CCTV installation company, electric fence specialists, professional security team, certified technicians Punjab"
+        image="https://kirpalsecurities.com/about-team.jpg"
+        url="https://kirpalsecurities.com/about"
+        type="website"
       />
 
       {/* About Header */}

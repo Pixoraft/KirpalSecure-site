@@ -11,9 +11,9 @@ export default function ServicesPage() {
   return (
     <>
       <SEOHead
-        title="Professional Security Services in Jalandhar | CCTV, Biometric, Home Automation | Kirpal Securities"
-        description="🎯 Complete Security Services in Jalandhar: CCTV installation, home security systems, biometric devices, networking, video intercom, laptop/printer repair. Expert installation with warranty. Get free quote!"
-        keywords="security services Jalandhar, CCTV camera installation Punjab, home security system installation, biometric attendance system, video door phone system, access control system, surveillance camera installation, networking solutions business, laptop repair Jalandhar, printer service center"
+        title="Security Services Jalandhar | Kirpal Securities"
+        description="Complete security services in Jalandhar: CCTV installation, electric fencing, biometric systems, networking and intercom. Professional installation with warranty."
+        keywords="security services Jalandhar, CCTV installation Punjab, electric fence installation, biometric systems, video door phone, intercom systems, networking solutions, fire alarm installation"
         image="https://kirpalsecurities.com/services-security.jpg"
         url="https://kirpalsecurities.com/services"
         type="website"

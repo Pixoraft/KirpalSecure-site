@@ -78,9 +78,9 @@ Please get back to me. Thanks!`;
   return (
     <>
       <SEOHead
-        title="Contact Kirpal Securities Jalandhar | Free Security Consultation & Quote | Call 7009154711"
-        description="📞 Contact Jalandhar's #1 Security Company! Get FREE consultation & quote for CCTV, home security, biometric systems. Expert installation with warranty. Call 7009154711 or WhatsApp now!"
-        keywords="contact security company Jalandhar, free security consultation Punjab, CCTV installation quote, security system price, home security consultation, biometric system cost, video door phone price Jalandhar"
+        title="Contact Kirpal Securities | Call 7009154711"
+        description="Contact us for free consultation and quote. Professional security solutions in Jalandhar. CCTV, electric fencing, biometric systems. Call 7009154711."
+        keywords="contact Kirpal Securities, security company contact Jalandhar, CCTV installation quote, free security consultation Punjab, security service enquiry"
         image="https://kirpalsecurities.com/contact-team.jpg"
         url="https://kirpalsecurities.com/contact"
         type="website"
