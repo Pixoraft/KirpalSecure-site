@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Shield, MapPin, Mail, Phone, Clock, Camera, ArrowUp } from "lucide-react";
+import { Shield, MapPin, Mail, Phone, Clock, ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -31,16 +31,11 @@ export function Footer() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="relative mr-4">
-                  <div className="w-14 h-14 bg-gradient-primary rounded-xl shadow-glow flex items-center justify-center">
-                    <Camera className="text-white" size={24} />
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-black text-gradient">KIRPAL</h3>
-                  <span className="text-sm font-semibold text-gray-400 -mt-1 block tracking-wider">SECURITIES</span>
-                </div>
+                <img 
+                  src="/kirpal-logo.png" 
+                  alt="Kirpal Securities Logo" 
+                  className="h-16 w-auto"
+                />
               </motion.div>
               
               <motion.p
@@ -95,7 +90,6 @@ export function Footer() {
                   { href: "/", label: "Home", testId: "footer-home" },
                   { href: "/services", label: "Services", testId: "footer-services" },
                   { href: "/about", label: "About Us", testId: "footer-about" },
-                  { href: "/blogs", label: "Blogs", testId: "footer-blogs" },
                   { href: "/contact", label: "Contact", testId: "footer-contact" }
                 ].map((link, index) => (
                   <li key={link.href}>
@@ -168,6 +162,17 @@ export function Footer() {
             <div className="text-gray-400 text-center md:text-left mb-4 md:mb-0">
               <p>&copy; {currentYear} Kirpal Securities. All rights reserved.</p>
               <p className="text-sm mt-1">Professional Security Solutions • Licensed & Insured • Serving Jalandhar & Surrounding Areas</p>
+              <p className="text-sm mt-2">
+                by <a 
+                  href="https://pixocraft.in" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-brand-red hover:text-brand-red-light transition-colors font-semibold"
+                  data-testid="footer-pixocraft"
+                >
+                  Pixocraft
+                </a>
+              </p>
             </div>
             
             {/* Scroll to Top Button */}

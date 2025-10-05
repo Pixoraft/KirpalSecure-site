@@ -25,7 +25,7 @@ const heroBannerSlides = [
     subtitle: "⚡ ELECTRIC FENCING SPECIALISTS ⚡",
     description: "North India's biggest solar electric fencing company • 7+ Years Experience • 3300+ Installations PAN INDIA • Most Trusted Electric Fencing Installation",
     backgroundImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    ctaText: "⚡ Get Electric Fencing Quote",
+    ctaText: "⚡ Buy Now",
     isElectricFencing: true
   },
   {
@@ -640,7 +640,7 @@ export default function HomePage() {
                     className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all"
                     data-testid="button-fence-contact"
                   >
-                    Get a Quote
+                    Buy Now
                   </Link>
                 </div>
               </div>
@@ -1111,7 +1111,7 @@ export default function HomePage() {
               className="bg-brand-red hover:bg-red-700 text-white px-12 py-4 text-xl font-bold rounded-xl inline-flex items-center group shadow-lg hover:shadow-xl transition-all"
               data-testid="button-get-free-quote"
             >
-              Get Free Security Assessment
+              Buy Now
               <Lock className="ml-3 transition-transform group-hover:rotate-12" size={24} />
             </Link>
           </motion.div>
