@@ -190,43 +190,43 @@ Please provide more details and availability. Thanks!`;
                   <p className="text-sm text-gray-500 mt-2">
                     *Price includes installation and setup
                   </p>
-                </div>
 
-                {/* Action Buttons - Desktop */}
-                <div className="space-y-4 hidden lg:block">
-                  <button
-                    onClick={handleWhatsAppClick}
-                    disabled={!product.inStock}
-                    className="w-full bg-brand-red hover:bg-red-700 disabled:bg-gray-400 text-white py-4 px-6 rounded-lg font-bold text-lg flex items-center justify-center gap-3 transition-colors disabled:cursor-not-allowed min-h-[56px]"
-                    data-testid="buy-now-button"
-                  >
-                    <MessageCircle size={20} />
-                    {product.inStock ? 'Buy Now via WhatsApp' : 'Out of Stock'}
-                  </button>
-                  
-                  <div className="grid grid-cols-2 gap-4">
+                  {/* Action Buttons - Desktop (Now inside pricing section) */}
+                  <div className="space-y-4 mt-6 hidden lg:block">
                     <button
-                      onClick={() => {
-                        const phoneMessage = `Hi! I'd like to know more about ${product.name}. Please call me to discuss pricing and availability.`;
-                        const encodedMessage = encodeURIComponent(phoneMessage);
-                        const whatsappURL = `https://wa.me/917009154711?text=${encodedMessage}`;
-                        window.open(whatsappURL, '_blank');
-                      }}
-                      className="bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
-                      data-testid="call-now-button"
+                      onClick={handleWhatsAppClick}
+                      disabled={!product.inStock}
+                      className="w-full bg-brand-red hover:bg-red-700 disabled:bg-gray-400 text-white py-4 px-6 rounded-lg font-bold text-lg flex items-center justify-center gap-3 transition-colors disabled:cursor-not-allowed min-h-[56px]"
+                      data-testid="buy-now-button"
                     >
-                      <Phone size={16} />
-                      Call Now
+                      <MessageCircle size={20} />
+                      {product.inStock ? 'Buy Now via WhatsApp' : 'Out of Stock'}
                     </button>
                     
-                    <button
-                      onClick={handleShare}
-                      className="bg-gray-600 hover:bg-gray-700 text-white py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
-                      data-testid="share-button"
-                    >
-                      <Share2 size={16} />
-                      Share
-                    </button>
+                    <div className="grid grid-cols-2 gap-4">
+                      <button
+                        onClick={() => {
+                          const phoneMessage = `Hi! I'd like to know more about ${product.name}. Please call me to discuss pricing and availability.`;
+                          const encodedMessage = encodeURIComponent(phoneMessage);
+                          const whatsappURL = `https://wa.me/917009154711?text=${encodedMessage}`;
+                          window.open(whatsappURL, '_blank');
+                        }}
+                        className="bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
+                        data-testid="call-now-button"
+                      >
+                        <Phone size={16} />
+                        Call Now
+                      </button>
+                      
+                      <button
+                        onClick={handleShare}
+                        className="bg-gray-600 hover:bg-gray-700 text-white py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
+                        data-testid="share-button"
+                      >
+                        <Share2 size={16} />
+                        Share
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

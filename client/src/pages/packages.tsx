@@ -215,7 +215,7 @@ function WhatsAppButton({ packageName, price }: { packageName: string; price: nu
       data-testid={`whatsapp-${packageName.toLowerCase().replace(/\s+/g, '-')}`}
     >
       <MessageCircle className="mr-2" size={16} />
-      Get Quote on WhatsApp
+      Buy Now on WhatsApp
     </Button>
   );
 }
@@ -483,7 +483,7 @@ export default function PackagesPage() {
               data-testid="button-whatsapp-inquiry"
             >
               <MessageCircle className="mr-2" size={20} />
-              WhatsApp for Quick Quote
+              Buy Now on WhatsApp
             </Button>
             <Button 
               onClick={() => window.location.href = '/contact'}

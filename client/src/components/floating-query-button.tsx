@@ -168,7 +168,7 @@ Please get back to me. Thanks!`;
           data-testid="floating-query-button"
         >
           <MessageCircle size={18} className="group-hover:scale-110 transition-transform sm:w-5 sm:h-5" />
-          <span className="text-xs sm:text-sm font-semibold">Get Query</span>
+          <span className="text-xs sm:text-sm font-semibold">Buy Now</span>
           
           {/* Pulse animation */}
           <motion.div
@@ -202,7 +202,7 @@ Please get back to me. Thanks!`;
             >
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Get Quick Query</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Buy Now</h3>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-3 min-w-[44px] min-h-[44px] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors flex items-center justify-center"

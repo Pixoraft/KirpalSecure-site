@@ -221,6 +221,158 @@ function HeroBannerSlider() {
   );
 }
 
+// Featured Products Slider Component
+function FeaturedProductsSlider() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const featuredProducts = data.products.filter(product => product.featured);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % featuredProducts.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [featuredProducts.length]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % featuredProducts.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + featuredProducts.length) % featuredProducts.length);
+  };
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {featuredProducts.map((product) => {
+            const category = data.categories.find(cat => cat.id === product.category);
+            const savings = product.originalPrice - product.price;
+            const savingsPercent = Math.round((savings / product.originalPrice) * 100);
+
+            return (
+              <div key={product.id} className="w-full flex-shrink-0 px-4">
+                <div className="max-w-4xl mx-auto">
+                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="relative h-80 md:h-96">
+                        <img 
+                          src={product.image} 
+                          alt={product.name}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <div className="bg-yellow-500 text-black font-bold px-3 py-2 rounded-full text-sm flex items-center">
+                            <Star className="mr-1" size={16} />
+                            Featured
+                          </div>
+                        </div>
+                        {savingsPercent > 0 && (
+                          <div className="absolute top-4 right-4">
+                            <div className="bg-red-500 text-white font-bold px-3 py-2 rounded-full text-sm">
+                              {savingsPercent}% OFF
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      
+                      <div className="p-8 flex flex-col justify-center">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="text-sm font-medium text-gray-500">{category?.name}</span>
+                          <div className="flex items-center">
+                            <Star className="text-yellow-500 fill-current" size={16} />
+                            <span className="text-sm font-medium ml-1">{product.rating}/5</span>
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                          {product.name}
+                        </h3>
+                        
+                        <p className="text-gray-600 text-base mb-6">
+                          {product.shortDescription}
+                        </p>
+                        
+                        <div className="mb-6">
+                          <div className="flex items-center gap-3 mb-2">
+                            <span className="text-3xl md:text-4xl font-bold text-green-600">
+                              ₹{product.price.toLocaleString()}
+                            </span>
+                            {savings > 0 && (
+                              <span className="text-lg text-gray-500 line-through">
+                                ₹{product.originalPrice.toLocaleString()}
+                              </span>
+                            )}
+                          </div>
+                          {savings > 0 && (
+                            <p className="text-green-600 font-medium">
+                              Save ₹{savings.toLocaleString()} ({savingsPercent}% off)
+                            </p>
+                          )}
+                        </div>
+                        
+                        <button
+                          onClick={() => window.location.href = `/product/${product.id}`}
+                          className="bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors flex items-center justify-center gap-2"
+                          data-testid={`buy-now-featured-${product.id}`}
+                        >
+                          Buy Now
+                          <ArrowRight size={20} />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      
+      {/* Navigation Arrows */}
+      {featuredProducts.length > 1 && (
+        <>
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-10"
+            data-testid="featured-slider-prev"
+          >
+            <ArrowRight className="rotate-180" size={24} />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-10"
+            data-testid="featured-slider-next"
+          >
+            <ArrowRight size={24} />
+          </button>
+        </>
+      )}
+      
+      {/* Slide Indicators */}
+      {featuredProducts.length > 1 && (
+        <div className="flex justify-center mt-6 gap-2">
+          {featuredProducts.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                index === currentIndex ? 'bg-brand-red w-8' : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+              data-testid={`featured-indicator-${index}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // Mock reviews data - changes daily
 const reviews = [
   {
@@ -384,6 +536,45 @@ export default function HomePage() {
               <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-red mb-1 sm:mb-2">24/7</div>
               <div className="text-sm sm:text-base text-gray-600 font-medium">Support Available</div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Products Slider */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-4 sm:mb-6 text-display">
+              Featured <span className="text-gradient">Products</span>
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600">
+              Discover our premium security products with exclusive deals
+            </p>
+          </motion.div>
+
+          <FeaturedProductsSlider />
+          
+          <motion.div
+            className="text-center mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <Link
+              href="/products"
+              className="btn-modern px-8 py-4 text-lg font-bold rounded-xl inline-flex items-center group shadow-lg hover:shadow-xl"
+              data-testid="button-view-all-products"
+            >
+              View All Products
+              <ArrowRight className="ml-3 transition-transform group-hover:translate-x-1" size={20} />
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -917,7 +1108,7 @@ export default function HomePage() {
             
             <Link
               href="/contact"
-              className="btn-modern px-12 py-4 text-xl font-bold rounded-xl inline-flex items-center group"
+              className="bg-brand-red hover:bg-red-700 text-white px-12 py-4 text-xl font-bold rounded-xl inline-flex items-center group shadow-lg hover:shadow-xl transition-all"
               data-testid="button-get-free-quote"
             >
               Get Free Security Assessment
