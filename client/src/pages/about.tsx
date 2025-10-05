@@ -47,10 +47,10 @@ export default function AboutPage() {
             </div>
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Professional security technician at work" 
+                src="/attached_assets/image_1759655122560.png" 
+                alt="Kirpal Securities Office - Professional Security Solutions" 
                 className="rounded-lg shadow-lg w-full h-auto" 
-                data-testid="img-technician"
+                data-testid="img-office"
               />
             </div>
           </div>
