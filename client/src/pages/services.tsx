@@ -29,11 +29,11 @@ export default function ServicesPage() {
           {/* CCTV & Security Cameras */}
           <div className="mb-16" data-testid="section-cctv">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
+              <div className="overflow-hidden rounded-lg shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                  alt="Security camera installation" 
-                  className="rounded-lg shadow-lg w-full h-auto" 
+                  src="/attached_assets/image_1759656714453.png" 
+                  alt="CCTV and security camera installation services" 
+                  className="w-full h-[500px] object-cover object-left-top" 
                   data-testid="img-cctv"
                 />
               </div>
@@ -72,11 +72,11 @@ export default function ServicesPage() {
           {/* Home Security Systems */}
           <div className="mb-16" data-testid="section-home-security">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="lg:order-2">
+              <div className="lg:order-2 overflow-hidden rounded-lg shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                  alt="Home security system control panel" 
-                  className="rounded-lg shadow-lg w-full h-auto" 
+                  src="/attached_assets/image_1759656678518.png" 
+                  alt="Home security system with CCTV cameras" 
+                  className="w-full h-[500px] object-cover object-left-top" 
                   data-testid="img-home-security"
                 />
               </div>
@@ -115,11 +115,11 @@ export default function ServicesPage() {
           {/* Biometric Devices */}
           <div className="mb-16" data-testid="section-biometric">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
+              <div className="overflow-hidden rounded-lg shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1633265486064-086b219458ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                  alt="Biometric fingerprint scanner" 
-                  className="rounded-lg shadow-lg w-full h-auto" 
+                  src="/attached_assets/image_1759656669660.png" 
+                  alt="Biometric access control and fingerprint scanner devices" 
+                  className="w-full h-[500px] object-cover object-left-top" 
                   data-testid="img-biometric"
                 />
               </div>
@@ -158,11 +158,11 @@ export default function ServicesPage() {
           {/* Networking Solutions */}
           <div className="mb-16" data-testid="section-networking">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="lg:order-2">
+              <div className="lg:order-2 overflow-hidden rounded-lg shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                  alt="Network server room with equipment" 
-                  className="rounded-lg shadow-lg w-full h-auto" 
+                  src="/attached_assets/image_1759656662799.png" 
+                  alt="Professional networking solutions and equipment installation" 
+                  className="w-full h-[500px] object-cover object-left-top" 
                   data-testid="img-networking"
                 />
               </div>
@@ -320,14 +320,14 @@ export default function ServicesPage() {
                 </div>
               </div>
               
-              <div className="relative">
+              <div className="relative overflow-hidden rounded-lg shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                  src="/attached_assets/image_1759656687097.png" 
                   alt="Electric fencing installation by KIRPAL SECURITIES" 
-                  className="rounded-lg shadow-2xl w-full h-auto" 
+                  className="w-full h-[500px] object-cover object-left-top" 
                   data-testid="img-electric-fencing"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-center">
                   <button 
                     className="bg-yellow-400 text-black px-8 py-3 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all transform hover:scale-105 shadow-lg w-full"
