@@ -512,8 +512,7 @@ export default function ProductsPage() {
             </Button>
             <Link href="/packages">
               <Button 
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-brand-red px-8 py-3"
+                className="bg-white text-brand-red hover:bg-gray-100 px-8 py-3"
                 data-testid="button-view-packages"
               >
                 View CCTV Packages

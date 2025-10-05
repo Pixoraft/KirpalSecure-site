@@ -49,7 +49,7 @@ export default function AboutPage() {
               <img 
                 src="/attached_assets/image_1759655122560.png" 
                 alt="Kirpal Securities Office - Professional Security Solutions" 
-                className="rounded-lg shadow-lg w-full max-w-md h-auto object-cover" 
+                className="rounded-lg shadow-lg w-80 h-80 object-cover" 
                 data-testid="img-office"
               />
             </div>
