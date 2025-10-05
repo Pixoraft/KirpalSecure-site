@@ -1,5 +1,6 @@
 import { Award, Clock, Users, DollarSign, MapPin } from "lucide-react";
 import { SEOHead } from "@/components/seo-head";
+import officeImage from "@assets/image_1759655122560.png";
 
 export default function AboutPage() {
   return (
@@ -47,7 +48,7 @@ export default function AboutPage() {
             </div>
             <div className="flex items-center justify-center">
               <img 
-                src="/attached_assets/image_1759655122560.png" 
+                src={officeImage} 
                 alt="Kirpal Securities Office - Professional Security Solutions" 
                 className="rounded-lg shadow-lg w-80 h-80 object-cover" 
                 data-testid="img-office"

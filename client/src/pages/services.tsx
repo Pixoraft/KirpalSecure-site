@@ -1,6 +1,11 @@
 import { Link } from "wouter";
 import { Video, Home, Fingerprint, Network, Phone, Wrench, CheckCircle, Zap, Shield, Award } from "lucide-react";
 import { SEOHead } from "@/components/seo-head";
+import cctvImage from "@assets/image_1759656714453.png";
+import homeSecurityImage from "@assets/image_1759656678518.png";
+import biometricImage from "@assets/image_1759656669660.png";
+import networkingImage from "@assets/image_1759656662799.png";
+import electricFencingImage from "@assets/image_1759656687097.png";
 
 export default function ServicesPage() {
   return (
@@ -31,7 +36,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="overflow-hidden rounded-lg shadow-lg">
                 <img 
-                  src="/attached_assets/image_1759656714453.png" 
+                  src={cctvImage} 
                   alt="CCTV and security camera installation services" 
                   className="w-full h-[500px] object-cover object-left-top" 
                   data-testid="img-cctv"
@@ -74,7 +79,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:order-2 overflow-hidden rounded-lg shadow-lg">
                 <img 
-                  src="/attached_assets/image_1759656678518.png" 
+                  src={homeSecurityImage} 
                   alt="Home security system with CCTV cameras" 
                   className="w-full h-[500px] object-cover object-left-top" 
                   data-testid="img-home-security"
@@ -117,7 +122,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="overflow-hidden rounded-lg shadow-lg">
                 <img 
-                  src="/attached_assets/image_1759656669660.png" 
+                  src={biometricImage} 
                   alt="Biometric access control and fingerprint scanner devices" 
                   className="w-full h-[500px] object-cover object-left-top" 
                   data-testid="img-biometric"
@@ -160,7 +165,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:order-2 overflow-hidden rounded-lg shadow-lg">
                 <img 
-                  src="/attached_assets/image_1759656662799.png" 
+                  src={networkingImage} 
                   alt="Professional networking solutions and equipment installation" 
                   className="w-full h-[500px] object-cover object-left-top" 
                   data-testid="img-networking"
@@ -322,7 +327,7 @@ export default function ServicesPage() {
               
               <div className="relative overflow-hidden rounded-lg shadow-2xl">
                 <img 
-                  src="/attached_assets/image_1759656687097.png" 
+                  src={electricFencingImage} 
                   alt="Electric fencing installation by KIRPAL SECURITIES" 
                   className="w-full h-[500px] object-cover object-left-top" 
                   data-testid="img-electric-fencing"
