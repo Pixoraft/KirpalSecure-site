@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Shield, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import kirpalLogo from "@assets/image_1759637433269.png";
 
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -44,11 +45,15 @@ export function Navigation() {
               >
                 <div className="relative">
                   <motion.div
-                    className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-xl shadow-glow flex items-center justify-center"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.8 }}
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl shadow-glow flex items-center justify-center overflow-hidden"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <Shield className="text-white" size={20} />
+                    <img 
+                      src={kirpalLogo} 
+                      alt="Kirpal Securities Logo" 
+                      className="w-full h-full object-cover"
+                    />
                   </motion.div>
                   <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-red-500 rounded-full animate-pulse"></div>
                 </div>
