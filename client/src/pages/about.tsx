@@ -45,11 +45,11 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="flex items-center justify-center">
               <img 
                 src="/attached_assets/image_1759655122560.png" 
                 alt="Kirpal Securities Office - Professional Security Solutions" 
-                className="rounded-lg shadow-lg w-full h-auto" 
+                className="rounded-lg shadow-lg w-full max-w-md h-auto object-cover" 
                 data-testid="img-office"
               />
             </div>

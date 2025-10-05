@@ -635,13 +635,20 @@ export default function HomePage() {
                     Learn More
                     <ArrowRight className="ml-2" size={18} />
                   </Link>
-                  <Link
-                    href="/contact"
+                  <button
+                    onClick={() => {
+                      window.dispatchEvent(new CustomEvent('openQueryForm', {
+                        detail: {
+                          serviceType: 'Electric Fencing Installation',
+                          message: 'I am interested in KIRPAL SECURITIES electric fencing installation. Please provide detailed pricing and timeline information.'
+                        }
+                      }));
+                    }}
                     className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all"
                     data-testid="button-fence-contact"
                   >
                     Buy Now
-                  </Link>
+                  </button>
                 </div>
               </div>
               

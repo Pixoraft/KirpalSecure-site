@@ -245,6 +245,7 @@ Please get back to me. Thanks!`;
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
+                      <SelectItem value="electric-fencing">Electric Fencing Installation</SelectItem>
                       <SelectItem value="cctv">CCTV & Security Cameras</SelectItem>
                       <SelectItem value="home-security">Home Security Systems</SelectItem>
                       <SelectItem value="biometric">Biometric Devices</SelectItem>
