@@ -194,7 +194,7 @@ Please get back to me. Thanks!`;
             
             {/* Modal */}
             <motion.div
-              className="fixed inset-4 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-96 w-full h-fit max-h-[calc(100vh-2rem)] sm:max-h-[85vh] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl z-[120] overflow-y-auto m-auto"
+              className="fixed inset-4 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 w-full sm:w-96 md:w-[28rem] lg:w-[32rem] h-fit max-h-[calc(100vh-2rem)] sm:max-h-[85vh] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl z-[120] overflow-y-auto m-auto"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}

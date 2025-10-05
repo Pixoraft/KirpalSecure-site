@@ -1,5 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
 import session from "express-session";
+import path from "path";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
@@ -50,10 +51,12 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  const server = await registerRoutes(app);
+  // Serve attached assets FIRST (product images, etc.)
+  // Use absolute path to ensure it works in both dev and production
+  const attachedAssetsPath = path.resolve(process.cwd(), 'attached_assets');
+  app.use('/attached_assets', express.static(attachedAssetsPath));
 
-  // Serve attached assets (product images, etc.)
-  app.use('/attached_assets', express.static('attached_assets'));
+  const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
