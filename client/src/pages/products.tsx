@@ -54,7 +54,7 @@ Please provide more details and help me get a quote. Thanks!`;
       data-testid={`whatsapp-${product.id}`}
     >
       <MessageCircle className="mr-2" size={16} />
-      Get Quote on WhatsApp
+      Buy Now
     </Button>
   );
 }
@@ -173,15 +173,16 @@ function ProductCard({ product, onViewDetails }: { product: Product; onViewDetai
         
         {/* Action Buttons */}
         <div className="space-y-2 pt-4 border-t">
-          <Button 
-            onClick={() => onViewDetails(product)}
-            variant="outline" 
-            className="w-full min-h-[44px]"
-            data-testid={`view-details-${product.id}`}
-          >
-            <Eye className="mr-2" size={16} />
-            View Details
-          </Button>
+          <Link href={`/product/${product.id}`}>
+            <Button 
+              variant="outline" 
+              className="w-full min-h-[44px]"
+              data-testid={`view-details-${product.id}`}
+            >
+              <Eye className="mr-2" size={16} />
+              View Full Details
+            </Button>
+          </Link>
           <WhatsAppButton product={product} />
         </div>
       </CardContent>
@@ -507,7 +508,7 @@ export default function ProductsPage() {
               data-testid="button-whatsapp-inquiry"
             >
               <MessageCircle className="mr-2" size={20} />
-              WhatsApp for Quote
+              Buy Now on WhatsApp
             </Button>
             <Link href="/packages">
               <Button 

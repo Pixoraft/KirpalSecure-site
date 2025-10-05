@@ -18,7 +18,7 @@
       "category": "security-cameras",
       "price": 2800,
       "originalPrice": 3500,
-      "image": "@assets/image_1759637441452.png",
+      "image": "/attached_assets/image_1759637441452.png",
       "shortDescription": "Professional outdoor bullet camera with infrared night vision",
       "description": "White Eagle professional bullet camera designed for outdoor surveillance with excellent infrared night vision and weatherproof housing. Features advanced motion detection and high-resolution recording.",
       "features": [
@@ -50,7 +50,7 @@
       "category": "security-cameras",
       "price": 3200,
       "originalPrice": 4000,
-      "image": "@assets/image_1759637448962.png",
+      "image": "/attached_assets/image_1759637448962.png",
       "shortDescription": "Advanced dome camera with color night vision and built-in LEDs",
       "description": "White Eagle dome security camera with superior color night vision, built-in LED illumination, and weather-resistant construction. Perfect for 24/7 monitoring with crystal clear video quality.",
       "features": [
@@ -82,7 +82,7 @@
       "category": "access-control",
       "price": 3500,
       "originalPrice": 4500,
-      "image": "@assets/image_1759637460170.png",
+      "image": "/attached_assets/image_1759637460170.png",
       "shortDescription": "Professional electronic lock with secure access control",
       "description": "Advanced electronic door lock system providing secure access control for residential and commercial applications. Features durable construction and reliable locking mechanism.",
       "features": [
