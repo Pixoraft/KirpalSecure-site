@@ -194,26 +194,26 @@ Please get back to me. Thanks!`;
             
             {/* Modal */}
             <motion.div
-              className="fixed left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] sm:w-[420px] md:w-[450px] lg:w-[480px] max-w-[95vw] h-fit max-h-[calc(100vh-4rem)] overflow-y-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl z-[120]"
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md h-fit max-h-[90vh] overflow-y-auto bg-white dark:bg-gray-900 rounded-xl shadow-2xl z-[120]"
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.25 }}
+              exit={{ opacity: 0, scale: 0.9, y: 30 }}
+              transition={{ duration: 0.2 }}
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Buy Now</h3>
+              <div className="flex items-center justify-between p-4 sm:p-5 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Buy Now</h3>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-3 min-w-[44px] min-h-[44px] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors flex items-center justify-center"
+                  className="p-2 min-w-[40px] min-h-[40px] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors flex items-center justify-center"
                   data-testid="close-query-form"
                 >
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} className="p-6 space-y-4">
+              <form onSubmit={handleSubmit} className="p-4 sm:p-5 space-y-3">
                 {/* Name */}
                 <div>
                   <Label htmlFor="name" className="text-sm font-medium">Your Name</Label>
