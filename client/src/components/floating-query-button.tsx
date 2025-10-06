@@ -192,13 +192,13 @@ Please get back to me. Thanks!`;
               onClick={() => setIsOpen(false)}
             />
             
-            {/* Modal */}
+            {/* Modal - Slides from right */}
             <motion.div
-              className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md h-fit max-h-[90vh] overflow-y-auto bg-white dark:bg-gray-900 rounded-xl shadow-2xl z-[120]"
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 30 }}
-              transition={{ duration: 0.2 }}
+              className="fixed right-0 top-0 h-full w-full sm:w-[420px] md:w-[450px] overflow-y-auto bg-white dark:bg-gray-900 shadow-2xl z-[120]"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               {/* Header */}
               <div className="flex items-center justify-between p-4 sm:p-5 border-b border-gray-200 dark:border-gray-700">
