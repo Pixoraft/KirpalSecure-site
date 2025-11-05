@@ -34,84 +34,81 @@ export function CCTVCamera() {
       }}
     >
       <div className="relative">
-        {/* Wall Mount Bracket - L-shaped */}
-        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-          {/* Vertical part of bracket */}
-          <div className="w-3 h-8 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 border border-gray-500 shadow-lg"></div>
-          {/* Horizontal connector */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-10 h-2 bg-gradient-to-b from-gray-600 to-gray-700 border border-gray-500 shadow-md"></div>
+        {/* Wall Mount Bracket - Top */}
+        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          {/* Mounting Plate */}
+          <div className="w-20 h-6 bg-gradient-to-b from-gray-200 via-gray-300 to-gray-400 rounded-t-lg border-2 border-gray-400 shadow-xl relative">
+            {/* Screw holes */}
+            <div className="absolute top-1.5 left-2 w-1.5 h-1.5 bg-gray-600 rounded-full shadow-inner"></div>
+            <div className="absolute top-1.5 right-2 w-1.5 h-1.5 bg-gray-600 rounded-full shadow-inner"></div>
+            {/* Cable conduit holes */}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-2 bg-gray-500 rounded-b"></div>
+          </div>
+          {/* Connection arm */}
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-3 bg-gradient-to-b from-gray-300 to-gray-400 border-x-2 border-gray-400"></div>
         </div>
         
-        {/* Bullet-Style CCTV Camera Housing */}
-        <div className="relative pt-6">
-          {/* Main Cylindrical Body */}
-          <div className="relative w-24 h-12 flex items-center">
-            {/* Camera Cylinder - Bullet Style */}
-            <div className="absolute left-0 w-24 h-12 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 rounded-r-full shadow-2xl border-2 border-gray-400 overflow-hidden">
+        {/* PTZ Dome Camera Housing */}
+        <div className="relative pt-5">
+          <div className="relative w-24 h-20">
+            {/* White Dome Housing - Upper half */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-14 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-t-full border-2 border-gray-300 shadow-2xl overflow-hidden">
               {/* Top highlight */}
-              <div className="absolute top-0 left-0 right-0 h-3 bg-gradient-to-b from-white/40 to-transparent rounded-tr-full"></div>
-              {/* Bottom shadow */}
-              <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-t from-black/20 to-transparent rounded-br-full"></div>
+              <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-b from-white/80 to-transparent rounded-t-full"></div>
+              {/* Side shadows */}
+              <div className="absolute top-0 left-0 bottom-0 w-3 bg-gradient-to-r from-gray-300/40 to-transparent"></div>
+              <div className="absolute top-0 right-0 bottom-0 w-3 bg-gradient-to-l from-gray-300/40 to-transparent"></div>
               
-              {/* Lens Section at front */}
-              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 w-16 h-16 -mr-4">
-                {/* Outer Lens Ring - Black */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-full border-4 border-gray-700 shadow-2xl flex items-center justify-center">
-                  {/* Middle Ring */}
-                  <div className="w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-full border-2 border-gray-600 flex items-center justify-center">
-                    {/* Glass Lens */}
-                    <div className="w-9 h-9 bg-gradient-to-br from-blue-900 via-blue-950 to-black rounded-full border-2 border-blue-800 relative overflow-hidden shadow-inner">
-                      {/* Lens Reflection */}
-                      <div className="absolute top-1 left-1.5 w-3 h-3 bg-white/50 rounded-full blur-sm"></div>
-                      <div className="absolute top-2 right-1.5 w-1.5 h-1.5 bg-blue-300/40 rounded-full blur-[1px]"></div>
-                      
-                      {/* Lens Internal Details */}
-                      <div className="absolute inset-1 border-2 border-blue-400/30 rounded-full"></div>
-                      <div className="absolute inset-2 border border-blue-500/20 rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
+              {/* Brand Label on top */}
+              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                <div className="text-[10px] font-black text-brand-red tracking-tight">KIRPAL</div>
               </div>
-              
-              {/* IR LED Ring around lens */}
-              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 w-16 h-16 -mr-4">
-                {/* 6 IR LEDs positioned in a circle */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-red-900 rounded-full border border-red-700"></div>
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-red-900 rounded-full border border-red-700"></div>
-                <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-red-900 rounded-full border border-red-700"></div>
-                <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-red-900 rounded-full border border-red-700"></div>
-                <div className="absolute top-2 right-2 w-2 h-2 bg-red-900 rounded-full border border-red-700"></div>
-                <div className="absolute bottom-2 left-2 w-2 h-2 bg-red-900 rounded-full border border-red-700"></div>
-              </div>
-              
-              {/* Status LED - Recording */}
-              <div className="absolute top-1.5 left-3 w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse shadow-lg border border-red-300">
-                <div className="absolute inset-0.5 bg-red-400 rounded-full"></div>
-              </div>
-              
-              {/* Brand Label */}
-              <div className="absolute top-1.5 left-8 text-[9px] font-black text-gray-700 tracking-tight">
-                KIRPAL
-              </div>
-              <div className="absolute top-3.5 left-8 text-[6px] font-bold text-gray-500 tracking-wider">
-                CCTV
-              </div>
-              
-              {/* Camera Body Details */}
-              <div className="absolute bottom-1.5 left-3 space-y-px">
-                <div className="w-5 h-px bg-gray-400 opacity-60"></div>
-                <div className="w-5 h-px bg-gray-400 opacity-60"></div>
-                <div className="w-5 h-px bg-gray-400 opacity-60"></div>
-              </div>
-              
-              {/* Adjustment Ring Details */}
-              <div className="absolute left-8 top-0 bottom-0 w-px bg-gray-400 opacity-40"></div>
-              <div className="absolute left-12 top-0 bottom-0 w-px bg-gray-400 opacity-40"></div>
             </div>
             
-            {/* Sunshade/Hood at front */}
-            <div className="absolute right-0 w-6 h-14 -mr-2">
-              <div className="w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-r-lg border-2 border-gray-700 shadow-xl"></div>
+            {/* Lower Housing Base - White */}
+            <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-24 h-8 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300 border-2 border-t-0 border-gray-300 shadow-xl rounded-b-lg overflow-hidden">
+              {/* Bottom shadow */}
+              <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+            
+            {/* PTZ Black Ball Mechanism - Visible through dome */}
+            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 z-10">
+              {/* Black PTZ Ball */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-full border-2 border-gray-700 shadow-2xl flex items-center justify-center">
+                {/* Camera Lens Housing */}
+                <div className="w-10 h-10 bg-gradient-to-br from-gray-800 to-black rounded-full border-2 border-gray-600 flex items-center justify-center relative">
+                  {/* Main Glass Lens */}
+                  <div className="w-7 h-7 bg-gradient-to-br from-blue-900 via-blue-950 to-black rounded-full border-2 border-blue-800 relative overflow-hidden shadow-inner">
+                    {/* Lens Reflection */}
+                    <div className="absolute top-0.5 left-1 w-2.5 h-2.5 bg-white/60 rounded-full blur-sm"></div>
+                    <div className="absolute top-1.5 right-1 w-1 h-1 bg-blue-300/50 rounded-full blur-[1px]"></div>
+                    {/* Lens Details */}
+                    <div className="absolute inset-1 border border-blue-400/40 rounded-full"></div>
+                    <div className="absolute inset-2 border border-blue-500/30 rounded-full"></div>
+                  </div>
+                  
+                  {/* IR LED Ring - 8 LEDs around the lens */}
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-1.5 h-1.5 bg-red-900 rounded-full border border-red-700 shadow-glow"></div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-1.5 h-1.5 bg-red-900 rounded-full border border-red-700 shadow-glow"></div>
+                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 w-1.5 h-1.5 bg-red-900 rounded-full border border-red-700 shadow-glow"></div>
+                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1 w-1.5 h-1.5 bg-red-900 rounded-full border border-red-700 shadow-glow"></div>
+                  <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-red-900 rounded-full border border-red-700 shadow-glow"></div>
+                  <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-red-900 rounded-full border border-red-700 shadow-glow"></div>
+                  <div className="absolute bottom-1 right-1 w-1.5 h-1.5 bg-red-900 rounded-full border border-red-700 shadow-glow"></div>
+                  <div className="absolute bottom-1 left-1 w-1.5 h-1.5 bg-red-900 rounded-full border border-red-700 shadow-glow"></div>
+                </div>
+                
+                {/* Recording LED on ball */}
+                <div className="absolute top-1 right-2 w-2 h-2 bg-red-500 rounded-full animate-pulse shadow-lg border border-red-300 z-20">
+                  <div className="absolute inset-0.5 bg-red-400 rounded-full"></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Transparent dome glass effect overlay */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-14 rounded-t-full pointer-events-none">
+              <div className="absolute inset-2 bg-gradient-to-br from-white/10 via-transparent to-white/5 rounded-t-full"></div>
+              <div className="absolute top-2 left-4 w-6 h-3 bg-white/20 rounded-full blur-sm"></div>
             </div>
           </div>
         </div>
