@@ -65,15 +65,16 @@ export function CCTVCamera() {
               </div>
             </div>
             
-            {/* Lower Housing Base - White with opening for PTZ ball */}
-            <div className="absolute top-10.5 left-1/2 transform -translate-x-1/2 w-20 h-6.5 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300 border-2 border-t-0 border-gray-300 shadow-xl rounded-b-lg overflow-visible z-20">
+            {/* Middle White Ring - Background for PTZ Ball */}
+            <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-18 h-18 bg-gradient-to-br from-white via-gray-100 to-gray-200 rounded-full border-2 border-gray-300 shadow-xl z-10 flex items-center justify-center">
+              {/* Inner circle */}
+              <div className="w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-full"></div>
+            </div>
+            
+            {/* Lower Housing Base - White */}
+            <div className="absolute top-10.5 left-1/2 transform -translate-x-1/2 w-20 h-6.5 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300 border-2 border-t-0 border-gray-300 shadow-xl rounded-b-lg overflow-hidden z-20">
               {/* Bottom shadow */}
               <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-black/20 to-transparent"></div>
-              
-              {/* Circular opening for PTZ ball */}
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-15 h-12 bg-gradient-to-b from-gray-200 via-gray-300 to-gray-400 rounded-full border-2 border-gray-300 shadow-inner">
-                <div className="absolute inset-2 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full"></div>
-              </div>
             </div>
             
             {/* PTZ Black Ball Mechanism - Visible through dome */}
