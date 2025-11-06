@@ -293,7 +293,7 @@ Please provide more details and availability. Thanks!`;
                   
                   return (
                     <Card key={otherProduct.id} className="group hover:shadow-xl transition-all duration-300" data-testid={`related-product-${otherProduct.id}`}>
-                      <Link href={`/product/${otherProduct.id}`}>
+                      <Link href={`/product/${otherProduct.id}`} data-testid={`link-product-${otherProduct.id}`}>
                         <div className="cursor-pointer">
                           <div className="relative h-48 overflow-hidden rounded-t-lg">
                             <img 
