@@ -82,9 +82,9 @@ export function CCTVCamera() {
               {/* Black PTZ Ball */}
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-full border-2 border-gray-700 shadow-2xl flex items-center justify-center">
                 {/* Camera Lens Housing */}
-                <div className="w-9 h-9 bg-gradient-to-br from-gray-800 to-black rounded-full border-2 border-gray-600 flex items-center justify-center relative">
+                <div className="w-11 h-11 bg-gradient-to-br from-gray-800 to-black rounded-full border-2 border-gray-600 flex items-center justify-center relative">
                   {/* Main Glass Lens */}
-                  <div className="w-6 h-6 bg-gradient-to-br from-blue-900 via-blue-950 to-black rounded-full border-2 border-blue-800 relative overflow-hidden shadow-inner">
+                  <div className="w-7 h-7 bg-gradient-to-br from-blue-900 via-blue-950 to-black rounded-full border-2 border-blue-800 relative overflow-hidden shadow-inner">
                     {/* Lens Reflection */}
                     <div className="absolute top-0.5 left-1 w-2 h-2 bg-white/60 rounded-full blur-sm"></div>
                     <div className="absolute top-1.5 right-1 w-1 h-1 bg-blue-300/50 rounded-full blur-[1px]"></div>
