@@ -90,7 +90,9 @@ export function Footer() {
                   { href: "/", label: "Home", testId: "footer-home" },
                   { href: "/services", label: "Services", testId: "footer-services" },
                   { href: "/about", label: "About Us", testId: "footer-about" },
-                  { href: "/contact", label: "Contact", testId: "footer-contact" }
+                  { href: "/contact", label: "Contact", testId: "footer-contact" },
+                  { href: "/privacy-policy", label: "Privacy Policy", testId: "footer-privacy" },
+                  { href: "/terms-conditions", label: "Terms & Conditions", testId: "footer-terms" }
                 ].map((link, index) => (
                   <li key={link.href}>
                     <Link 

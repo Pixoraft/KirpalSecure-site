@@ -21,9 +21,9 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Product, ProductData } from "@/types/product";
-import productData from "@/data/products.json";
+import productData from "@/data/products";
 
-const data = productData as ProductData;
+const data = productData;
 
 function WhatsAppButton({ product }: { product: Product }) {
   const handleWhatsAppClick = () => {

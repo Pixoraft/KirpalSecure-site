@@ -12,10 +12,10 @@ import { SEOHead } from "@/components/seo-head";
 import { FloatingQueryButton } from "@/components/floating-query-button";
 import CountUp from "react-countup";
 import { ProductData } from "@/types/product";
-import productData from "@/data/products.json";
+import productData from "@/data/products";
 import { cctvPackages, CCTVPackage } from "@/data/packages";
 
-const data = productData as ProductData;
+const data = productData;
 
 // Hero banner slides data
 const heroBannerSlides = [

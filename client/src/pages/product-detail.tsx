@@ -6,9 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { SEOHead } from "@/components/seo-head";
 import { Product, ProductData } from "@/types/product";
-import productData from "@/data/products.json";
+import productData from "@/data/products";
 
-const data = productData as ProductData;
+const data = productData;
 
 export default function ProductDetailPage() {
   const { id } = useParams();

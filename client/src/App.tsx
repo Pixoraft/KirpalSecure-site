@@ -18,6 +18,8 @@ import AboutPage from "@/pages/about";
 import BlogsPage from "@/pages/blogs";
 import BlogDetailPage from "@/pages/blog-detail";
 import ContactPage from "@/pages/contact";
+import PrivacyPolicyPage from "@/pages/privacy-policy";
+import TermsConditionsPage from "@/pages/terms-conditions";
 import { AdminPage } from "@/pages/admin";
 
 function Router() {
@@ -37,6 +39,8 @@ function Router() {
           <Route path="/blogs" component={BlogsPage} />
           <Route path="/blog/:slug" component={BlogDetailPage} />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/privacy-policy" component={PrivacyPolicyPage} />
+          <Route path="/terms-conditions" component={TermsConditionsPage} />
           <Route path="/admin" component={AdminPage} />
           {/* Fallback to 404 */}
           <Route component={NotFound} />

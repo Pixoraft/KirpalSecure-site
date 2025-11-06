@@ -239,7 +239,7 @@ Please get back to me. Thanks!`;
                     <SelectTrigger className="min-h-[44px]" data-testid="service-type-select">
                       <SelectValue placeholder="Select service type" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="z-[130]">
                       {serviceTypes.map((service) => (
                         <SelectItem key={service} value={service}>
                           {service}
@@ -279,7 +279,7 @@ Please get back to me. Thanks!`;
                             <SelectTrigger data-testid="site-type-select">
                               <SelectValue placeholder="Select site type" />
                             </SelectTrigger>
-                            <SelectContent>
+                            <SelectContent className="z-[130]">
                               <SelectItem value="Commercial">Commercial</SelectItem>
                               <SelectItem value="Residential">Residential</SelectItem>
                               <SelectItem value="Industrial">Industrial</SelectItem>
@@ -297,7 +297,7 @@ Please get back to me. Thanks!`;
                             <SelectTrigger data-testid="fencing-type-select">
                               <SelectValue placeholder="Select fencing type" />
                             </SelectTrigger>
-                            <SelectContent>
+                            <SelectContent className="z-[130]">
                               <SelectItem value="Straight Fencing">Straight Fencing</SelectItem>
                               <SelectItem value="Openable Gate Fencing">Openable Gate Fencing</SelectItem>
                               <SelectItem value="Mixed (Straight + Gate)">Mixed (Straight + Gate)</SelectItem>
