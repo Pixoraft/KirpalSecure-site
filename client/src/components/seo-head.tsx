@@ -6,12 +6,15 @@ interface SEOHeadProps {
   keywords?: string;
   image?: string;
   url?: string;
+  canonicalUrl?: string;
   type?: 'website' | 'article';
+  ogType?: string;
   publishedTime?: string;
   modifiedTime?: string;
   author?: string;
   section?: string;
   tags?: string[];
+  structuredData?: any | any[];
 }
 
 export function SEOHead({ 
@@ -20,12 +23,15 @@ export function SEOHead({
   keywords,
   image = "https://kirpalsecurities.com/og-image.jpg",
   url,
+  canonicalUrl,
   type = "website",
+  ogType,
   publishedTime,
   modifiedTime,
   author = "Kirpal Securities",
   section,
-  tags = []
+  tags = [],
+  structuredData
 }: SEOHeadProps) {
   
   useEffect(() => {
@@ -68,10 +74,11 @@ export function SEOHead({
     
     // Canonical URL
     const currentUrl = url || window.location.href;
-    updateLinkTag('canonical', currentUrl);
+    const canonicalLink = canonicalUrl || currentUrl;
+    updateLinkTag('canonical', canonicalLink);
     
     // Open Graph tags
-    updateMetaTag('og:type', type, true);
+    updateMetaTag('og:type', ogType || type, true);
     updateMetaTag('og:title', title, true);
     updateMetaTag('og:description', description, true);
     updateMetaTag('og:image', image, true);
@@ -111,76 +118,92 @@ export function SEOHead({
     updateMetaTag('apple-mobile-web-app-capable', 'yes');
     updateMetaTag('mobile-web-app-capable', 'yes');
 
-    // Structured data for local business
-    let structuredData = document.querySelector('#structured-data') as HTMLScriptElement;
-    if (!structuredData) {
-      structuredData = document.createElement('script');
-      structuredData.id = 'structured-data';
-      structuredData.type = 'application/ld+json';
-      document.head.appendChild(structuredData);
+    // Structured data - clean up and recreate on every render
+    const existingScripts = document.querySelectorAll('script[type="application/ld+json"]');
+    existingScripts.forEach(script => script.remove());
+    
+    if (structuredData) {
+      const dataArray = Array.isArray(structuredData) ? structuredData : [structuredData];
+      dataArray.forEach((data, index) => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = `structured-data-${index}`;
+        script.textContent = JSON.stringify(data);
+        document.head.appendChild(script);
+      });
+    } else {
+      const defaultScript = document.createElement('script');
+      defaultScript.type = 'application/ld+json';
+      defaultScript.id = 'structured-data-default';
+      
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Kirpal Securities",
+        "description": "Professional security solutions provider in Jalandhar offering CCTV installation, home security systems, biometric devices, networking solutions, and repair services.",
+        "url": "https://kirpalsecurities.com",
+        "telephone": ["+91-7009154711", "+91-9463687535"],
+        "email": "kirpalsecurities@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Urban Estate Ph. 2, Road Opp. Hotel Imperia Suites",
+          "addressLocality": "Jalandhar",
+          "addressRegion": "Punjab", 
+          "addressCountry": "India",
+          "postalCode": "144022"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "31.3260",
+          "longitude": "75.5762"
+        },
+        "areaServed": ["Jalandhar", "Punjab"],
+        "priceRange": "₹₹",
+        "openingHours": ["Mo-Fr 09:00-19:00", "Sa 09:00-18:00", "Su 10:00-16:00"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "150"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Security Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "CCTV Installation & Security Cameras"
+              }
+            },
+            {
+              "@type": "Offer", 
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Home Security Systems"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Biometric Access Control"
+              }
+            }
+          ]
+        }
+      };
+      
+      defaultScript.textContent = JSON.stringify(schema);
+      document.head.appendChild(defaultScript);
     }
-    
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Kirpal Securities",
-      "description": "Professional security solutions provider in Jalandhar offering CCTV installation, home security systems, biometric devices, networking solutions, and repair services.",
-      "url": "https://kirpalsecurities.com",
-      "telephone": ["+91-7009154711", "+91-9463687535"],
-      "email": "kirpalsecurities@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Urban Estate Ph. 2, Road Opp. Hotel Imperia Suites",
-        "addressLocality": "Jalandhar",
-        "addressRegion": "Punjab", 
-        "addressCountry": "India",
-        "postalCode": "144022"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "31.3260",
-        "longitude": "75.5762"
-      },
-      "areaServed": ["Jalandhar", "Punjab"],
-      "priceRange": "₹₹",
-      "openingHours": ["Mo-Fr 09:00-19:00", "Sa 09:00-18:00", "Su 10:00-16:00"],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "150"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Security Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "CCTV Installation & Security Cameras"
-            }
-          },
-          {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Home Security Systems"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Biometric Access Control"
-            }
-          }
-        ]
-      }
-    };
-    
-    structuredData.textContent = JSON.stringify(schema);
 
-  }, [title, description, keywords, image, url, type, publishedTime, modifiedTime, author, section]);
+    return () => {
+      const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+      scripts.forEach(script => script.remove());
+    };
+
+  }, [title, description, keywords, image, url, canonicalUrl, type, ogType, publishedTime, modifiedTime, author, section, structuredData]);
 
   return null;
 }

@@ -438,9 +438,9 @@ export default function HomePage() {
   return (
     <>
       <SEOHead
-        title="Security Solutions Jalandhar | Kirpal Securities"
-        description="Professional CCTV installation, electric fencing, biometric systems and home security in Jalandhar. 500+ installations, 2-year warranty. Call 7009154711."
-        keywords="security solutions Jalandhar, CCTV installation Jalandhar, electric fence Punjab, biometric systems Jalandhar, home security Jalandhar, surveillance cameras Punjab, security company Jalandhar"
+        title="Security Solutions Jalandhar | White Eagle Camera Dealer | Kirpal Securities"
+        description="Professional CCTV installation, White Eagle camera dealer, electric fencing, biometric systems and home security in Jalandhar. White Eagle cameras at best prices. 500+ installations, 2-year warranty. Call 7009154711."
+        keywords="white eagle camera, white eagle camera price, white eagle cctv camera, white eagle camera jalandhar, buy white eagle camera, security solutions Jalandhar, CCTV installation Jalandhar, electric fence Punjab, biometric systems Jalandhar, home security Jalandhar, surveillance cameras Punjab, security company Jalandhar, white eagle bullet camera, white eagle dome camera"
         image="https://kirpalsecurities.com/hero-security-team.jpg"
         url="https://kirpalsecurities.com"
         type="website"
@@ -574,6 +574,134 @@ export default function HomePage() {
             >
               View All Products
               <ArrowRight className="ml-3 transition-transform group-hover:translate-x-1" size={20} />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* White Eagle Cameras Section - SEO Optimized */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full mb-4">
+              <Video className="w-5 h-5 text-blue-600" />
+              <span className="text-sm font-semibold text-blue-900">Authorized Dealer</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-4">
+              White Eagle <span className="text-gradient">Camera</span> in Jalandhar
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+              Buy genuine White Eagle CCTV cameras at best prices. Authorized dealer offering professional installation, 2-year warranty, and lifetime support in Punjab.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {data.products
+              .filter(p => p.name.toLowerCase().includes('white eagle'))
+              .map((product, index) => (
+                <motion.div
+                  key={product.id}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  data-testid={`white-eagle-card-${product.id}`}
+                >
+                  <div className="relative h-64">
+                    <img 
+                      src={product.image} 
+                      alt={`${product.name} - Best price in Jalandhar`}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
+                    </div>
+                    <div className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-lg shadow-lg">
+                      <div className="flex items-center gap-1">
+                        <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                        <span className="font-semibold">{product.rating}</span>
+                        <span className="text-gray-600 text-sm">/5</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{product.name}</h3>
+                    <p className="text-gray-600 mb-4">{product.shortDescription}</p>
+                    
+                    <div className="flex items-baseline gap-3 mb-4">
+                      <span className="text-3xl font-bold text-green-600 flex items-center">
+                        <IndianRupee className="w-6 h-6" />
+                        {product.price.toLocaleString()}
+                      </span>
+                      <span className="text-lg text-gray-400 line-through flex items-center">
+                        <IndianRupee className="w-4 h-4" />
+                        {product.originalPrice.toLocaleString()}
+                      </span>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-2 mb-4">
+                      {product.features.slice(0, 4).map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-1 text-sm text-gray-700">
+                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                          <span className="truncate">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <Link href={`/product/${product.id}`}>
+                      <button className="w-full bg-brand-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold transition-colors flex items-center justify-center gap-2">
+                        View Details
+                        <ArrowRight size={18} />
+                      </button>
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+          </div>
+
+          <motion.div
+            className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Why Buy White Eagle Cameras from Kirpal Securities?
+            </h3>
+            <div className="grid md:grid-cols-4 gap-6 mb-8">
+              <div className="flex flex-col items-center">
+                <Shield className="w-12 h-12 mb-3 text-yellow-300" />
+                <p className="font-semibold">100% Genuine Products</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Award className="w-12 h-12 mb-3 text-yellow-300" />
+                <p className="font-semibold">Best Price Guarantee</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Users className="w-12 h-12 mb-3 text-yellow-300" />
+                <p className="font-semibold">Expert Installation</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Clock className="w-12 h-12 mb-3 text-yellow-300" />
+                <p className="font-semibold">2 Year Warranty</p>
+              </div>
+            </div>
+            <Link
+              href="/white-eagle-cameras"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 font-bold rounded-xl hover:bg-gray-100 transition-all shadow-lg text-lg"
+              data-testid="button-white-eagle-page"
+            >
+              View All White Eagle Cameras
+              <ArrowRight className="ml-2" size={20} />
             </Link>
           </motion.div>
         </div>

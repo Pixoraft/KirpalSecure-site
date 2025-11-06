@@ -6,6 +6,10 @@ Allow: /
 
 # Prioritize important pages for crawlers
 Allow: /services
+Allow: /products
+Allow: /white-eagle-cameras
+Allow: /product/
+Allow: /packages
 Allow: /about
 Allow: /contact
 Allow: /blogs
