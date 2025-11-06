@@ -1,8 +1,9 @@
-import { useParams, useLocation } from "wouter";
+import { useParams, useLocation, Link } from "wouter";
 import { useState, useEffect } from "react";
 import { ArrowLeft, Star, IndianRupee, CheckCircle, MessageCircle, Phone, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { SEOHead } from "@/components/seo-head";
 import { Product, ProductData } from "@/types/product";
 import productData from "@/data/products.json";
@@ -275,6 +276,82 @@ Please provide more details and availability. Thanks!`;
                   </div>
                 )}
               </div>
+            </div>
+          </div>
+
+          {/* Other Products Section */}
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Other Products You May Like</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {data.products
+                .filter(p => p.id !== product.id)
+                .slice(0, 3)
+                .map((otherProduct) => {
+                  const otherCategory = data.categories.find(cat => cat.id === otherProduct.category);
+                  const savings = otherProduct.originalPrice - otherProduct.price;
+                  const savingsPercent = Math.round((savings / otherProduct.originalPrice) * 100);
+                  
+                  return (
+                    <Card key={otherProduct.id} className="group hover:shadow-xl transition-all duration-300" data-testid={`related-product-${otherProduct.id}`}>
+                      <Link href={`/product/${otherProduct.id}`}>
+                        <div className="cursor-pointer">
+                          <div className="relative h-48 overflow-hidden rounded-t-lg">
+                            <img 
+                              src={otherProduct.image} 
+                              alt={otherProduct.name}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            />
+                            {otherProduct.featured && (
+                              <Badge className="absolute top-2 left-2 bg-yellow-500 text-black">
+                                ⭐ Featured
+                              </Badge>
+                            )}
+                            {savingsPercent > 0 && (
+                              <Badge className="absolute top-2 right-2 bg-red-500 text-white">
+                                {savingsPercent}% OFF
+                              </Badge>
+                            )}
+                          </div>
+                          <CardHeader>
+                            <Badge variant="secondary" className="w-fit mb-2">
+                              {otherCategory?.name}
+                            </Badge>
+                            <CardTitle className="text-lg line-clamp-2 group-hover:text-brand-red transition-colors">
+                              {otherProduct.name}
+                            </CardTitle>
+                            <CardDescription className="line-clamp-2">
+                              {otherProduct.shortDescription}
+                            </CardDescription>
+                          </CardHeader>
+                          <CardContent>
+                            <div className="flex items-center justify-between mb-4">
+                              <div className="flex items-center gap-2">
+                                <span className="text-2xl font-bold text-green-600">
+                                  ₹{otherProduct.price.toLocaleString()}
+                                </span>
+                                {savings > 0 && (
+                                  <span className="text-sm text-gray-500 line-through">
+                                    ₹{otherProduct.originalPrice.toLocaleString()}
+                                  </span>
+                                )}
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <Star className="text-yellow-500 fill-current" size={14} />
+                                <span className="text-sm font-medium">{otherProduct.rating}</span>
+                              </div>
+                            </div>
+                            <Button 
+                              className="w-full bg-brand-red hover:bg-red-700 text-white"
+                              data-testid={`view-product-${otherProduct.id}`}
+                            >
+                              View Details
+                            </Button>
+                          </CardContent>
+                        </div>
+                      </Link>
+                    </Card>
+                  );
+                })}
             </div>
           </div>
 
