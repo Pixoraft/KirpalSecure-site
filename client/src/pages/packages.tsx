@@ -42,8 +42,8 @@ const cctvPackages: CCTVPackage[] = [
     name: "Silver IP Camera Set",
     category: "silver",
     cameraCount: 4,
-    discountedPrice: 13000,
-    originalPrice: 16999,
+    discountedPrice: 20000,   // Kirpal veer price
+    originalPrice: 23999,     // Market original
     features: [
       "5MP Silver Plastic Body (Day/Night Color + Audio)",
       "5 Channel NVR (4K Resolution)",
@@ -60,13 +60,14 @@ const cctvPackages: CCTVPackage[] = [
     maxSupport: "8MP",
     warranty: "2 Years"
   },
+
   {
     id: "silver-ip-8",
     name: "Silver IP Camera Set",
     category: "silver",
     cameraCount: 8,
-    discountedPrice: 21000,
-    originalPrice: 23999,
+    discountedPrice: 29000,   // Kirpal veer price
+    originalPrice: 32999,
     features: [
       "8 Outdoor 5MP Silver Plastic Body (Day/Night Color + Audio)",
       "10 Channel NVR (4K Resolution)",
@@ -83,13 +84,14 @@ const cctvPackages: CCTVPackage[] = [
     maxSupport: "8MP",
     warranty: "2 Years"
   },
+
   {
     id: "gold-ip-4",
     name: "Gold IP Series",
     category: "gold",
     cameraCount: 4,
-    discountedPrice: 14500,
-    originalPrice: 18999,
+    discountedPrice: 22500,   // Kirpal veer price
+    originalPrice: 27999,
     features: [
       "4 Outdoor 5MP Gold Metal Body (Day/Night Color + Audio)",
       "5 Channel NVR (4K Resolution)",
@@ -106,13 +108,14 @@ const cctvPackages: CCTVPackage[] = [
     maxSupport: "8MP",
     warranty: "2 Years"
   },
+
   {
     id: "gold-ip-8",
     name: "Gold IP Series",
     category: "gold",
     cameraCount: 8,
-    discountedPrice: 23000,
-    originalPrice: 26999,
+    discountedPrice: 32000,   // Kirpal veer gold series IP 8 set
+    originalPrice: 36999,
     features: [
       "8 Outdoor 5MP Gold Metal Body (Day/Night Color + Audio)",
       "10 Channel NVR (4K Resolution)",
@@ -129,13 +132,14 @@ const cctvPackages: CCTVPackage[] = [
     maxSupport: "8MP",
     warranty: "2 Years"
   },
+
   {
     id: "silver-hd-4",
     name: "Silver HD Camera Setup",
     category: "hd",
     cameraCount: 4,
-    discountedPrice: 10000,
-    originalPrice: 12839,
+    discountedPrice: 16000,   // Kirpal veer price
+    originalPrice: 18999,
     features: [
       "4 Outdoor 5MP Silver Plastic Body (Day/Night Color + Audio)",
       "4 Channel DVR",
@@ -152,13 +156,14 @@ const cctvPackages: CCTVPackage[] = [
     maxSupport: "5MP",
     warranty: "2 Years"
   },
+
   {
     id: "silver-hd-8",
     name: "Silver HD Camera Setup",
     category: "hd",
     cameraCount: 8,
-    discountedPrice: 12500,
-    originalPrice: 13839,
+    discountedPrice: 21500,   // Kirpal veer price
+    originalPrice: 24999,
     features: [
       "8 Outdoor 5MP Silver Plastic Body (Day/Night Color + Audio)",
       "8 Channel DVR",
@@ -175,13 +180,14 @@ const cctvPackages: CCTVPackage[] = [
     maxSupport: "5MP",
     warranty: "2 Years"
   },
+
   {
     id: "gold-hd-8",
     name: "Gold HD Camera Setup",
     category: "hd",
     cameraCount: 8,
-    discountedPrice: 13839,
-    originalPrice: 14500,
+    discountedPrice: 23000,   // Kirpal veer price
+    originalPrice: 26999,
     features: [
       "8 Outdoor 3MP Gold Metal Body (Day/Night Color + Audio)",
       "8 Channel DVR",
@@ -198,7 +204,9 @@ const cctvPackages: CCTVPackage[] = [
     maxSupport: "5MP",
     warranty: "2 Years"
   }
-];
+]
+
+  
 
 function WhatsAppButton({ packageName, price }: { packageName: string; price: number }) {
   const handleWhatsAppClick = () => {
