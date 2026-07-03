@@ -1,0 +1,166 @@
+ROLE
+You are a senior Local SEO strategist and service-area content architect specializing in service business websites.
+
+Your task is to create a **high-authority local landing page** for Electric Fence Installation in Amritsar for Kirpal Securities.
+
+PRIMARY GOAL
+
+Create a dedicated SEO page designed to rank on Google for:
+
+Electric Fence Installation Amritsar
+
+The page should strongly target Amritsar searches while also indicating that Kirpal Securities provides services across Punjab.
+
+TARGET LOCATION
+
+Primary city: Amritsar, Punjab
+
+Nearby areas that should be naturally mentioned in content:
+
+Ranjit Avenue
+Lawrence Road
+Majitha Road
+Batala Road
+Chheharta
+Airport Road
+Verka
+Attari Road
+
+PRIMARY KEYWORDS
+
+electric fence installation amritsar
+electric fencing amritsar
+solar electric fence amritsar
+electric fence company amritsar
+
+SECONDARY KEYWORDS
+
+perimeter electric fencing amritsar
+farm electric fencing amritsar
+warehouse electric fencing amritsar
+industrial electric fence amritsar
+
+PAGE URL
+
+/electric-fence-installation-amritsar
+
+PAGE STRUCTURE
+
+SECTION 1 — HERO SECTION
+
+H1
+
+Electric Fence Installation in Amritsar
+
+Subheading
+
+Kirpal Securities provides professional electric fence installation services in Amritsar for farms, warehouses, factories and residential properties.
+
+Explain that the company installs solar electric fencing systems designed to provide reliable perimeter security.
+
+CTA Buttons
+
+Call Now
+Get Free Site Inspection
+WhatsApp Consultation
+
+SECTION 2 — ELECTRIC FENCING SERVICES IN AMRITSAR
+
+Explain local demand.
+
+Example content:
+
+Electric fencing is widely used in Amritsar to protect agricultural land, warehouses, commercial properties and industrial facilities. With large agricultural areas and storage facilities around the city, electric fencing systems help secure property boundaries effectively.
+
+Kirpal Securities installs professional electric fencing systems designed for strong and reliable perimeter security.
+
+SECTION 3 — WHERE ELECTRIC FENCING IS USED IN AMRITSAR
+
+Create sub sections.
+
+Electric fencing for farms in Amritsar
+Electric fencing for warehouses and storage facilities
+Electric fencing for factories and industrial sites
+Electric fencing for residential properties
+
+Explain the benefits of each use case.
+
+SECTION 4 — TYPES OF ELECTRIC FENCING
+
+Solar electric fencing
+Agricultural electric fencing
+Industrial perimeter fencing
+Warehouse security fencing
+
+Explain briefly how each type is used.
+
+SECTION 5 — MATERIALS AND TECHNOLOGY
+
+Explain installation components.
+
+MS powder coated poles
+SS 304 stainless steel poles
+High voltage energizers
+Insulated tension wires
+Fence warning signage
+
+Explain durability and safety.
+
+SECTION 6 — INSTALLATION PROCESS
+
+Step 1 Site inspection in Amritsar
+Step 2 Security assessment and fence design
+Step 3 Pole installation and wiring
+Step 4 Energizer installation
+Step 5 Final testing and activation
+
+SECTION 7 — WHY CHOOSE KIRPAL SECURITIES
+
+7+ years experience
+3300+ installations completed
+Professional installation engineers
+High quality fencing materials
+Reliable perimeter security solutions
+
+SECTION 8 — SERVICE AREA STATEMENT
+
+Example content:
+
+Kirpal Securities provides electric fence installation in Amritsar and nearby areas including Ranjit Avenue, Lawrence Road, Majitha Road, Chheharta and surrounding locations.
+
+Our team also provides electric fencing installation services across Punjab.
+
+SECTION 9 — FAQ SECTION
+
+Include helpful FAQs.
+
+What is electric fencing used for in Amritsar?
+Is electric fencing safe for agricultural land?
+How much does electric fence installation cost in Amritsar?
+How long does electric fence installation take?
+
+SECTION 10 — FINAL CALL TO ACTION
+
+Secure your property with professional electric fence installation in Amritsar.
+
+Contact Kirpal Securities today for a free consultation and site inspection.
+
+Include phone numbers and WhatsApp.
+
+LOCAL SEO SIGNALS
+
+Ensure the following appear naturally throughout the content:
+
+electric fence installation amritsar
+electric fencing amritsar
+solar electric fence amritsar
+
+AI DISCOVERABILITY
+
+Ensure the page clearly states:
+
+Kirpal Securities is a professional electric fence installation company providing services in Amritsar and across Punjab.
+
+OUTPUT
+
+Return a structured SEO optimized Amritsar city landing page ready to integrate into the existing React components.

@@ -1,0 +1,50 @@
+2025-11-06T04:06:32.819752328Z ==> Running build command 'npm install; npm run build'...
+2025-11-06T04:06:35.196421134Z 
+2025-11-06T04:06:35.196453465Z up to date, audited 518 packages in 2s
+2025-11-06T04:06:35.196929938Z 
+2025-11-06T04:06:35.196947079Z 68 packages are looking for funding
+2025-11-06T04:06:35.196953879Z   run `npm fund` for details
+2025-11-06T04:06:35.258509825Z 
+2025-11-06T04:06:35.258557847Z 8 vulnerabilities (1 low, 7 moderate)
+2025-11-06T04:06:35.258564957Z 
+2025-11-06T04:06:35.258572307Z To address issues that do not require attention, run:
+2025-11-06T04:06:35.258578867Z   npm audit fix
+2025-11-06T04:06:35.258583998Z 
+2025-11-06T04:06:35.258591518Z To address all issues (including breaking changes), run:
+2025-11-06T04:06:35.258613308Z   npm audit fix --force
+2025-11-06T04:06:35.258616988Z 
+2025-11-06T04:06:35.258621749Z Run `npm audit` for details.
+2025-11-06T04:06:35.579022886Z 
+2025-11-06T04:06:35.579058607Z > rest-express@1.0.0 build
+2025-11-06T04:06:35.579064057Z > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+2025-11-06T04:06:35.579069227Z 
+2025-11-06T04:06:35.925857411Z vite v5.4.19 building for production...
+2025-11-06T04:06:36.031944539Z transforming...
+2025-11-06T04:06:36.481484445Z Browserslist: browsers data (caniuse-lite) is 13 months old. Please run:
+2025-11-06T04:06:36.481518846Z   npx update-browserslist-db@latest
+2025-11-06T04:06:36.481524427Z   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2025-11-06T04:06:44.452927946Z ✓ 2103 modules transformed.
+2025-11-06T04:06:45.08513956Z rendering chunks...
+2025-11-06T04:06:45.104628166Z computing gzip size...
+2025-11-06T04:06:45.143597128Z ../dist/public/index.html                                   2.76 kB │ gzip:   1.07 kB
+2025-11-06T04:06:45.143767203Z ../dist/public/assets/image_1759637433269-DJebxorr.png     41.86 kB
+2025-11-06T04:06:45.143833135Z ../dist/public/assets/image_1759655122560-Dy31QKdK.png  1,139.09 kB
+2025-11-06T04:06:45.144052591Z ../dist/public/assets/image_1759656669660-CDJVdetY.png  1,447.57 kB
+2025-11-06T04:06:45.144236846Z ../dist/public/assets/image_1759656662799-rQPC784X.png  1,515.38 kB
+2025-11-06T04:06:45.144251857Z ../dist/public/assets/image_1759656678518-BxXNRexl.png  1,541.21 kB
+2025-11-06T04:06:45.144264957Z ../dist/public/assets/image_1759656714453-CNZR4mUz.png  1,749.23 kB
+2025-11-06T04:06:45.144389081Z ../dist/public/assets/image_1759656687097-Dqa6SLez.png  1,769.66 kB
+2025-11-06T04:06:45.144401471Z ../dist/public/assets/index-BoIwM79-.css                  114.94 kB │ gzip:  17.96 kB
+2025-11-06T04:06:45.144459913Z ../dist/public/assets/index-I2YUZeVQ.js                   634.91 kB │ gzip: 184.07 kB
+2025-11-06T04:06:45.144606707Z 
+2025-11-06T04:06:45.144617257Z (!) Some chunks are larger than 500 kB after minification. Consider:
+2025-11-06T04:06:45.144623008Z - Using dynamic import() to code-split the application
+2025-11-06T04:06:45.144628608Z - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2025-11-06T04:06:45.144633638Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2025-11-06T04:06:45.144946077Z ✓ built in 9.17s
+2025-11-06T04:06:45.22903094Z 
+2025-11-06T04:06:45.229061Z   dist/index.js  13.4kb
+2025-11-06T04:06:45.229066681Z 
+2025-11-06T04:06:45.229072431Z ⚡ Done in 8ms
+2025-11-06T04:06:49.775724625Z ==> Uploading build...
+2025-11-06T04:06:50.080481932Z ==> Your site is live 🎉

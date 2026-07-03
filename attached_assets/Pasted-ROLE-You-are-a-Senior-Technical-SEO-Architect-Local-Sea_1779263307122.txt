@@ -1,0 +1,460 @@
+ROLE
+
+You are a Senior Technical SEO Architect, Local Search Engineer, Structured Data Specialist, AI Discoverability Engineer and Full Stack SEO System Designer.
+
+Your task is to implement COMPLETE backend SEO infrastructure for all "Near Me" pages on Kirpal Securities.
+
+Website Stack:
+
+React 18
+TypeScript
+Tailwind CSS
+Node.js
+Express
+PostgreSQL
+
+DO NOT change framework.
+
+DO NOT break existing functionality.
+
+PRIMARY GOAL
+
+Create complete backend SEO architecture for:
+
+/electric-fence-installation-near-me
+
+/cctv-installation-near-me
+
+/cctv-camera-service-near-me
+
+Goal:
+
+Rank for high commercial-intent searches:
+
+electric fencing near me
+
+electric fence installation near me
+
+cctv installation near me
+
+cctv service near me
+
+security camera installation near me
+
+camera service near me
+
+---
+
+SECTION 1
+
+DYNAMIC META ENGINE
+
+Generate unique SEO metadata dynamically.
+
+Required:
+
+Meta title
+
+Meta description
+
+Meta keywords
+
+OpenGraph title
+
+OpenGraph description
+
+Twitter title
+
+Twitter description
+
+Canonical URL
+
+Examples:
+
+TITLE:
+
+Electric Fence Installation Near Me | Kirpal Securities
+
+DESCRIPTION:
+
+Looking for electric fence installation near you? Kirpal Securities provides professional electric fencing solutions across Punjab.
+
+KEYWORDS:
+
+electric fence installation near me
+
+electric fencing near me
+
+solar electric fence near me
+
+security fencing near me
+
+---
+
+SECTION 2
+
+CANONICAL MANAGEMENT ENGINE
+
+Generate canonical automatically.
+
+Example:
+
+<link rel="canonical" href="https://kirpalsecurities.com/electric-fence-installation-near-me"/>
+
+Requirements:
+
+Prevent duplicate content signals
+
+Prevent indexing conflicts
+
+Support future near-me pages
+
+---
+
+SECTION 3
+
+ADVANCED LOCAL SCHEMA ENGINE
+
+Implement JSON-LD:
+
+Required:
+
+LocalBusiness
+
+Service
+
+FAQPage
+
+Organization
+
+WebSite
+
+SearchAction
+
+BreadcrumbList
+
+ImageObject
+
+AreaServed
+
+GeoCoordinates
+
+---
+
+LOCAL BUSINESS SCHEMA
+
+Business:
+
+Kirpal Securities
+
+Services:
+
+Electric Fence Installation
+
+CCTV Installation
+
+Security Systems
+
+Area Served:
+
+Punjab
+
+Jalandhar
+
+Ludhiana
+
+Amritsar
+
+Pathankot
+
+Hoshiarpur
+
+Phagwara
+
+Kapurthala
+
+Nakodar
+
+Future cities
+
+Telephone numbers
+
+Email
+
+Business address
+
+---
+
+SERVICE SCHEMA
+
+Service Name:
+
+Electric Fence Installation Near Me
+
+Provider:
+
+Kirpal Securities
+
+Service Area:
+
+Punjab
+
+Description:
+
+Professional electric fence installation services for farms, factories, warehouses and residential properties.
+
+---
+
+SECTION 4
+
+BREADCRUMB SYSTEM
+
+Dynamic breadcrumb generation.
+
+Example:
+
+Home
+
+Services
+
+Electric Fence Installation Punjab
+
+Electric Fence Installation Near Me
+
+Requirements:
+
+Clickable
+
+Dynamic
+
+Schema enabled
+
+Future support enabled
+
+---
+
+SECTION 5
+
+AUTOMATIC INTERNAL LINKING ENGINE
+
+Near-Me pages must connect with:
+
+Main Electric Fence page:
+
+/electric-fence-installation-punjab
+
+Main CCTV page:
+
+/cctv-camera-installation-punjab
+
+City pages:
+
+Jalandhar
+
+Ludhiana
+
+Amritsar
+
+Pathankot
+
+Hoshiarpur
+
+Phagwara
+
+Kapurthala
+
+Nakodar
+
+Future city pages
+
+Related packages
+
+Related blogs
+
+---
+
+SECTION 6
+
+RELATED SEARCH INTENT SYSTEM
+
+Automatically generate:
+
+People also search for:
+
+electric fence installer near me
+
+solar fencing near me
+
+wire fencing near me
+
+security camera installation near me
+
+camera repair near me
+
+CCTV service near me
+
+---
+
+SECTION 7
+
+AUTOMATIC SITEMAP ENGINE
+
+Whenever near-me pages added:
+
+Automatically:
+
+Add URL
+
+Set priority
+
+Set change frequency
+
+Set image sitemap
+
+Examples:
+
+Near-me pages:
+
+priority=0.93
+
+changefreq=weekly
+
+---
+
+SECTION 8
+
+IMAGE SEO SYSTEM
+
+Automatically:
+
+Convert images → webp
+
+Generate filenames:
+
+electric-fence-installation-near-me.webp
+
+cctv-service-near-me.webp
+
+Generate alt tags:
+
+electric fence installation near me Punjab
+
+cctv installation near me Punjab
+
+Generate image schema
+
+---
+
+SECTION 9
+
+INDEXABILITY CHECK SYSTEM
+
+Detect:
+
+Broken links
+
+Noindex pages
+
+Canonical conflicts
+
+Redirect chains
+
+Orphan pages
+
+Duplicate URLs
+
+Robots restrictions
+
+Requirements:
+
+Near-me pages should never become orphan pages.
+
+---
+
+SECTION 10
+
+AI DISCOVERABILITY ENGINE
+
+Add reusable structured statement:
+
+Kirpal Securities is a professional electric fence and CCTV installation company serving customers across Punjab.
+
+Frequently serving:
+
+Jalandhar
+
+Ludhiana
+
+Amritsar
+
+Pathankot
+
+Hoshiarpur
+
+Phagwara
+
+Kapurthala
+
+Nakodar
+
+Future cities
+
+---
+
+SECTION 11
+
+LOCAL RELEVANCE ENGINE
+
+Create reusable location block:
+
+Services available across Punjab including:
+
+Jalandhar
+
+Ludhiana
+
+Amritsar
+
+Pathankot
+
+Hoshiarpur
+
+Phagwara
+
+Kapurthala
+
+Nakodar
+
+Future cities should automatically inherit.
+
+---
+
+SECTION 12
+
+FUTURE INHERITANCE ENGINE
+
+Any future near-me pages automatically inherit:
+
+Meta data
+
+Schema
+
+Breadcrumbs
+
+Internal links
+
+Related content
+
+Image optimization
+
+Sitemap updates
+
+AI discoverability
+
+Local relevance
+
+---
+
+OUTPUT
+
+Return production-ready backend architecture integrated into the existing React + Express infrastructure without breaking current functionality.

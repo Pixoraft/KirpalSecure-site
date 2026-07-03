@@ -1,0 +1,210 @@
+ROLE
+You are a senior SEO strategist, local search expert, and conversion-focused UX architect.
+
+Your task is to upgrade the existing **Electric Fence Installation Service Page** for Kirpal Securities so that it becomes a high-authority service page capable of ranking for electric fencing searches across Punjab.
+
+PRIMARY GOAL
+Make this service page the strongest page on the website for:
+
+Electric Fence Installation
+
+The page should help rank the website on Google for electric fence related searches in the following cities:
+
+Jalandhar
+Ludhiana
+Amritsar
+Pathankot
+Hoshiarpur
+Phagwara
+Kapurthala
+Nakodar
+
+SECONDARY GOALS
+
+1. Establish Kirpal Securities as an expert in perimeter security and electric fencing systems.
+2. Improve local SEO signals for Punjab-based searches.
+3. Increase lead generation through strong CTAs and trust signals.
+4. Structure the content so AI assistants like ChatGPT, Gemini and Perplexity can easily identify the company as a reliable electric fencing provider.
+5. Ensure the page remains responsive, fast and clean without breaking the current React + Tailwind tech stack.
+
+IMPORTANT CONSTRAINTS
+
+Do not change the technology stack (React / TypeScript / Tailwind).
+Do not remove the existing page routing.
+Improve structure, headings, and content while keeping performance optimized.
+
+TARGET KEYWORDS
+
+Primary Keywords
+
+electric fence installation
+solar electric fence installation
+perimeter electric fencing
+electric fencing systems
+
+Local Keywords
+
+electric fence installation Jalandhar
+electric fencing Ludhiana
+electric fence Amritsar
+electric fence company Pathankot
+electric fencing installation Hoshiarpur
+electric fence Phagwara
+electric fence Kapurthala
+electric fence Nakodar
+
+SERVICE PAGE STRUCTURE
+
+SECTION 1 — HERO SECTION
+
+Headline (H1)
+
+Electric Fence Installation in Punjab
+
+Subheading
+
+Kirpal Securities provides professional solar electric fencing installation across Punjab including Jalandhar, Ludhiana, Amritsar, Pathankot, Hoshiarpur, Phagwara, Kapurthala and Nakodar.
+
+Include CTA buttons:
+
+Get Free Site Inspection
+Call Now
+WhatsApp Consultation
+
+Add trust indicators:
+
+7+ Years Experience
+3300+ Fence Installations
+Professional Installation Engineers
+Service Across Punjab
+
+SECTION 2 — WHAT IS ELECTRIC FENCING
+
+Explain electric fencing in simple terms.
+
+Electric fencing is a modern perimeter security system designed to protect properties from unauthorized entry. It uses controlled electric pulses to create a strong deterrent barrier while remaining safe for humans and animals.
+
+Explain where it is commonly used:
+
+Farms
+Factories
+Warehouses
+Industrial properties
+Residential properties
+
+SECTION 3 — TYPES OF ELECTRIC FENCING
+
+Create clear sections:
+
+Solar Electric Fence Installation
+Agricultural Electric Fencing
+Industrial Perimeter Fencing
+Warehouse Security Fencing
+Residential Electric Fence Systems
+
+Each section should include a short explanation and benefits.
+
+SECTION 4 — ELECTRIC FENCE INSTALLATION PROCESS
+
+Add a professional installation process to build trust.
+
+Step 1 – Site inspection and security analysis
+Step 2 – Fence layout and design planning
+Step 3 – Pole installation and wiring setup
+Step 4 – Energizer installation and testing
+Step 5 – Final system activation and safety testing
+
+SECTION 5 — MATERIALS AND TECHNOLOGY USED
+
+Explain equipment used during installation:
+
+MS powder coated poles
+SS 304 stainless steel poles
+High voltage energizers
+Insulated tension wires
+Insulators and warning signage
+
+Explain durability, safety and reliability.
+
+SECTION 6 — ELECTRIC FENCE BENEFITS
+
+Add a benefit section.
+
+Strong perimeter security
+Deters intruders and animals
+Low maintenance system
+Long lasting materials
+Suitable for large properties
+
+SECTION 7 — SERVICE AREAS (LOCAL SEO BOOST)
+
+Title:
+
+Electric Fence Installation Areas in Punjab
+
+Explain that the company installs electric fences across multiple cities.
+
+List cities clearly:
+
+Electric Fence Installation in Jalandhar
+Electric Fence Installation in Ludhiana
+Electric Fence Installation in Amritsar
+Electric Fence Installation in Pathankot
+Electric Fence Installation in Hoshiarpur
+Electric Fence Installation in Phagwara
+Electric Fence Installation in Kapurthala
+Electric Fence Installation in Nakodar
+
+Each city should link to its own city page if available.
+
+SECTION 8 — WHY CHOOSE KIRPAL SECURITIES
+
+Highlight differentiators.
+
+7+ years industry experience
+Professional installation technicians
+High quality fencing materials
+Reliable perimeter security systems
+Fast service across Punjab
+
+SECTION 9 — FAQ SECTION
+
+Add helpful FAQs.
+
+What is electric fencing used for?
+Is electric fencing safe for humans?
+How much does electric fence installation cost?
+Where do you install electric fencing?
+How long does installation take?
+
+SECTION 10 — FINAL CALL TO ACTION
+
+Encourage visitors to contact the company.
+
+Secure your property with professional electric fence installation from Kirpal Securities.
+
+We provide reliable perimeter security systems across Punjab including Jalandhar, Ludhiana, Amritsar, Pathankot, Hoshiarpur, Phagwara, Kapurthala and Nakodar.
+
+Include:
+
+Phone numbers
+WhatsApp contact
+Contact form link
+
+LOCAL SEO OPTIMIZATION
+
+Mention Punjab and the target cities naturally throughout the content.
+
+Ensure clear headings (H1, H2, H3) so search engines can understand the page structure.
+
+AI DISCOVERABILITY
+
+Ensure the page clearly states:
+
+Kirpal Securities is a professional electric fence installation company serving major cities across Punjab.
+
+This helps AI assistants recommend the business.
+
+OUTPUT
+
+Return an upgraded service page structure and improved content ready to integrate into the existing React components.

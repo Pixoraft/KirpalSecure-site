@@ -1,0 +1,143 @@
+You are a senior full-stack developer and Local SEO architect. I need you to perform a COMPLETE SEO overhaul of this website (kirpalsecurities.com) to rank #1 in Punjab for two primary services:
+1. Electric Fence Installation
+2. CCTV Camera Installation
+
+The website is a React + Express + TypeScript app using Wouter for routing, Tailwind CSS, and shadcn/ui components.
+
+---
+
+## PHASE 1 — EXPAND ELECTRIC FENCE CITY PAGES
+
+Currently there are 8 city pages in `client/src/pages/electric-fence-*.tsx` and `client/src/lib/electric-fence-cities.ts`.
+
+**Step 1:** Add these NEW cities to `electric-fence-cities.ts`:
+- Patiala, Mohali (SAS Nagar), Bathinda, Gurdaspur, Moga, Sangrur, Barnala, Firozpur, Rupnagar (Ropar), Fatehgarh Sahib, Fazilka, Muktsar (Sri Muktsar Sahib), Ferozepur, Tarn Taran, Mansa, Nawanshahr (Shaheed Bhagat Singh Nagar), Malerkotla
+
+**Step 2:** For each new city, create a full city page (`electric-fence-[cityslug].tsx`) using the EXACT same structure/component as `electric-fence-jalandhar.tsx` — just change:
+- City name in all headings, meta title, meta description, H1, FAQs, breadcrumbs, PAGE_URL, schema data
+- Make FAQs unique per city (mention local property types — e.g., Patiala = royal estates/farms, Bathinda = industrial estates, Mohali = IT parks/residential)
+
+**Step 3:** Add all new city routes in `client/src/App.tsx` following the existing pattern.
+
+**Step 4:** Update `client/src/pages/electric-fence-installation.tsx` (the pillar/parent page) to include a "Serving All Punjab Cities" grid section with cards linking to ALL city pages (existing 8 + new 17 = 25 total). Each card = city name + "Electric Fence Installation in [City]" link.
+
+---
+
+## PHASE 2 — CREATE CCTV CAMERA INSTALLATION CITY PAGES (NEW)
+
+Currently there are NO city-specific CCTV pages. Electric fence has a great city-page system — replicate it for CCTV.
+
+**Step 1:** Create `client/src/lib/cctv-cities.ts` with:
+- Same structure as electric-fence-cities.ts
+- Cities: Jalandhar, Ludhiana, Amritsar, Patiala, Mohali, Bathinda, Phagwara, Kapurthala, Hoshiarpur, Pathankot, Gurdaspur, Moga, Nakodar, Sangrur, Rupnagar, Firozpur, Tarn Taran, Nawanshahr
+- BUSINESS_INFO same as electric fence
+- Build schema function `buildCCTVSchemas()` similar to `buildElectricFenceSchemas()` with Schema types: LocalBusiness, Service (CCTV Installation), FAQPage, BreadcrumbList, WebPage
+
+**Step 2:** Create a CCTV pillar page at `client/src/pages/cctv-installation-punjab.tsx` with:
+- Title: "CCTV Camera Installation in Punjab | Best CCTV Packages – Kirpal Securities"
+- H1: "Professional CCTV Camera Installation Across Punjab"
+- Meta description: "Best CCTV camera installation company in Punjab. Hikvision, CP Plus, White Eagle cameras. Packages from ₹8,500. Serving 18+ cities. Call +91-98156-71271"
+- Sections: Hero with CTA, Why Choose Us (3300+ installs, 7+ years), CCTV Packages (4 cam / 8 cam / 16 cam), Brands (Hikvision, CP Plus, White Eagle), City Grid (cards linking to all city pages), Process (4 steps), FAQs (10 questions), Contact CTA
+- Route: `/cctv-camera-installation-punjab`
+
+**Step 3:** Create individual city CCTV pages for all 18 cities:
+- Filename: `cctv-installation-[cityslug].tsx`
+- Route: `/cctv-camera-installation-[cityslug]`
+- Structure same as electric fence city pages but CCTV-focused
+- Unique content per city:
+  - Jalandhar: mention Model Town, Lamba Pind, Focal Point industrial area
+  - Ludhiana: mention industrial hubs, garment factories, residential colonies
+  - Amritsar: mention Golden Temple area, tourist zones, heritage properties
+  - Patiala: mention Rajpura, old city areas, royal estate properties
+  - Mohali: mention IT sector, Phase areas, airport road
+  - (Pattern: mention 2-3 local areas/contexts per city for uniqueness)
+- Each city page must have:
+  - Unique H1: "CCTV Camera Installation in [City] | Kirpal Securities"
+  - Unique meta title and description with city name + price signal
+  - 5 unique FAQs mentioning city name
+  - Package pricing section (4 cam ₹8,500 / 8 cam ₹14,500 / 16 cam ₹22,000)
+  - Installation process steps
+  - Call + WhatsApp CTAs linking to +91-98156-71271 and wa.me/919815671271
+  - Full structured data (LocalBusiness + Service + FAQPage + BreadcrumbList)
+  - Breadcrumb: Home → Services → CCTV Installation Punjab → CCTV [City]
+  - Internal links to electric fence page and pillar CCTV page
+  - "Also serving nearby areas: [2-3 nearby cities with links]" section
+
+---
+
+## PHASE 3 — UPGRADE WHITE EAGLE CAMERA PAGE
+
+The existing `client/src/pages/white-eagle-cameras.tsx` needs major content upgrade for SEO.
+
+**Add these sections:**
+
+1. **Comparison Table**: White Eagle vs CP Plus vs Hikvision — columns: Price, Resolution, Night Vision, Warranty, Best For. Add a `<table>` with schema markup (`Table` type). This targets "white eagle vs cp plus" comparison queries.
+
+2. **City Availability Section**: "White Eagle Cameras Available In" — grid of 10 Punjab cities, each linking to the respective cctv-installation-[city] page. Heading: "Buy & Install White Eagle Cameras Across Punjab"
+
+3. **More FAQs** — add 6 more FAQs targeting these specific queries:
+   - "white eagle vs cp plus camera which is better"
+   - "white eagle 4 camera package price in jalandhar"
+   - "white eagle camera not working what to do"
+   - "how to connect white eagle camera to mobile"
+   - "white eagle camera 5mp price"
+   - "white eagle authorized dealer punjab"
+
+4. **Video/Installation Gallery placeholder section** with a heading "White Eagle Camera Installation Gallery – Jalandhar" and text "View our recent White Eagle CCTV installations across Jalandhar, Punjab" (placeholder for future images)
+
+5. **Update SEO keywords** in `<SEOHead>` to include: "white eagle vs cp plus, white eagle 5mp camera, white eagle 4 camera package, white eagle camera mobile setup, white eagle camera dealer punjab"
+
+---
+
+## PHASE 4 — INTERNAL LINKING & NAVIGATION
+
+**Step 1:** Update `client/src/components/layout/navigation.tsx`:
+- Add a "Services" dropdown with:
+  - CCTV Camera Installation → `/cctv-camera-installation-punjab`
+  - Electric Fence Installation → `/electric-fence-installation-punjab`
+  - White Eagle Cameras → `/white-eagle-cameras`
+  - CCTV Packages → `/packages`
+
+**Step 2:** In the homepage `client/src/pages/home.tsx` (if it exists), add:
+- A "Our Services" section with 3 cards linking to the two pillar pages + white eagle page
+- A "Cities We Serve" section with city grid (all Punjab cities, split into CCTV links + electric fence links)
+
+**Step 3:** In `server/routes.ts`, make sure ALL new page routes are handled for SSR/static serving (if applicable). Add any missing routes.
+
+---
+
+## PHASE 5 — SITEMAP & ROBOTS UPDATES
+
+Update `public/sitemap.xml` to include ALL new page URLs:
+- `/cctv-camera-installation-punjab`
+- `/cctv-camera-installation-jalandhar` (and all 17 other cities)
+- `/electric-fence-installation-[all new cities]`
+- Priority for pillar pages: 0.9 | City pages: 0.8 | White Eagle: 0.8
+- lastmod: today's date (2026-04-26)
+- changefreq: monthly for city pages, weekly for pillar pages
+
+---
+
+## TECHNICAL REQUIREMENTS FOR ALL PAGES:
+
+- Every page must use `<SEOHead>` with unique title, description, keywords, canonicalUrl, structuredData
+- All schema data must be valid JSON-LD (no errors)
+- H1 must appear exactly once per page, contain city name + service keyword
+- H2 headings must include secondary keywords naturally
+- Every page needs a WhatsApp CTA: `https://wa.me/919815671271?text=...` with pre-filled city-specific message
+- Phone number must be clickable `<a href="tel:+919815671271">`
+- All pages must have BreadcrumbNav component with correct hierarchy
+- Image alt texts must include location + service (e.g., "CCTV camera installation in Ludhiana")
+- Use `<Link>` from wouter for internal navigation (not `<a>`)
+- Every city page must link back to its pillar page AND to the homepage
+
+---
+
+## EXECUTION ORDER:
+1. Phase 5 changes to sitemap first (so you don't forget)
+2. Phase 1 (electric fence cities expansion)
+3. Phase 2 (CCTV city pages — most important)
+4. Phase 3 (White Eagle upgrade)
+5. Phase 4 (Navigation + internal links)
+
+Start with Phase 1 Step 1 (updating electric-fence-cities.ts) and proceed systematically. Show me each file as you complete it.

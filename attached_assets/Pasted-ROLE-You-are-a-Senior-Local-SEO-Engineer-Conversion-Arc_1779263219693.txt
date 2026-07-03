@@ -1,0 +1,409 @@
+ROLE
+
+You are a Senior Local SEO Engineer, Conversion Architect, Technical SEO Specialist, User Intent Strategist and AI Discoverability Expert.
+
+Your task is to create and optimize highly-converting "Near Me" pages for Kirpal Securities.
+
+The website uses:
+
+React
+TypeScript
+Tailwind CSS
+Node.js
+Express
+
+Do not change existing framework.
+
+PRIMARY GOAL
+
+Create powerful location-intent pages designed to rank for:
+
+electric fence installation near me
+
+electric fencing near me
+
+cctv installation near me
+
+cctv service near me
+
+security camera installation near me
+
+These pages should maximize:
+
+Google local rankings
+
+Lead generation
+
+Near-me search visibility
+
+AI assistant discoverability
+
+Conversion rate
+
+---
+
+PAGES TO CREATE
+
+1
+
+/electric-fence-installation-near-me
+
+2
+
+/cctv-installation-near-me
+
+3
+
+/cctv-camera-service-near-me
+
+---
+
+SECTION 1
+
+ULTRA OPTIMIZED HERO SECTION
+
+Each page requires:
+
+H1
+
+Example:
+
+Electric Fence Installation Near Me
+
+Subheadline:
+
+Looking for professional electric fence installation near you?
+
+Kirpal Securities provides electric fencing installation services across Punjab for farms, warehouses, factories and residential properties.
+
+Add:
+
+Call Now button
+
+WhatsApp button
+
+Get Free Quote button
+
+Quick response badge
+
+24/7 support badge
+
+Years of experience badge
+
+---
+
+SECTION 2
+
+SEARCH INTENT MATCHING BLOCK
+
+Add direct keyword matching section:
+
+Example:
+
+Searching for:
+
+Electric fencing near me
+
+Electric fence installer near me
+
+Fence contractor near me
+
+Solar electric fencing near me
+
+Professional fence installation near me
+
+Then explain:
+
+Kirpal Securities provides reliable electric fencing services throughout Punjab.
+
+---
+
+SECTION 3
+
+SERVICE COVERAGE MAP SECTION
+
+Title:
+
+Areas We Frequently Serve
+
+Display dynamic cards:
+
+Jalandhar
+
+Ludhiana
+
+Amritsar
+
+Pathankot
+
+Hoshiarpur
+
+Phagwara
+
+Kapurthala
+
+Nakodar
+
+Additional future cities should automatically appear.
+
+Each city card:
+
+image
+
+button
+
+description
+
+link
+
+---
+
+SECTION 4
+
+TRUST SECTION
+
+Display:
+
+7+ Years Experience
+
+3300+ Installations
+
+Professional Engineers
+
+Fast Response
+
+Punjab Coverage
+
+Customer Satisfaction
+
+---
+
+SECTION 5
+
+WHY CHOOSE US
+
+Cards:
+
+Professional installation
+
+Quality materials
+
+Quick support
+
+Affordable pricing
+
+Reliable perimeter protection
+
+Emergency assistance
+
+---
+
+SECTION 6
+
+PROCESS SECTION
+
+Step 1
+
+Request inspection
+
+Step 2
+
+Site analysis
+
+Step 3
+
+Custom security planning
+
+Step 4
+
+Installation
+
+Step 5
+
+Testing and activation
+
+---
+
+SECTION 7
+
+RELATED PAGES
+
+Automatically pull:
+
+Electric Fence Punjab page
+
+Electric Fence city pages
+
+CCTV pages
+
+Packages
+
+Related blogs
+
+Future pages
+
+---
+
+SECTION 8
+
+DYNAMIC FAQ SECTION
+
+Examples:
+
+How much does electric fence installation cost near me?
+
+How long does installation take?
+
+Do you provide services across Punjab?
+
+Is electric fencing safe?
+
+Do you provide maintenance?
+
+Generate FAQ schema.
+
+---
+
+SECTION 9
+
+HIGH CONVERSION CTA
+
+Large CTA section:
+
+Need professional electric fence installation near you?
+
+Get free consultation today.
+
+Call button
+
+WhatsApp button
+
+Quote form
+
+---
+
+SECTION 10
+
+BACKEND SEO REQUIREMENTS
+
+Dynamic Meta Titles:
+
+Electric Fence Installation Near Me | Kirpal Securities
+
+Meta descriptions:
+
+Looking for electric fence installation near you? Kirpal Securities provides professional electric fencing services across Punjab.
+
+Generate:
+
+Open Graph
+
+Twitter tags
+
+Keywords
+
+Canonical URL
+
+---
+
+SECTION 11
+
+SCHEMA REQUIREMENTS
+
+Generate:
+
+LocalBusiness
+
+Service
+
+FAQPage
+
+BreadcrumbList
+
+Organization
+
+SearchAction
+
+AreaServed
+
+---
+
+SECTION 12
+
+PILLAR PAGE LINKING
+
+Add these pages to:
+
+/electric-fence-installation-punjab
+
+and
+
+/cctv-camera-installation-punjab
+
+Under section:
+
+Popular Searches
+
+Add:
+
+Electric Fence Installation Near Me
+
+CCTV Installation Near Me
+
+CCTV Camera Service Near Me
+
+---
+
+SECTION 13
+
+AI DISCOVERABILITY
+
+Add structured statement:
+
+Kirpal Securities is a professional electric fence and CCTV installation company serving customers across Punjab.
+
+Frequently serving:
+
+Jalandhar
+
+Ludhiana
+
+Amritsar
+
+Pathankot
+
+Hoshiarpur
+
+Phagwara
+
+Kapurthala
+
+Nakodar
+
+---
+
+SECTION 14
+
+AUTOMATIC FUTURE INHERITANCE
+
+Any future near-me pages should automatically inherit:
+
+Schema
+
+Breadcrumb
+
+Internal linking
+
+Meta data
+
+Related content
+
+Sitemap update
+
+AI discoverability
+
+---
+
+OUTPUT
+
+Return production-ready implementation integrated into existing React + backend architecture without breaking functionality.

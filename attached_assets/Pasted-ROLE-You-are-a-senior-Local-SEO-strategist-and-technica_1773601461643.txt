@@ -1,0 +1,241 @@
+ROLE
+You are a senior Local SEO strategist and technical SEO architect specializing in service-area business websites.
+
+Your task is to create a **high-authority local landing page** for Electric Fence Installation in Kapurthala for Kirpal Securities.
+
+PRIMARY GOAL
+
+Create a dedicated SEO page designed to rank on Google for:
+
+Electric Fence Installation Kapurthala
+
+The page must strongly target Kapurthala searches while clearly indicating that Kirpal Securities provides electric fence installation services across Punjab.
+
+---
+
+PAGE URL
+
+/electric-fence-installation-kapurthala
+
+---
+
+TARGET LOCATION
+
+Primary city
+
+Kapurthala, Punjab
+
+Nearby locations to mention naturally in content
+
+Sultanpur Lodhi
+Begowal
+Bholath
+Phagwara Road
+Kartarpur Road
+Model Town Kapurthala
+
+---
+
+PRIMARY KEYWORDS
+
+electric fence installation kapurthala
+electric fencing kapurthala
+solar electric fence kapurthala
+electric fence company kapurthala
+
+---
+
+SECONDARY KEYWORDS
+
+perimeter electric fencing kapurthala
+farm electric fencing kapurthala
+agriculture electric fence kapurthala
+warehouse electric fencing kapurthala
+
+---
+
+PAGE STRUCTURE
+
+SECTION 1 — HERO SECTION
+
+H1
+
+Electric Fence Installation in Kapurthala
+
+Subheading
+
+Kirpal Securities provides professional electric fence installation services in Kapurthala for farms, warehouses, factories and residential properties.
+
+Explain that the company installs solar electric fencing systems designed to provide reliable perimeter protection.
+
+CTA Buttons
+
+Call Now
+Get Free Site Inspection
+WhatsApp Consultation
+
+---
+
+SECTION 2 — ELECTRIC FENCING SERVICES IN KAPURTHALA
+
+Explain local relevance.
+
+Example content
+
+Electric fencing is widely used in Kapurthala to protect agricultural land, farms and industrial sites. Many farm owners and property owners use electric fencing systems to secure their land and prevent unauthorized entry.
+
+Kirpal Securities installs professional electric fencing systems designed for strong and reliable boundary protection.
+
+---
+
+SECTION 3 — WHERE ELECTRIC FENCING IS USED IN KAPURTHALA
+
+Electric fencing for farms in Kapurthala
+Electric fencing for agricultural land and orchards
+Electric fencing for warehouses and storage facilities
+Electric fencing for residential properties
+
+Explain benefits clearly.
+
+---
+
+SECTION 4 — TYPES OF ELECTRIC FENCING
+
+Solar electric fencing
+Agricultural electric fencing
+Industrial perimeter fencing
+Warehouse security fencing
+
+Explain briefly where each system is used.
+
+---
+
+SECTION 5 — MATERIALS AND TECHNOLOGY
+
+Explain installation components
+
+MS powder coated poles
+SS 304 stainless steel poles
+High voltage energizers
+Insulated tension wires
+Fence warning signage
+
+Explain durability and safety.
+
+---
+
+SECTION 6 — INSTALLATION PROCESS
+
+Step 1 Site inspection in Kapurthala
+Step 2 Security assessment and fence design
+Step 3 Pole installation and wiring setup
+Step 4 Energizer installation
+Step 5 Final testing and activation
+
+---
+
+SECTION 7 — WHY CHOOSE KIRPAL SECURITIES
+
+7+ years experience
+3300+ installations completed
+Professional installation engineers
+High quality fencing materials
+Reliable perimeter security solutions
+
+---
+
+SECTION 8 — SERVICE AREA STATEMENT
+
+Example content
+
+Kirpal Securities provides electric fence installation in Kapurthala and nearby areas including Sultanpur Lodhi, Begowal, Bholath and surrounding regions.
+
+Our team also provides electric fencing installation services across Punjab.
+
+---
+
+SECTION 9 — FAQ SECTION
+
+What is electric fencing used for in Kapurthala?
+Is electric fencing safe for farms?
+How much does electric fence installation cost in Kapurthala?
+How long does installation take?
+
+---
+
+SECTION 10 — FINAL CALL TO ACTION
+
+Secure your property with professional electric fence installation in Kapurthala.
+
+Contact Kirpal Securities today for a free consultation and site inspection.
+
+Include phone numbers and WhatsApp.
+
+---
+
+BACKEND SEO REQUIREMENTS
+
+Meta title example
+
+Electric Fence Installation in Kapurthala | Kirpal Securities
+
+Meta description example
+
+Professional electric fence installation in Kapurthala for farms and warehouses. Kirpal Securities provides solar electric fencing solutions across Punjab.
+
+Add canonical tag.
+
+Implement schema
+
+LocalBusiness
+Service
+FAQPage
+BreadcrumbList
+
+---
+
+PILLAR PAGE LINKING
+
+Add this page inside the main electric fence page
+
+/electric-fence-installation-punjab
+
+under the section
+
+Electric Fence Installation Service Areas
+
+Add link
+
+Electric Fence Installation Kapurthala
+
+---
+
+BACKLINK TO MAIN PAGE
+
+Inside this page include text
+
+Kirpal Securities provides electric fence installation in Kapurthala and across Punjab.
+
+Link to
+
+/electric-fence-installation-punjab
+
+---
+
+SITEMAP UPDATE
+
+Ensure this page is added to sitemap.xml.
+
+---
+
+AI DISCOVERABILITY
+
+Ensure the page clearly states
+
+Kirpal Securities is a professional electric fence installation company providing services in Kapurthala and across Punjab.
+
+---
+
+OUTPUT
+
+Return a structured SEO optimized Kapurthala city page ready to integrate into the existing React components.

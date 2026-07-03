@@ -1,0 +1,469 @@
+ROLE
+
+You are a Senior Technical SEO Architect, Search Intent Engineer, Full Stack SEO Engineer, Information Architecture Specialist and AI Discoverability Engineer.
+
+Your task is to implement COMPLETE backend SEO architecture for Industry Specific CCTV pages for Kirpal Securities.
+
+Website Stack:
+
+React 18
+TypeScript
+Tailwind CSS
+Node.js
+Express
+PostgreSQL
+
+DO NOT change framework.
+
+DO NOT break existing functionality.
+
+---
+
+PRIMARY GOAL
+
+Build a reusable backend SEO ecosystem for high commercial-intent industry pages.
+
+Target industries:
+
+Schools
+
+Factories
+
+Warehouses
+
+Hospitals
+
+Offices
+
+Commercial Buildings
+
+Future industries
+
+---
+
+PAGES
+
+/best-cctv-camera-for-school
+
+/best-cctv-camera-for-factory
+
+/warehouse-cctv-security-solutions
+
+/best-cctv-camera-for-office
+
+/best-cctv-camera-for-hospital
+
+/cctv-for-commercial-buildings
+
+Future pages should inherit architecture automatically.
+
+---
+
+SECTION 1
+
+DYNAMIC SEO ENGINE
+
+Create reusable dynamic SEO generation system.
+
+Auto generate:
+
+Meta title
+
+Meta description
+
+Keywords
+
+OpenGraph title
+
+OpenGraph description
+
+Twitter title
+
+Twitter description
+
+Canonical URL
+
+Robots directives
+
+Examples:
+
+TITLE:
+
+Best CCTV Camera For School Security | Kirpal Securities
+
+DESCRIPTION:
+
+Discover professional CCTV camera systems for schools with monitoring solutions designed for safety and surveillance across Punjab.
+
+KEYWORDS:
+
+best cctv for schools
+
+school security camera system
+
+school surveillance cameras
+
+school monitoring system
+
+---
+
+SECTION 2
+
+CANONICAL MANAGEMENT SYSTEM
+
+Generate canonical URLs dynamically.
+
+Example:
+
+<link rel="canonical"
+href="https://kirpalsecurities.com/best-cctv-camera-for-school"/>
+
+Requirements:
+
+Prevent duplicate indexing
+
+Prevent query parameter duplication
+
+Prevent canonical conflicts
+
+Support future industry pages
+
+---
+
+SECTION 3
+
+ADVANCED SCHEMA ENGINE
+
+Generate JSON-LD dynamically.
+
+Required:
+
+LocalBusiness
+
+Service
+
+Organization
+
+FAQPage
+
+BreadcrumbList
+
+WebSite
+
+SearchAction
+
+ImageObject
+
+ItemList
+
+Product
+
+AreaServed
+
+---
+
+PRODUCT SCHEMA
+
+Example:
+
+Product Name:
+
+School CCTV Camera Solution
+
+Brand:
+
+Kirpal Securities
+
+Category:
+
+Security System
+
+Description:
+
+Professional CCTV surveillance systems designed for school safety and monitoring.
+
+---
+
+SERVICE SCHEMA
+
+Service Name:
+
+School CCTV Installation
+
+Provider:
+
+Kirpal Securities
+
+Area Served:
+
+Punjab
+
+Jalandhar
+
+Ludhiana
+
+Amritsar
+
+Pathankot
+
+Hoshiarpur
+
+Phagwara
+
+Kapurthala
+
+Nakodar
+
+Future cities
+
+---
+
+SECTION 4
+
+INTENT-BASED INTERNAL LINK ENGINE
+
+Automatically connect:
+
+Industry pages
+
+CCTV pillar page
+
+City pages
+
+Packages
+
+Blogs
+
+Near-me pages
+
+Related industries
+
+Future pages
+
+Example:
+
+School page shows:
+
+Best CCTV Camera For Factory
+
+Best CCTV Camera For Warehouse
+
+CCTV Installation Punjab
+
+CCTV Installation Jalandhar
+
+CCTV Packages
+
+---
+
+SECTION 5
+
+RELATED CONTENT ENGINE
+
+Create dynamic block:
+
+You may also be interested in
+
+Auto pull:
+
+Nearby city pages
+
+Related industry pages
+
+Related blogs
+
+Packages
+
+Near-me pages
+
+---
+
+SECTION 6
+
+BREADCRUMB ENGINE
+
+Auto generate:
+
+Home
+
+Services
+
+CCTV Punjab
+
+Best CCTV Camera For School
+
+Requirements:
+
+Clickable
+
+Dynamic
+
+Schema enabled
+
+Future support enabled
+
+---
+
+SECTION 7
+
+SITEMAP AUTOMATION
+
+Automatically:
+
+Add URLs
+
+Assign priority
+
+Assign changefreq
+
+Generate image sitemap
+
+Priority rules:
+
+Pillar pages:
+
+0.95
+
+Industry pages:
+
+0.92
+
+Blogs:
+
+0.70
+
+---
+
+SECTION 8
+
+IMAGE SEO ENGINE
+
+Convert images:
+
+WebP
+
+Generate filenames:
+
+best-cctv-camera-school.webp
+
+warehouse-security-camera.webp
+
+factory-cctv-monitoring.webp
+
+Generate alt text:
+
+best cctv camera for school security Punjab
+
+warehouse cctv monitoring system Punjab
+
+factory security camera installation Punjab
+
+Generate image schema
+
+---
+
+SECTION 9
+
+INDEXABILITY ENGINE
+
+Automatically detect:
+
+Broken links
+
+Orphan pages
+
+Redirect chains
+
+Noindex conflicts
+
+Canonical conflicts
+
+Duplicate pages
+
+Robots blocking
+
+Requirements:
+
+No industry page becomes orphaned
+
+---
+
+SECTION 10
+
+AI DISCOVERABILITY ENGINE
+
+Create reusable structured block:
+
+Kirpal Securities provides professional CCTV camera solutions across Punjab for schools, factories, warehouses, hospitals, offices and commercial properties.
+
+Frequently serving:
+
+Jalandhar
+
+Ludhiana
+
+Amritsar
+
+Pathankot
+
+Hoshiarpur
+
+Phagwara
+
+Kapurthala
+
+Nakodar
+
+Future cities
+
+---
+
+SECTION 11
+
+FUTURE INDUSTRY PAGE INHERITANCE
+
+Whenever a new industry page is created automatically inherit:
+
+Meta generation
+
+Schema generation
+
+Internal links
+
+Related content
+
+Image optimization
+
+Sitemap updates
+
+Canonical URLs
+
+Breadcrumbs
+
+AI discoverability
+
+---
+
+SECTION 12
+
+PERFORMANCE OPTIMIZATION
+
+Implement:
+
+Lazy loading
+
+Code splitting
+
+Preload critical assets
+
+WebP compression
+
+Reduce render blocking resources
+
+Minimize JavaScript execution
+
+---
+
+OUTPUT
+
+Return production-ready implementation integrated into current React + Express architecture without breaking existing functionality.

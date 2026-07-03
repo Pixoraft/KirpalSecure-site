@@ -1,0 +1,160 @@
+ROLE
+You are a senior Local SEO specialist and UX conversion strategist for service business websites.
+
+Your task is to upgrade the **Contact Page** for Kirpal Securities so that it improves local SEO signals, trust, and lead generation.
+
+PRIMARY GOAL
+Create a professional contact page that helps customers easily reach Kirpal Securities for **electric fence installation services across Punjab**.
+
+SECONDARY GOALS
+
+1 Improve local SEO signals such as business address, phone numbers and service regions.
+2 Increase conversions through clear call-to-action sections.
+3 Help search engines and AI assistants recognize the company as a trusted service provider.
+4 Maintain responsive design using the existing React + Tailwind + TypeScript stack.
+
+BUSINESS INFORMATION
+
+Business Name
+Kirpal Securities
+
+Phone Numbers
+Nikhil – 7009154711
+Naveen – 9463687535
+
+Email
+[kirpalsecurities@gmail.com](mailto:kirpalsecurities@gmail.com)
+
+Office Address
+Urban Estate Phase 2
+Road Opp. Hotel Imperia Suites
+Aggarwal Dhaba Road
+Jalandhar, Punjab
+India
+
+SERVICE REGION
+
+Kirpal Securities provides electric fence installation services **across Punjab**.
+
+Major cities frequently served include:
+
+Jalandhar
+Ludhiana
+Amritsar
+Pathankot
+Hoshiarpur
+Phagwara
+Kapurthala
+Nakodar
+
+However, the company can provide installation services across other locations in Punjab as well.
+
+CONTACT PAGE STRUCTURE
+
+SECTION 1 — PAGE HERO
+
+H1
+
+Contact Kirpal Securities
+
+Subheading
+
+Get in touch with our team for professional electric fence installation services across Punjab.
+
+CTA Buttons
+
+Call Now
+WhatsApp Us
+Request Free Quote
+
+SECTION 2 — CONTACT DETAILS
+
+Display clear business information.
+
+Business Name
+Kirpal Securities
+
+Phone Numbers
+Nikhil – 7009154711
+Naveen – 9463687535
+
+Email
+[kirpalsecurities@gmail.com](mailto:kirpalsecurities@gmail.com)
+
+Office Address
+Urban Estate Phase 2
+Road Opp. Hotel Imperia Suites
+Aggarwal Dhaba Road
+Jalandhar, Punjab
+India
+
+Business Hours
+
+Monday – Friday
+9:00 AM – 7:00 PM
+
+Saturday
+9:00 AM – 6:00 PM
+
+Sunday
+10:00 AM – 4:00 PM
+
+Emergency support available.
+
+SECTION 3 — CONTACT FORM
+
+Create a simple lead form.
+
+Fields:
+
+Full Name
+Phone Number
+Email Address
+Service Interested In
+Message
+
+Button:
+
+Send Message
+
+Add message:
+
+Our team will respond within 24 hours.
+
+SECTION 4 — SERVICE AREAS
+
+Title
+
+Electric Fence Installation Across Punjab
+
+Content example:
+
+Kirpal Securities provides professional electric fence installation services across Punjab. Our team frequently installs fencing systems in cities such as Jalandhar, Ludhiana, Amritsar, Pathankot, Hoshiarpur, Phagwara, Kapurthala and Nakodar.
+
+We also provide installation services across surrounding towns and rural areas in Punjab.
+
+SECTION 5 — MAP SECTION
+
+Add Google Maps embed showing the business location in Jalandhar.
+
+This helps strengthen local SEO signals.
+
+SECTION 6 — FINAL CALL TO ACTION
+
+Example closing message:
+
+Need electric fence installation for your property?
+
+Contact Kirpal Securities today for professional perimeter security solutions across Punjab.
+
+Call or WhatsApp our team to schedule a site inspection.
+
+AI DISCOVERABILITY
+
+Ensure the page clearly states:
+
+Kirpal Securities is a professional electric fence installation company serving customers across Punjab.
+
+OUTPUT
+
+Return the upgraded contact page layout and content ready to integrate into the existing React components.

@@ -1,0 +1,241 @@
+ROLE
+You are a senior Local SEO strategist and technical SEO architect specializing in service-area business websites.
+
+Your task is to create a **high-authority local landing page** for Electric Fence Installation in Nakodar for Kirpal Securities.
+
+PRIMARY GOAL
+
+Create a dedicated SEO page designed to rank on Google for:
+
+Electric Fence Installation Nakodar
+
+The page must strongly target Nakodar searches while clearly indicating that Kirpal Securities provides electric fence installation services across Punjab.
+
+---
+
+PAGE URL
+
+/electric-fence-installation-nakodar
+
+---
+
+TARGET LOCATION
+
+Primary city
+
+Nakodar, Punjab
+
+Nearby locations to mention naturally in content
+
+Shankar
+Lohian Khas
+Mehatpur
+Nurmahal
+Nakodar Road
+Jalandhar Road
+
+---
+
+PRIMARY KEYWORDS
+
+electric fence installation nakodar
+electric fencing nakodar
+solar electric fence nakodar
+electric fence company nakodar
+
+---
+
+SECONDARY KEYWORDS
+
+perimeter electric fencing nakodar
+farm electric fencing nakodar
+agriculture electric fence nakodar
+warehouse electric fencing nakodar
+
+---
+
+PAGE STRUCTURE
+
+SECTION 1 — HERO SECTION
+
+H1
+
+Electric Fence Installation in Nakodar
+
+Subheading
+
+Kirpal Securities provides professional electric fence installation services in Nakodar for farms, warehouses, factories and residential properties.
+
+Explain that the company installs solar electric fencing systems designed to provide reliable perimeter protection.
+
+CTA Buttons
+
+Call Now
+Get Free Site Inspection
+WhatsApp Consultation
+
+---
+
+SECTION 2 — ELECTRIC FENCING SERVICES IN NAKODAR
+
+Explain local relevance.
+
+Example content
+
+Electric fencing is widely used in Nakodar to protect agricultural land and rural properties. Farm owners and property owners use electric fencing systems to secure their land boundaries and prevent unauthorized entry.
+
+Kirpal Securities installs professional electric fencing systems designed for strong and reliable boundary security.
+
+---
+
+SECTION 3 — WHERE ELECTRIC FENCING IS USED IN NAKODAR
+
+Electric fencing for farms in Nakodar
+Electric fencing for agricultural land
+Electric fencing for warehouses and storage facilities
+Electric fencing for residential properties
+
+Explain benefits clearly.
+
+---
+
+SECTION 4 — TYPES OF ELECTRIC FENCING
+
+Solar electric fencing
+Agricultural electric fencing
+Industrial perimeter fencing
+Warehouse security fencing
+
+Explain briefly where each system is used.
+
+---
+
+SECTION 5 — MATERIALS AND TECHNOLOGY
+
+Explain installation components
+
+MS powder coated poles
+SS 304 stainless steel poles
+High voltage energizers
+Insulated tension wires
+Fence warning signage
+
+Explain durability and safety.
+
+---
+
+SECTION 6 — INSTALLATION PROCESS
+
+Step 1 Site inspection in Nakodar
+Step 2 Security assessment and fence design
+Step 3 Pole installation and wiring setup
+Step 4 Energizer installation
+Step 5 Final testing and activation
+
+---
+
+SECTION 7 — WHY CHOOSE KIRPAL SECURITIES
+
+7+ years experience
+3300+ installations completed
+Professional installation engineers
+High quality fencing materials
+Reliable perimeter security solutions
+
+---
+
+SECTION 8 — SERVICE AREA STATEMENT
+
+Example content
+
+Kirpal Securities provides electric fence installation in Nakodar and nearby areas including Shankar, Lohian Khas, Mehatpur and surrounding locations.
+
+Our team also provides electric fencing installation services across Punjab.
+
+---
+
+SECTION 9 — FAQ SECTION
+
+What is electric fencing used for in Nakodar?
+Is electric fencing safe for farms?
+How much does electric fence installation cost in Nakodar?
+How long does installation take?
+
+---
+
+SECTION 10 — FINAL CALL TO ACTION
+
+Secure your property with professional electric fence installation in Nakodar.
+
+Contact Kirpal Securities today for a free consultation and site inspection.
+
+Include phone numbers and WhatsApp.
+
+---
+
+BACKEND SEO REQUIREMENTS
+
+Meta title example
+
+Electric Fence Installation in Nakodar | Kirpal Securities
+
+Meta description example
+
+Professional electric fence installation in Nakodar for farms and warehouses. Kirpal Securities provides solar electric fencing solutions across Punjab.
+
+Add canonical tag.
+
+Implement schema
+
+LocalBusiness
+Service
+FAQPage
+BreadcrumbList
+
+---
+
+PILLAR PAGE LINKING
+
+Add this page inside the main electric fence page
+
+/electric-fence-installation-punjab
+
+under the section
+
+Electric Fence Installation Service Areas
+
+Add link
+
+Electric Fence Installation Nakodar
+
+---
+
+BACKLINK TO MAIN PAGE
+
+Inside this page include text
+
+Kirpal Securities provides electric fence installation in Nakodar and across Punjab.
+
+Link to
+
+/electric-fence-installation-punjab
+
+---
+
+SITEMAP UPDATE
+
+Ensure this page is added to sitemap.xml.
+
+---
+
+AI DISCOVERABILITY
+
+Ensure the page clearly states
+
+Kirpal Securities is a professional electric fence installation company providing services in Nakodar and across Punjab.
+
+---
+
+OUTPUT
+
+Return a structured SEO optimized Nakodar city page ready to integrate into the existing React components.

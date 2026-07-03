@@ -1,0 +1,434 @@
+ROLE
+
+You are a Senior Technical SEO Architect, Full Stack SEO Engineer, Local SEO Specialist, Information Architecture Expert and AI Discoverability Engineer.
+
+Your task is to perform a COMPLETE technical SEO and website architecture optimization for Kirpal Securities.
+
+The website uses:
+
+React 18
+TypeScript
+Tailwind CSS
+Node.js
+Express
+PostgreSQL
+
+DO NOT modify the framework or break existing functionality.
+
+PRIMARY GOAL
+
+Create a complete SEO foundation so that:
+
+Google can crawl pages efficiently
+
+Google can understand page hierarchy
+
+Google can understand local relevance
+
+AI systems (ChatGPT, Gemini, Perplexity) can understand the business structure
+
+Future pages automatically inherit SEO structure
+
+No important SEO signal is missing
+
+---
+
+CURRENT WEBSITE STRUCTURE
+
+Core pages:
+
+/
+services
+packages
+about
+contact
+blogs
+
+Electric Fence Main Page:
+
+/electric-fence-installation-punjab
+
+Electric Fence City Pages:
+
+/electric-fence-installation-jalandhar
+/electric-fence-installation-ludhiana
+/electric-fence-installation-amritsar
+/electric-fence-installation-pathankot
+/electric-fence-installation-hoshiarpur
+/electric-fence-installation-phagwara
+/electric-fence-installation-kapurthala
+/electric-fence-installation-nakodar
+
+Plus all future electric fence city pages
+
+CCTV Main Page:
+
+/cctv-camera-installation-punjab
+
+All CCTV city pages
+
+---
+
+SECTION 1
+
+AUTOMATIC INTERNAL LINKING ENGINE
+
+Build a reusable dynamic internal linking system.
+
+Requirements:
+
+1.
+
+Electric Fence Main Page automatically displays:
+
+Title:
+
+Electric Fence Installation Service Areas
+
+Links:
+
+Electric Fence Installation Jalandhar
+
+Electric Fence Installation Ludhiana
+
+Electric Fence Installation Amritsar
+
+Electric Fence Installation Pathankot
+
+Electric Fence Installation Hoshiarpur
+
+Electric Fence Installation Phagwara
+
+Electric Fence Installation Kapurthala
+
+Electric Fence Installation Nakodar
+
+All future pages must automatically appear.
+
+2.
+
+CCTV Main Page automatically displays:
+
+CCTV Camera Installation Jalandhar
+
+CCTV Camera Installation Ludhiana
+
+CCTV Camera Installation Amritsar
+
+All future city pages.
+
+3.
+
+Every city page must include:
+
+Related Services
+
+Related Locations
+
+Related Articles
+
+Main pillar page
+
+Nearby cities
+
+---
+
+SECTION 2
+
+RELATED CONTENT ENGINE
+
+At bottom of every page create:
+
+You may also be interested in
+
+Dynamic suggestions:
+
+Nearby city pages
+
+Related service pages
+
+Relevant blogs
+
+Related packages
+
+Examples:
+
+Electric Fence Installation Punjab
+
+Electric Fence Installation Ludhiana
+
+CCTV Camera Installation Punjab
+
+Best CCTV For Warehouse
+
+---
+
+SECTION 3
+
+ADVANCED BREADCRUMB SYSTEM
+
+Create visual breadcrumb navigation:
+
+Example:
+
+Home
+
+Services
+
+Electric Fence Installation Punjab
+
+Electric Fence Installation Jalandhar
+
+Add schema:
+
+BreadcrumbList
+
+Requirements:
+
+Clickable
+
+Dynamic
+
+Auto-generated
+
+Works for future pages
+
+---
+
+SECTION 4
+
+DYNAMIC META ENGINE
+
+Create reusable SEO engine.
+
+Each page should dynamically generate:
+
+Title
+
+Meta description
+
+OpenGraph title
+
+OpenGraph description
+
+Twitter title
+
+Twitter description
+
+Keywords
+
+Canonical URL
+
+Examples:
+
+Title:
+
+Electric Fence Installation in Jalandhar | Kirpal Securities
+
+Description:
+
+Professional electric fence installation in Jalandhar for farms warehouses and factories.
+
+---
+
+SECTION 5
+
+STRUCTURED DATA SYSTEM
+
+Implement JSON-LD.
+
+Required schemas:
+
+LocalBusiness
+
+Service
+
+Organization
+
+FAQPage
+
+BreadcrumbList
+
+WebSite
+
+SearchAction
+
+ImageObject
+
+AreaServed
+
+Service schema example:
+
+Service:
+
+Electric Fence Installation
+
+Provider:
+
+Kirpal Securities
+
+Area Served:
+
+Punjab
+
+Jalandhar
+
+Ludhiana
+
+Amritsar
+
+Pathankot
+
+Hoshiarpur
+
+Phagwara
+
+Kapurthala
+
+Nakodar
+
+---
+
+SECTION 6
+
+AUTOMATIC SITEMAP ENGINE
+
+Whenever page added:
+
+Automatically:
+
+Add to sitemap.xml
+
+Set priority
+
+Set change frequency
+
+Set image sitemap
+
+Examples:
+
+Pillar pages:
+
+priority 0.95
+
+City pages:
+
+priority 0.9
+
+Blogs:
+
+priority 0.7
+
+---
+
+SECTION 7
+
+IMAGE SEO SYSTEM
+
+Convert all images to:
+
+webp
+
+Generate filenames automatically:
+
+electric-fence-installation-jalandhar.webp
+
+cctv-camera-installation-punjab.webp
+
+Generate alt text automatically.
+
+Examples:
+
+Electric fence installation in Jalandhar Punjab
+
+Solar electric fencing in Punjab
+
+---
+
+SECTION 8
+
+INDEXABILITY SYSTEM
+
+Check:
+
+noindex tags
+
+robots.txt
+
+canonical conflicts
+
+duplicate pages
+
+redirect chains
+
+broken links
+
+orphan pages
+
+Requirements:
+
+No page should become orphaned
+
+---
+
+SECTION 9
+
+AI DISCOVERABILITY ENGINE
+
+Add reusable structured content block:
+
+Kirpal Securities is a professional electric fence installation and CCTV camera installation company serving customers across Punjab.
+
+Frequently serving:
+
+Jalandhar
+
+Ludhiana
+
+Amritsar
+
+Pathankot
+
+Hoshiarpur
+
+Phagwara
+
+Kapurthala
+
+Nakodar
+
+This block should be reusable.
+
+---
+
+SECTION 10
+
+FUTURE PAGE INHERITANCE SYSTEM
+
+Whenever any future page is created:
+
+Automatically inherit:
+
+Meta tags
+
+Schema
+
+Breadcrumb
+
+Internal links
+
+Related content
+
+Image SEO
+
+Sitemap updates
+
+Canonical URL
+
+AI discoverability
+
+---
+
+OUTPUT
+
+Return production-ready code and architecture integrated into the current React + Express system without breaking existing functionality.

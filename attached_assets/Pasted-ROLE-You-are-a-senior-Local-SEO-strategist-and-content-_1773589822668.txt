@@ -1,0 +1,163 @@
+ROLE
+You are a senior Local SEO strategist and content architect specializing in service-area business websites.
+
+Your task is to create a **high-authority local landing page** for Electric Fence Installation in Jalandhar for Kirpal Securities.
+
+PRIMARY GOAL
+
+Create a dedicated city page designed to rank on Google for:
+
+Electric Fence Installation Jalandhar
+
+The page should strongly target Jalandhar searches while also indicating that the company provides services across Punjab.
+
+TARGET LOCATION
+
+Primary city: Jalandhar, Punjab
+
+Nearby areas that should be naturally mentioned:
+
+Urban Estate
+Model Town
+Jalandhar Cantt
+Adarsh Nagar
+Lamba Pind
+Phagwara Road
+Nakodar Road
+
+PRIMARY KEYWORDS
+
+electric fence installation jalandhar
+electric fencing jalandhar
+solar electric fence jalandhar
+electric fence company jalandhar
+
+SECONDARY KEYWORDS
+
+perimeter electric fencing jalandhar
+farm electric fencing jalandhar
+warehouse electric fencing jalandhar
+industrial electric fence jalandhar
+
+PAGE URL
+
+/electric-fence-installation-jalandhar
+
+PAGE STRUCTURE
+
+SECTION 1 — HERO SECTION
+
+H1
+
+Electric Fence Installation in Jalandhar
+
+Subheading
+
+Kirpal Securities provides professional electric fence installation services in Jalandhar for farms, factories, warehouses and residential properties.
+
+Explain that the company installs solar electric fencing systems designed to provide strong perimeter security.
+
+CTA Buttons
+
+Call Now
+Get Free Site Inspection
+WhatsApp Consultation
+
+SECTION 2 — ELECTRIC FENCING SERVICES IN JALANDHAR
+
+Explain the importance of electric fencing in Jalandhar.
+
+Example:
+
+Electric fencing is widely used in Jalandhar to secure agricultural land, warehouses, factories and commercial properties. These systems create a protective perimeter using controlled electrical pulses that deter intruders and animals while remaining safe.
+
+SECTION 3 — WHERE ELECTRIC FENCING IS USED IN JALANDHAR
+
+Create sub sections.
+
+Electric fencing for farms in Jalandhar
+Electric fencing for factories and industrial sites
+Electric fencing for warehouses
+Electric fencing for residential properties
+
+Explain use cases clearly.
+
+SECTION 4 — TYPES OF ELECTRIC FENCING
+
+Solar electric fencing
+Agricultural electric fencing
+Industrial perimeter fencing
+Warehouse security fencing
+
+Explain benefits briefly.
+
+SECTION 5 — MATERIALS USED
+
+Explain installation components:
+
+MS powder coated poles
+SS 304 stainless steel poles
+High voltage energizers
+Insulated tension wires
+Fence warning signage
+
+SECTION 6 — INSTALLATION PROCESS
+
+Step 1 Site inspection in Jalandhar
+Step 2 Fence design planning
+Step 3 Pole installation and wiring
+Step 4 Energizer installation
+Step 5 Final testing and activation
+
+SECTION 7 — WHY CHOOSE KIRPAL SECURITIES
+
+7+ years experience
+3300+ installations
+Professional installation engineers
+High quality fencing materials
+Reliable perimeter security solutions
+
+SECTION 8 — SERVICE AREA STATEMENT
+
+Explain service coverage.
+
+Example text:
+
+Kirpal Securities provides electric fence installation in Jalandhar and surrounding areas. Our team frequently installs fencing systems across Jalandhar including Urban Estate, Model Town, Jalandhar Cantt and nearby regions.
+
+We also provide electric fencing installation services across Punjab.
+
+SECTION 9 — FAQ SECTION
+
+Include helpful FAQs.
+
+What is electric fencing used for in Jalandhar?
+Is electric fencing safe for residential areas?
+How much does electric fence installation cost in Jalandhar?
+How long does installation take?
+
+SECTION 10 — FINAL CTA
+
+Secure your property with professional electric fence installation in Jalandhar.
+
+Contact Kirpal Securities today for a free consultation and site inspection.
+
+Include phone numbers and WhatsApp.
+
+LOCAL SEO SIGNALS
+
+Ensure the following appear naturally:
+
+electric fence installation jalandhar
+electric fencing jalandhar
+solar electric fencing jalandhar
+
+AI DISCOVERABILITY
+
+Ensure the page clearly states:
+
+Kirpal Securities is a professional electric fence installation company providing services in Jalandhar and across Punjab.
+
+OUTPUT
+
+Return a structured SEO optimized city landing page ready for integration into the existing React components.

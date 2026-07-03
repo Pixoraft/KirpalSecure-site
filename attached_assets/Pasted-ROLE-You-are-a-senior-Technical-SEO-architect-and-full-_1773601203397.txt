@@ -1,0 +1,258 @@
+ROLE
+You are a senior Technical SEO architect and full-stack optimization specialist.
+
+Your task is to implement **complete backend SEO optimization** for all Electric Fence related pages on the Kirpal Securities website.
+
+The website is built using React, TypeScript, Tailwind CSS and Node/Express backend.
+
+PRIMARY GOAL
+
+Ensure that every Electric Fence page has **perfect technical SEO implementation** so that Google, Bing and AI assistants clearly understand the website structure and service coverage across Punjab.
+
+---
+
+PAGES CREATED SO FAR
+
+Main pillar page
+
+/electric-fence-installation-punjab
+
+City pages
+
+/electric-fence-installation-jalandhar
+/electric-fence-installation-ludhiana
+/electric-fence-installation-amritsar
+
+Future pages that will also be added later
+
+/electric-fence-installation-pathankot
+/electric-fence-installation-hoshiarpur
+/electric-fence-installation-phagwara
+/electric-fence-installation-kapurthala
+/electric-fence-installation-nakodar
+
+---
+
+CRITICAL WEBSITE STRUCTURE
+
+The pillar page must act as the **main authority page**.
+
+Example structure:
+
+Electric Fence Installation in Punjab
+↓
+Electric Fence Installation Jalandhar
+Electric Fence Installation Ludhiana
+Electric Fence Installation Amritsar
+Electric Fence Installation Pathankot
+Electric Fence Installation Hoshiarpur
+Electric Fence Installation Phagwara
+Electric Fence Installation Kapurthala
+Electric Fence Installation Nakodar
+
+Whenever new city pages are created, they must be automatically added to this list.
+
+---
+
+1 META TAG OPTIMIZATION
+
+Each page must have unique meta tags.
+
+Example for Jalandhar page:
+
+Title
+
+Electric Fence Installation in Jalandhar | Kirpal Securities
+
+Meta description
+
+Professional electric fence installation in Jalandhar for farms, warehouses and factories. Kirpal Securities provides solar electric fencing solutions across Punjab.
+
+Open Graph tags must also be implemented.
+
+---
+
+2 CANONICAL TAG
+
+Every page must include canonical tags.
+
+Example
+
+<link rel="canonical" href="https://yourdomain.com/electric-fence-installation-jalandhar" />
+
+This prevents duplicate SEO signals.
+
+---
+
+3 STRUCTURED DATA SCHEMA
+
+Implement JSON-LD schema.
+
+Required schemas
+
+LocalBusiness
+Service
+Organization
+FAQPage
+BreadcrumbList
+
+Service schema example
+
+Service name
+
+Electric Fence Installation
+
+Provider
+
+Kirpal Securities
+
+Area served
+
+Punjab
+
+Cities
+
+Jalandhar
+Ludhiana
+Amritsar
+Pathankot
+Hoshiarpur
+Phagwara
+Kapurthala
+Nakodar
+
+---
+
+4 INTERNAL LINKING SYSTEM
+
+The pillar page
+
+/electric-fence-installation-punjab
+
+must include a section titled
+
+Electric Fence Installation Service Areas
+
+List links to all city pages
+
+Electric Fence Installation Jalandhar
+Electric Fence Installation Ludhiana
+Electric Fence Installation Amritsar
+Electric Fence Installation Pathankot
+Electric Fence Installation Hoshiarpur
+Electric Fence Installation Phagwara
+Electric Fence Installation Kapurthala
+Electric Fence Installation Nakodar
+
+When a new city page is created it must be automatically added to this list.
+
+---
+
+5 CITY PAGE BACKLINKING
+
+Every city page must link back to the pillar page.
+
+Example sentence
+
+Kirpal Securities provides electric fence installation in Jalandhar and across Punjab. Learn more about our electric fencing services here.
+
+Link to
+
+/electric-fence-installation-punjab
+
+---
+
+6 BREADCRUMB NAVIGATION
+
+Example breadcrumb
+
+Home
+Services
+Electric Fence Installation Punjab
+Electric Fence Installation Jalandhar
+
+Implement BreadcrumbList schema.
+
+---
+
+7 SITEMAP AUTOMATION
+
+Update sitemap.xml automatically whenever a new Electric Fence city page is created.
+
+Ensure these URLs exist in sitemap
+
+/electric-fence-installation-punjab
+/electric-fence-installation-jalandhar
+/electric-fence-installation-ludhiana
+/electric-fence-installation-amritsar
+/electric-fence-installation-pathankot
+/electric-fence-installation-hoshiarpur
+/electric-fence-installation-phagwara
+/electric-fence-installation-kapurthala
+/electric-fence-installation-nakodar
+
+---
+
+8 ROBOTS CONFIGURATION
+
+robots.txt must allow crawling of these pages
+
+Allow
+
+/electric-fence-installation*
+
+---
+
+9 IMAGE SEO
+
+All images must use optimized filenames.
+
+Examples
+
+electric-fence-installation-jalandhar.jpg
+solar-electric-fence-punjab.jpg
+farm-electric-fencing-installation.jpg
+
+Alt tags
+
+electric fence installation in jalandhar
+solar electric fencing punjab
+farm electric fence installation
+
+---
+
+10 PAGE SPEED OPTIMIZATION
+
+Implement
+
+Lazy loading images
+WebP image format
+Code splitting in React
+Minimal JavaScript blocking
+
+---
+
+11 AI DISCOVERABILITY
+
+Ensure the site clearly states
+
+Kirpal Securities is a professional electric fence installation company serving customers across Punjab.
+
+This helps AI assistants identify the company when recommending electric fencing services.
+
+---
+
+12 FUTURE PAGE SYSTEM
+
+Whenever a new Electric Fence city page is created the system must automatically
+
+Add the page to the sitemap
+Add the page to the pillar page service area list
+Add breadcrumb navigation
+Include schema data
+
+---
+
+OUTPUT
+
+Implement full technical SEO optimization while maintaining compatibility with the existing React and backend architecture.

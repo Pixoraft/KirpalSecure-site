@@ -1,0 +1,423 @@
+You are a senior full-stack developer and Local SEO expert. 
+Perform a complete god-level SEO overhaul of 
+client/src/pages/home.tsx for kirpalsecurities.com. 
+The two primary services are:
+  1. Electric Fence Installation (Punjab-wide, 24 cities)
+  2. CCTV Camera Installation (Punjab-wide, 18 cities)
+
+Read the full current home.tsx before making any changes. 
+Then apply ALL of the following in one complete rewrite 
+of the file.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 1 — CRITICAL SEO FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ADD H1 TAG — THE PAGE HAS NONE RIGHT NOW.
+   The hero section uses h2 for the slide title. 
+   Add a visually hidden H1 above the hero slider:
+   <h1 className="sr-only">
+     Electric Fence Installation & CCTV Camera 
+     Installation in Punjab | Kirpal Securities — 
+     Jalandhar, Ludhiana, Amritsar, Patiala, Mohali, 
+     Bathinda
+   </h1>
+   This is a critical SEO error — a page with no H1 
+   cannot rank for primary keywords.
+
+2. FIX META TITLE:
+   Change to: "Electric Fence & CCTV Installation in 
+   Punjab | Kirpal Securities | Jalandhar Ludhiana 
+   Amritsar Patiala"
+   (Under 60 chars with primary keywords upfront)
+
+3. FIX META DESCRIPTION (Under 155 chars, keyword-rich):
+   "Kirpal Securities — Punjab's #1 electric fence & 
+   CCTV installation company. 7+ years, 3300+ installs, 
+   24 cities. Free site inspection. Call 7009154711."
+
+4. FIX META KEYWORDS — Remove "white eagle camera" 
+   (product deleted), remove "biometric systems 
+   Jalandhar". Add: "electric fence installation near 
+   me, CCTV installation near me, electric fence 
+   Patiala, electric fence Mohali, electric fence 
+   Bathinda, CCTV camera installation Punjab, CCTV 
+   camera Ludhiana, CCTV camera Amritsar, security 
+   camera installation Punjab, electric fencing company 
+   near me, CCTV installer near me"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 2 — STRUCTURED DATA (Schema.org)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Replace the entire structuredData array in <SEOHead> 
+with these 5 schemas:
+
+SCHEMA 1 — LocalBusiness (expanded):
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://kirpalsecurities.com/#localbusiness",
+  "name": "Kirpal Securities",
+  "description": "Kirpal Securities is Punjab's leading electric fence installation and CCTV camera installation company. We serve 24+ cities across Punjab including Jalandhar, Ludhiana, Amritsar, Patiala, Mohali and Bathinda. 7+ years experience, 3300+ installations.",
+  "url": "https://kirpalsecurities.com",
+  "telephone": ["+91-7009154711", "+91-9463687535"],
+  "email": "kirpalsecurities@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Urban Estate Ph. 2, Road Opp. Hotel Imperia Suites",
+    "addressLocality": "Jalandhar",
+    "addressRegion": "Punjab",
+    "addressCountry": "IN",
+    "postalCode": "144022"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "31.3260",
+    "longitude": "75.5762"
+  },
+  "areaServed": [
+    "Jalandhar","Ludhiana","Amritsar","Patiala",
+    "Mohali","Bathinda","Phagwara","Kapurthala",
+    "Hoshiarpur","Pathankot","Gurdaspur","Moga",
+    "Nakodar","Sangrur","Barnala","Firozpur",
+    "Rupnagar","Fatehgarh Sahib","Fazilka","Muktsar",
+    "Tarn Taran","Mansa","Nawanshahr","Malerkotla",
+    "Punjab"
+  ].map(name => ({ "@type": "City", "name": name })),
+  "priceRange": "₹₹",
+  "openingHours": [
+    "Mo-Fr 09:00-19:00",
+    "Sa 09:00-18:00",
+    "Su 10:00-16:00"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "312",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Security Services Punjab",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Solar Electric Fence Installation", "areaServed": "Punjab" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agricultural Electric Fencing", "areaServed": "Punjab" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Industrial Perimeter Fencing", "areaServed": "Punjab" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Electric Fence Installation", "areaServed": "Punjab" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CCTV Camera Installation", "areaServed": "Punjab" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hikvision CCTV Installation", "areaServed": "Punjab" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CP Plus CCTV Installation", "areaServed": "Punjab" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CCTV AMC & Maintenance", "areaServed": "Punjab" }}
+    ]
+  },
+  "sameAs": [
+    "https://maps.google.com/?cid=kirpalsecurities"
+  ]
+}
+
+SCHEMA 2 — WebSite with SearchAction:
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://kirpalsecurities.com/#website",
+  "name": "Kirpal Securities",
+  "url": "https://kirpalsecurities.com",
+  "description": "Punjab's #1 electric fence and CCTV installation company",
+  "publisher": { "@id": "https://kirpalsecurities.com/#localbusiness" },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://kirpalsecurities.com/contact?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+
+SCHEMA 3 — Service (Electric Fence):
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Electric Fence Installation in Punjab",
+  "serviceType": "Electric Fence Installation",
+  "description": "Professional electric fence installation for farms, factories, warehouses and homes across Punjab. Solar and grid-powered systems. Free site inspection.",
+  "provider": { "@id": "https://kirpalsecurities.com/#localbusiness" },
+  "areaServed": { "@type": "State", "name": "Punjab" },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "areaServed": "Punjab"
+  }
+}
+
+SCHEMA 4 — Service (CCTV):
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "CCTV Camera Installation in Punjab",
+  "serviceType": "CCTV Camera Installation",
+  "description": "Hikvision, CP Plus and Dahua CCTV installation for homes, shops, offices and factories across Punjab. Packages from Rs 16000 with 2-year warranty.",
+  "provider": { "@id": "https://kirpalsecurities.com/#localbusiness" },
+  "areaServed": { "@type": "State", "name": "Punjab" },
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "minPrice": "16000",
+      "priceCurrency": "INR"
+    },
+    "availability": "https://schema.org/InStock"
+  }
+}
+
+SCHEMA 5 — FAQPage (10 questions, 5 electric fence + 5 CCTV):
+Electric Fence FAQs:
+Q1: "What is the cost of electric fence installation in Punjab?"
+A1: "The cost depends on perimeter length, pole type (MS Powder Coated or SS 304 Stainless Steel) and whether solar or grid-powered. Kirpal Securities offers free site inspections and custom quotes across all Punjab cities. Call 7009154711 for a free estimate."
+
+Q2: "Is electric fencing legal in Punjab?"
+A2: "Yes, electric fencing is legal in India for property protection when installed professionally with proper warning signage, safe pulse technology, and compliance with IS 69 safety standards. Kirpal Securities ensures all installations are fully compliant."
+
+Q3: "Which areas in Punjab do you cover for electric fence installation?"
+A3: "Kirpal Securities covers all of Punjab including Jalandhar, Ludhiana, Amritsar, Patiala, Mohali, Bathinda, Phagwara, Kapurthala, Hoshiarpur, Pathankot, Gurdaspur, Moga, Sangrur, Barnala, Firozpur, Rupnagar, Tarn Taran, Mansa, Nawanshahr and Malerkotla."
+
+Q4: "How long does electric fence installation take?"
+A4: "A standard residential or small farm installation takes 1-2 days. Larger industrial or warehouse perimeters take 3-5 days. Our team provides a clear timeline during the free site inspection."
+
+Q5: "Do you provide solar electric fencing in Punjab?"
+A5: "Yes. Kirpal Securities installs solar electric fence systems across Punjab. Solar systems are ideal for farms and rural properties without reliable grid power and work 24/7 independently of the electricity grid."
+
+CCTV FAQs:
+Q6: "How much does CCTV camera installation cost in Punjab?"
+A6: "Kirpal Securities offers CCTV packages from Rs 16,000 for a 4-camera HD system including installation, DVR/NVR, cabling and mobile app setup. 8-camera packages start from Rs 21,500. Contact us for a free quote."
+
+Q7: "Which CCTV brands do you install in Punjab?"
+A7: "We install Hikvision, CP Plus and Dahua CCTV cameras — all with genuine warranty. Our technicians are trained and certified for all three brands. We recommend the best brand based on your budget and requirements."
+
+Q8: "Do you provide CCTV installation near me in Punjab?"
+A8: "Yes. Kirpal Securities provides CCTV installation across 18+ Punjab cities including Jalandhar, Ludhiana, Amritsar, Patiala, Mohali, Bathinda, Phagwara, Kapurthala, Hoshiarpur, Pathankot, Nakodar, Gurdaspur, Moga, Sangrur, Rupnagar, Firozpur, Tarn Taran and Nawanshahr."
+
+Q9: "Can I view CCTV cameras on my mobile phone?"
+A9: "Yes. All our CCTV systems support live mobile viewing on iOS and Android. Our technicians set up the mobile app during installation and provide full training so you can monitor your property from anywhere."
+
+Q10: "Do you provide CCTV maintenance and AMC services?"
+A10: "Yes. Kirpal Securities provides Annual Maintenance Contracts (AMC), camera repairs and replacements, DVR/NVR servicing, and remote support across Punjab. We service systems we installed as well as systems installed by other companies."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 3 — HERO SLIDER FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Keep only 3 slides. Delete slides 2 (Smart Home) 
+and 3 (Biometric). Update heroBannerSlides to:
+
+Slide 0 (Electric Fence — keep existing, no change)
+
+Slide 1 (CCTV — update to):
+{
+  id: 1,
+  title: "CCTV Camera Installation Punjab",
+  subtitle: "📷 Hikvision • CP Plus • Dahua 📷",
+  description: "Professional CCTV installation across 18 Punjab cities. HD and 4K cameras, mobile viewing, NVR/DVR setup and 2-year warranty. Packages from ₹16,000. Jalandhar, Ludhiana, Amritsar, Patiala, Mohali, Bathinda and more.",
+  backgroundImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+  ctaText: "📷 Get Free CCTV Quote",
+  isCCTV: true
+}
+
+Slide 2 (Support — update to):
+{
+  id: 2,
+  title: "Free Site Inspection",
+  subtitle: "📞 Call Now: 7009154711",
+  description: "Get a free site inspection and custom quote for electric fence or CCTV installation anywhere in Punjab. No hidden charges, professional installation, lifetime support.",
+  backgroundImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+  ctaText: "Book Free Inspection"
+}
+
+For slide 1 (isCCTV: true) — add a button that dispatches 
+openQueryForm with serviceType: 'CCTV Camera Installation',
+similar to the electric fence slide button pattern.
+
+For slide 2 — button links to /contact.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 4 — STATS SECTION FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fix all 4 stats:
+1. CountUp end={3300} → keep, label: "Installations Across India"
+2. CountUp end={5} cities → change to end={24}, 
+   label: "Cities Across Punjab"
+3. CountUp end={5} years → change to end={7}, 
+   label: "Years Experience"
+4. 24/7 Support → keep as is
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 5 — SERVICE AREAS SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The current service areas section is hardcoded with 
+8 cities and NO links. Replace it entirely with this:
+
+Import electricFenceCities from "@/lib/electric-fence-cities"
+Import cctvCities from "@/lib/cctv-cities"
+
+Replace the section with two tabs — "Electric Fence Cities" 
+and "CCTV Cities" — using a simple useState toggle 
+(no external tab library needed).
+
+Each city renders as a <Link href={city.url}> card 
+showing city name + icon + service type. 
+Electric fence cards: yellow border on hover.
+CCTV cards: blue border on hover.
+
+Section heading: "We Serve All of Punjab"
+Subheading: "Click your city to see local service details, 
+pricing and installation info"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 6 — SERVICES OVERVIEW CLEANUP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The current "Professional Security Solutions in Jalandhar"
+section shows 6 services including Smart Home, Biometric,
+Enterprise Networking, Video Intercom — services that are
+NOT the primary business focus and confuse Google about
+what the site is about.
+
+Replace the entire 6-card services grid with 4 focused 
+service cards:
+1. Electric Fence Installation — link: /electric-fence-installation-punjab
+2. Solar Electric Fencing — link: /electric-fence-installation-punjab
+3. CCTV Camera Installation — link: /cctv-camera-installation-punjab
+4. CCTV AMC & Maintenance — link: /cctv-camera-installation-punjab
+
+Section heading: "Our Core Services in Punjab"
+Section subheading: "Professional installation across 
+Jalandhar, Ludhiana, Amritsar, Patiala, Mohali, Bathinda 
+and 18 more cities"
+
+Each card must have a <Link> to the relevant pillar page.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 7 — FAQ SECTION UPDATE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Replace the 5 hardcoded FAQ items with the same 10 
+FAQs defined in the Schema 5 above (5 electric fence 
++ 5 CCTV). This makes the visible FAQ and the 
+schema FAQ match exactly — critical for Google 
+FAQ rich results.
+
+Update section heading:
+H2: "Electric Fence & CCTV Installation — FAQs"
+Subheading: "Common questions about our services 
+across Punjab"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 8 — ADD "NEAR ME" SEO SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Add a new section between the FAQ section and the 
+final CTA section:
+
+<section aria-label="Electric Fence and CCTV Installation Near Me in Punjab">
+  <h2>Looking for Electric Fence or CCTV Installation Near You?</h2>
+  <p>
+    Kirpal Securities provides electric fence installation 
+    and CCTV camera installation near you across all of 
+    Punjab. Whether you are in Jalandhar, Ludhiana, 
+    Amritsar, Patiala, Mohali, Bathinda, Phagwara, 
+    Kapurthala, Hoshiarpur, Pathankot or any other 
+    Punjab city — our installation team is near you.
+  </p>
+  
+  Then two CTA cards side by side:
+  Card 1 (yellow): "Electric Fence Near Me" → 
+    opens openQueryForm with serviceType: 
+    'Electric Fencing Installation'
+  Card 2 (blue): "CCTV Installation Near Me" → 
+    opens openQueryForm with serviceType: 
+    'CCTV Camera Installation'
+  
+  Below the cards, a text paragraph:
+  "Our teams operate from Jalandhar and cover 
+  the entire Punjab state. Typical response time 
+  for site inspection booking: 24 hours. 
+  Call Nikhil: 7009154711 | Naveen: 9463687535"
+</section>
+
+This section directly targets "electric fence 
+installation near me" and "CCTV installation near me" 
+queries which have HIGH search volume in Punjab.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 9 — REVIEWS CLEANUP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Remove the date field from all review objects.
+2. Remove the date display line from the review card.
+3. Update reviews to mention electric fence or CCTV 
+   specifically (not "biometric" or "laptop repair"):
+
+Review 1: service "Electric Fence Installation", 
+  text about electric fence on their farm in Jalandhar
+
+Review 2: service "CCTV Camera Installation",
+  text about 8-camera system for their shop in Ludhiana
+
+Review 3: service "Electric Fence Installation",
+  text about industrial perimeter fencing for factory
+
+Review 4: service "CCTV Camera Installation", 
+  text about home CCTV installation in Amritsar
+
+Review 5: service "Electric Fence Installation",
+  text about solar electric fence on agricultural land
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 10 — FINAL CTA FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Change all "Buy Now" button text to 
+   "Book Free Site Inspection"
+
+2. Change the Lock icon next to it to Phone icon.
+
+3. In the yellow gradient CTA section, add 
+   CCTV mention — the current text only says 
+   electric fence. Change paragraph to:
+   "Kirpal Securities provides reliable electric fence 
+   installation and CCTV camera installation services 
+   across all of Punjab — including Jalandhar, Ludhiana, 
+   Amritsar, Patiala, Mohali, Bathinda, Pathankot, 
+   Hoshiarpur and 16 more cities. Contact us for a 
+   free consultation and site inspection."
+
+4. The "Why Choose Us" section mentions only 
+   Jalandhar, Ludhiana, Amritsar, Pathankot, 
+   Hoshiarpur, Phagwara, Kapurthala & Nakodar.
+   Update the MapPin card description to:
+   "Jalandhar, Ludhiana, Amritsar, Patiala, Mohali, 
+   Bathinda, Phagwara, Kapurthala, Hoshiarpur, 
+   Pathankot and 14 more Punjab cities"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TECHNICAL REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Run npx tsc --noEmit after all changes to verify 
+  no TypeScript errors
+- Take a screenshot of the homepage to verify 
+  it renders correctly
+- Do NOT break any existing imports or components
+- Keep all existing motion/animation code intact
+- All new <Link> components must use wouter's Link
+- All phone numbers: 7009154711 (Nikhil), 
+  9463687535 (Naveen)
+- All WhatsApp links: wa.me/917009154711
+- No mention of White Eagle anywhere
+
+Execute all 10 sections in order. Show me a 
+screenshot when done.

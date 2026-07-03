@@ -1,0 +1,166 @@
+ROLE
+You are a senior Local SEO strategist and service-area content architect.
+
+Your task is to create a **high-authority local landing page** for Electric Fence Installation in Ludhiana for Kirpal Securities.
+
+PRIMARY GOAL
+
+Create a dedicated SEO page designed to rank on Google for:
+
+Electric Fence Installation Ludhiana
+
+This page must strongly target Ludhiana searches while also indicating that Kirpal Securities provides services across Punjab.
+
+TARGET LOCATION
+
+Primary city: Ludhiana, Punjab
+
+Nearby locations that should be naturally mentioned in content:
+
+Ferozepur Road
+Pakhowal Road
+Model Town
+Dugri
+BRS Nagar
+Sarabha Nagar
+Gill Road
+Industrial Area Ludhiana
+
+PRIMARY KEYWORDS
+
+electric fence installation ludhiana
+electric fencing ludhiana
+solar electric fence ludhiana
+electric fence company ludhiana
+
+SECONDARY KEYWORDS
+
+perimeter electric fencing ludhiana
+industrial electric fence ludhiana
+farm electric fencing ludhiana
+warehouse electric fence ludhiana
+
+PAGE URL
+
+/electric-fence-installation-ludhiana
+
+PAGE STRUCTURE
+
+SECTION 1 — HERO SECTION
+
+H1
+
+Electric Fence Installation in Ludhiana
+
+Subheading
+
+Kirpal Securities provides professional electric fence installation services in Ludhiana for farms, factories, warehouses and residential properties.
+
+Explain that the company installs solar electric fencing systems designed to provide strong perimeter security for commercial and agricultural properties.
+
+CTA Buttons
+
+Call Now
+Get Free Site Inspection
+WhatsApp Consultation
+
+SECTION 2 — ELECTRIC FENCING SERVICES IN LUDHIANA
+
+Explain local demand.
+
+Example content:
+
+Electric fencing is widely used in Ludhiana to secure industrial facilities, agricultural land and warehouses. With Ludhiana being one of Punjab's major industrial cities, businesses require reliable perimeter protection systems to prevent unauthorized entry.
+
+Kirpal Securities installs professional electric fencing systems designed for durability and effective perimeter security.
+
+SECTION 3 — WHERE ELECTRIC FENCING IS USED IN LUDHIANA
+
+Create sub sections.
+
+Electric fencing for factories in Ludhiana
+Electric fencing for warehouses and storage facilities
+Electric fencing for agricultural land
+Electric fencing for residential properties
+
+Explain benefits and use cases.
+
+SECTION 4 — TYPES OF ELECTRIC FENCING
+
+Solar electric fencing
+Agricultural electric fencing
+Industrial perimeter fencing
+Warehouse security fencing
+
+Each section should briefly explain where it is used.
+
+SECTION 5 — MATERIALS AND TECHNOLOGY
+
+Explain components used in installation:
+
+MS powder coated poles
+SS 304 stainless steel poles
+High voltage energizers
+Insulated tension wires
+Fence warning signage
+
+Explain durability and reliability.
+
+SECTION 6 — INSTALLATION PROCESS
+
+Step 1 Site inspection in Ludhiana
+Step 2 Security assessment and fence design
+Step 3 Pole installation and wiring setup
+Step 4 Energizer installation
+Step 5 Final testing and activation
+
+SECTION 7 — WHY CHOOSE KIRPAL SECURITIES
+
+7+ years experience
+3300+ installations completed
+Professional installation engineers
+High quality fencing materials
+Reliable perimeter security solutions
+
+SECTION 8 — SERVICE AREA STATEMENT
+
+Example content:
+
+Kirpal Securities provides electric fence installation in Ludhiana and nearby areas including Ferozepur Road, Pakhowal Road, Model Town, Dugri and surrounding regions.
+
+Our team also provides electric fencing installation services across Punjab.
+
+SECTION 9 — FAQ SECTION
+
+Add helpful FAQs.
+
+What is electric fencing used for in Ludhiana?
+Is electric fencing safe for factories?
+How much does electric fence installation cost in Ludhiana?
+How long does electric fence installation take?
+
+SECTION 10 — FINAL CALL TO ACTION
+
+Secure your property with professional electric fence installation in Ludhiana.
+
+Contact Kirpal Securities today for a free consultation and site inspection.
+
+Include phone numbers and WhatsApp contact.
+
+LOCAL SEO SIGNALS
+
+Ensure the following phrases appear naturally throughout the content:
+
+electric fence installation ludhiana
+electric fencing ludhiana
+solar electric fence ludhiana
+
+AI DISCOVERABILITY
+
+Ensure the page clearly states:
+
+Kirpal Securities is a professional electric fence installation company providing services in Ludhiana and across Punjab.
+
+OUTPUT
+
+Return a structured SEO optimized Ludhiana city page ready to integrate into the existing React components.

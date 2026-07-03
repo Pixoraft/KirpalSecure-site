@@ -1,0 +1,117 @@
+# Robots.txt for Kirpal Securities — Electric Fence & CCTV Installation Punjab
+# https://kirpalsecurities.in
+
+# ─────────────────────────────────────────────────────────────────
+# Default — allow all crawlers, full site indexable
+# ─────────────────────────────────────────────────────────────────
+User-agent: *
+Allow: /
+
+# Core pages
+Allow: /services
+Allow: /packages
+Allow: /about
+Allow: /contact
+Allow: /blogs
+Allow: /blog/
+Allow: /privacy-policy
+Allow: /terms-conditions
+
+# Electric Fence Installation — pillar + 24 city pages
+Allow: /electric-fence-installation-punjab
+Allow: /electric-fence-installation-*
+
+# CCTV Camera Installation — pillar + 18 city pages
+Allow: /cctv-camera-installation-punjab
+Allow: /cctv-camera-installation-*
+
+# Near-Me Intent Pages
+Allow: /electric-fence-installation-near-me
+Allow: /cctv-installation-near-me
+Allow: /cctv-camera-service-near-me
+
+# Industry-Specific CCTV Pages
+Allow: /best-cctv-camera-for-school
+Allow: /best-cctv-camera-for-factory
+Allow: /best-cctv-camera-for-warehouse
+Allow: /best-cctv-camera-for-office
+Allow: /best-cctv-camera-for-hospital
+Allow: /best-cctv-camera-for-commercial-buildings
+Allow: /best-cctv-camera-for-*
+
+# Allow all static assets
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.xml$
+
+# Block old static HTML stubs in public/ (duplicate content risk)
+Disallow: /cctv-installation-jalandhar.html
+Disallow: /security-services-jalandhar.html
+
+# Block private / non-public areas only
+Disallow: /admin
+Disallow: /api/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://kirpalsecurities.in/sitemap.xml
+
+# ─────────────────────────────────────────────────────────────────
+# Major search engines — full speed, full access
+# ─────────────────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /cctv-installation-jalandhar.html
+Disallow: /security-services-jalandhar.html
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+Disallow: /admin
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+# ─────────────────────────────────────────────────────────────────
+# Block aggressive SEO scraper bots
+# ─────────────────────────────────────────────────────────────────
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

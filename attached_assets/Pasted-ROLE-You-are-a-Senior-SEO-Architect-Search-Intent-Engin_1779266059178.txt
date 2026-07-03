@@ -1,0 +1,376 @@
+ROLE
+
+You are a Senior SEO Architect, Search Intent Engineer, Commercial Content Strategist, Technical SEO Specialist and AI Discoverability Engineer.
+
+Your task is to create a complete Industry Specific SEO System for Kirpal Securities.
+
+Website Stack:
+
+React 18
+TypeScript
+Tailwind CSS
+Node.js
+Express
+PostgreSQL
+
+DO NOT change framework.
+
+DO NOT break existing functionality.
+
+---
+
+PRIMARY GOAL
+
+Create high-authority industry-specific pages designed to rank for commercial and high buying intent searches.
+
+Target users:
+
+School owners
+
+Factory owners
+
+Warehouse owners
+
+Hospital owners
+
+Office owners
+
+Commercial property owners
+
+---
+
+PAGES TO CREATE
+
+Create:
+
+/best-cctv-camera-for-school
+
+/best-cctv-camera-for-factory
+
+/best-cctv-camera-for-warehouse
+
+/best-cctv-camera-for-office
+
+/best-cctv-camera-for-hospital
+
+/best-cctv-camera-for-commercial-buildings
+
+Future pages should inherit structure automatically.
+
+---
+
+SECTION 1
+
+ULTRA HERO SECTION
+
+Each page should include:
+
+H1 example:
+
+Best CCTV Camera For School Security
+
+Subheading example:
+
+Discover professional CCTV camera solutions designed for schools with high quality surveillance, monitoring and security systems.
+
+CTA:
+
+Get Free Consultation
+
+Call Now
+
+WhatsApp
+
+Quick quote button
+
+---
+
+SECTION 2
+
+INDUSTRY PAIN POINT ENGINE
+
+Explain industry-specific problems.
+
+Example:
+
+School page:
+
+Student safety
+
+Unauthorized access
+
+Playground monitoring
+
+Bus monitoring
+
+Entrance monitoring
+
+Factory page:
+
+Unauthorized entry
+
+Production monitoring
+
+Equipment security
+
+Employee safety
+
+Warehouse page:
+
+Inventory theft
+
+Loading area monitoring
+
+Storage security
+
+Office page:
+
+Access monitoring
+
+Employee safety
+
+Visitor tracking
+
+---
+
+SECTION 3
+
+RECOMMENDED CCTV SYSTEMS
+
+Create sections:
+
+IP Cameras
+
+Bullet Cameras
+
+Dome Cameras
+
+PTZ Cameras
+
+Night Vision Cameras
+
+AI Cameras
+
+Explain:
+
+Benefits
+
+Use cases
+
+Recommended placements
+
+---
+
+SECTION 4
+
+CAMERA PLACEMENT GUIDE
+
+Example:
+
+School:
+
+Entrance
+
+Hallways
+
+Playgrounds
+
+Parking
+
+Classrooms
+
+Factory:
+
+Production floor
+
+Gate
+
+Warehouse
+
+Storage areas
+
+---
+
+SECTION 5
+
+BENEFITS SECTION
+
+Increase security
+
+Reduce theft
+
+Improve monitoring
+
+Increase safety
+
+Remote monitoring
+
+AI detection
+
+---
+
+SECTION 6
+
+FAQ SYSTEM
+
+Examples:
+
+Which CCTV camera is best for schools?
+
+How many cameras are needed?
+
+Do CCTV cameras work at night?
+
+Can cameras be monitored remotely?
+
+Generate FAQ schema.
+
+---
+
+SECTION 7
+
+RELATED CONTENT ENGINE
+
+Automatically show:
+
+CCTV Punjab page
+
+CCTV city pages
+
+Packages
+
+Blogs
+
+Related industries
+
+Future pages
+
+---
+
+SECTION 8
+
+BACKEND SEO ENGINE
+
+Generate:
+
+Meta titles
+
+Meta descriptions
+
+Keywords
+
+Canonical tags
+
+OpenGraph tags
+
+Twitter cards
+
+---
+
+SECTION 9
+
+SCHEMA ENGINE
+
+Generate:
+
+LocalBusiness
+
+Service
+
+FAQPage
+
+BreadcrumbList
+
+Organization
+
+SearchAction
+
+Product
+
+ItemList
+
+---
+
+SECTION 10
+
+PILLAR PAGE LINKING
+
+Automatically add all industry pages into:
+
+/cctv-camera-installation-punjab
+
+Create section:
+
+Industry Solutions
+
+Links:
+
+Best CCTV Camera For School
+
+Best CCTV Camera For Factory
+
+Best CCTV Camera For Warehouse
+
+Best CCTV Camera For Office
+
+Best CCTV Camera For Hospital
+
+Best CCTV Camera For Commercial Buildings
+
+Future pages automatically added.
+
+---
+
+SECTION 11
+
+IMAGE SEO ENGINE
+
+Generate:
+
+best-cctv-camera-school.webp
+
+best-cctv-camera-factory.webp
+
+best-cctv-camera-warehouse.webp
+
+Generate alt tags automatically.
+
+---
+
+SECTION 12
+
+AI DISCOVERABILITY
+
+Add reusable statement:
+
+Kirpal Securities provides professional CCTV camera solutions across Punjab for schools, factories, warehouses, offices and commercial properties.
+
+---
+
+SECTION 13
+
+FUTURE AUTOMATION
+
+Future industry pages automatically inherit:
+
+Meta
+
+Schema
+
+Breadcrumbs
+
+Internal links
+
+Related content
+
+Image optimization
+
+Sitemap updates
+
+AI discoverability
+
+---
+
+OUTPUT
+
+Return production-ready implementation integrated into React + backend without breaking existing architecture.
